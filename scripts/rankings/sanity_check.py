@@ -17,19 +17,16 @@ from build_master_data import (  # noqa: E402
     load_finals_race_results,
     validate_podium_overrides,
 )
-
-ROOT = Path(__file__).resolve().parents[1]
-REPO = ROOT.parent
-DATA = ROOT / "data"
+from hub_paths import DATA, PUBLIC, SEASONS  # noqa: E402
 
 REQUIRED_SOURCES = [
-    REPO / "Season 1 - 2023/EOL Rankings 2023.pdf",
-    REPO / "Season 1 - 2023/2 - Swiss Onewheel Race/Swiss Race Ranking.xlsx",
-    REPO / "season 2 - 2024/Rankings/EOL 2023_2024 Overall Rankings.xlsx",
-    REPO
+    SEASONS / "Season 1 - 2023/EOL Rankings 2023.pdf",
+    SEASONS / "Season 1 - 2023/2 - Swiss Onewheel Race/Swiss Race Ranking.xlsx",
+    SEASONS / "season 2 - 2024/Rankings/EOL 2023_2024 Overall Rankings.xlsx",
+    SEASONS
     / "season 2 - 2024/Tier 1/2 - Onewheel Algarve Race/OneWheel Final Results_231128_173038.pdf",
-    REPO / "Season 3 - 2025/EOL 2025 Overall Rankings.xlsx",
-    REPO / "Season 4 - 2026/EOL 2026 Overall Rankings.xlsx",
+    SEASONS / "Season 3 - 2025/EOL 2025 Overall Rankings.xlsx",
+    SEASONS / "Season 4 - 2026/EOL 2026 Overall Rankings.xlsx",
 ]
 
 errors: list[str] = []
@@ -47,11 +44,11 @@ def warn(msg: str) -> None:
 def main() -> int:
     for p in REQUIRED_SOURCES:
         if not p.exists():
-            fail(f"Missing canonical source: {p.relative_to(REPO)}")
+            fail(f"Missing canonical source: {p.relative_to(SEASONS)}")
 
     summary_path = DATA / "build_summary.json"
     if not summary_path.exists():
-        fail("Missing data/build_summary.json — run build_master_data.py")
+        fail("Missing data/rankings/build_summary.json — run build_master_data.py")
         return report()
 
     summary = json.loads(summary_path.read_text())
@@ -82,9 +79,9 @@ def main() -> int:
     if events["event_id"].duplicated().any():
         fail("Duplicate event_id in events.csv")
 
-    site_json = ROOT / "site/public/eol-data.json"
+    site_json = PUBLIC / "eol-data.json"
     if not site_json.exists():
-        warn("Missing site/public/eol-data.json — run build_site_data.py")
+        warn("Missing site/public/data/rankings/eol-data.json — run build_site_data.py")
     else:
         payload = json.loads(site_json.read_text())
         if payload.get("meta", {}).get("riderCount") != len(riders):
@@ -101,7 +98,7 @@ def main() -> int:
 
     ovr_path = DATA / "podium_overrides.csv"
     if not ovr_path.exists():
-        fail("Missing data/podium_overrides.csv")
+        fail("Missing data/rankings/podium_overrides.csv")
     else:
         try:
             validate_podium_overrides()

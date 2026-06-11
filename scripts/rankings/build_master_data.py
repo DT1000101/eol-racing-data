@@ -14,10 +14,7 @@ import pandas as pd
 from difflib import SequenceMatcher
 from pypdf import PdfReader
 
-ROOT = Path(__file__).resolve().parents[1]
-SOURCE = ROOT.parent
-OUT = ROOT / "data"
-APPROVED_MERGES = ROOT / "approved_merges.csv"
+from hub_paths import APPROVED_MERGES, DATA as OUT, HUB_ROOT as ROOT, SEASONS as SOURCE
 
 EVENTS = [
     {"event_id": "s1-gattinara-2023", "season": 1, "season_label": "2023", "name": "Gattinara Wine & Trails", "sort_key": 100,
@@ -1305,7 +1302,7 @@ def main():
     pd.DataFrame(discrepancies).to_csv(OUT / "name_discrepancies_for_review.csv", index=False)
     pd.DataFrame(variant_rows).to_csv(OUT / "name_variants_within_rider.csv", index=False)
 
-    xlsx_path = ROOT / "EOL_master.xlsx"
+    xlsx_path = OUT / "EOL_master.xlsx"
     with pd.ExcelWriter(xlsx_path, engine="openpyxl") as xw:
         pd.DataFrame(riders_csv).to_excel(xw, sheet_name="riders", index=False)
         pd.DataFrame(EVENTS).to_excel(xw, sheet_name="events", index=False)

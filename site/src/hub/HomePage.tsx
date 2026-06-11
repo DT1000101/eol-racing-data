@@ -1,58 +1,50 @@
+import { ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
 import { HelpTip } from "./HelpTip";
-
-const SECTIONS = [
-  {
-    to: "/rankings",
-    title: "Season rankings",
-    description:
-      "Overall standings by season and category, rider directory, teams, rookie of the year, and podium hall of fame.",
-    help: "Built from official season results. Use this to see who’s where in the league and explore rider histories.",
-  },
-  {
-    to: "/divisions",
-    title: "Dynamic divisions",
-    description:
-      "Split time-trial results into skill-based divisions with bracket-sized groups (4 / 8 / 16 / 32) and visual starting grids.",
-    help: "Helps organisers see how riders might be grouped before knockout racing. Adjust thresholds and reference rider to explore scenarios.",
-  },
-  {
-    to: "/seeding",
-    title: "Finals seeding",
-    description:
-      "How to place the top 32 into quarters, semis, and gates when speeds are known but seed order isn’t fixed yet.",
-    help: "Focused on OWA finals: you have 32 riders selected but need a fair bracket layout. More content coming soon.",
-    badge: "In progress",
-  },
-] as const;
+import { HOME_SECTIONS } from "./navConfig";
+import { SectionIcon } from "./siteIcons";
 
 export function HomePage() {
   return (
     <div className="hub-home">
       <div className="hub-home__hero">
-        <h1>EOL Hub</h1>
+        <h1>EOL Racing Data</h1>
         <p className="hub-home__lead">
-          One place for league rankings, division planning, and finals bracket
-          seeding — clear tools for organisers and riders.
+          Rankings, rider profiles, division planning, and finals bracket tools —
+          clear data for organisers and riders.
         </p>
         <p className="hub-home__note">
           Not the official EOL site, but maintained for the community.{" "}
-          <HelpTip text="These tools are built by committee members and serious riders to help explain how competitions are structured. Always check with organisers for final decisions." />
+          <HelpTip text="Built by committee members and serious riders to help explain how competitions are structured. Always check with organisers for final decisions." />
         </p>
       </div>
 
       <div className="hub-home__grid">
-        {SECTIONS.map((section) => (
+        {HOME_SECTIONS.map((section) => (
           <Link key={section.to} to={section.to} className="hub-card">
-            <div className="hub-card__head">
-              <h2 className="hub-card__title">{section.title}</h2>
-              {"badge" in section && section.badge && (
-                <span className="hub-card__badge">{section.badge}</span>
-              )}
-              <HelpTip text={section.help} />
+            <div className="hub-card__icon" aria-hidden>
+              <SectionIcon to={section.to} size={22} />
             </div>
-            <p className="hub-card__desc">{section.description}</p>
-            <span className="hub-card__cta">Open →</span>
+            <div className="hub-card__body">
+              <div className="hub-card__head">
+                <div className="hub-card__titles">
+                  <h2 className="hub-card__title">{section.pageTitle}</h2>
+                  {section.pageSubtitle && (
+                    <span className="hub-card__subtitle">
+                      {section.pageSubtitle}
+                    </span>
+                  )}
+                </div>
+                {section.badge && (
+                  <span className="hub-card__badge">{section.badge}</span>
+                )}
+                <HelpTip text={section.help} />
+              </div>
+              <p className="hub-card__desc">{section.description}</p>
+              <span className="hub-card__cta">
+                Open <ArrowRight size={14} strokeWidth={2} aria-hidden />
+              </span>
+            </div>
           </Link>
         ))}
       </div>

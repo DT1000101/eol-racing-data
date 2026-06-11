@@ -11,9 +11,9 @@ from pathlib import Path
 
 import pandas as pd
 
-HUB_ROOT = Path(__file__).resolve().parents[2]
-DATA = HUB_ROOT / "data" / "rankings"
-OUT = HUB_ROOT / "site" / "public" / "data" / "rankings" / "attendance-stats.json"
+from hub_paths import DATA, PUBLIC
+
+OUT = PUBLIC / "attendance-stats.json"
 
 CATEGORIES = ("open", "female", "groms")
 CAT_LABELS = {"open": "Open / Men", "female": "Women", "groms": "Groms"}

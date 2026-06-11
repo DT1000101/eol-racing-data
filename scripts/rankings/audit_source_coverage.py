@@ -14,10 +14,8 @@ from pypdf import PdfReader
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 import build_master_data as b
+from hub_paths import DATA, SEASONS
 
-ROOT = Path(__file__).resolve().parents[1]
-DATA = ROOT / "data"
-REPO = ROOT.parent
 FINALS = "s2-owar-finals-2024"
 
 

@@ -1,5 +1,7 @@
 import { useCallback, useEffect, useMemo, useState } from "react";
 import { DATA } from "../../hub/dataPaths";
+import { PageHeader } from "../../hub/PageHeader";
+import { pageMeta } from "../../hub/navConfig";
 import { ControlsPanel } from "./components/ControlsPanel";
 import { RiderList } from "./components/RiderList";
 import type {
@@ -20,6 +22,8 @@ const DEFAULT_SETTINGS: DivisionSettings = {
 };
 
 const DEFAULT_CATEGORIES = new Set(["Open", "Women"]);
+
+const PAGE = pageMeta("/divisions")!;
 
 export function DivisionsApp() {
   const [eventsIndex, setEventsIndex] = useState<EventsIndex | null>(null);
@@ -117,6 +121,9 @@ export function DivisionsApp() {
 
   return (
     <div className="app">
+      <div className="rankings-page__toolbar divisions-page__toolbar">
+        <PageHeader title={PAGE.pageTitle} subtitle={PAGE.pageSubtitle} />
+      </div>
       <ControlsPanel
         settings={settings}
         onChange={setSettings}

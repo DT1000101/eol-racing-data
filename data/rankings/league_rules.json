@@ -1,0 +1,47 @@
+{
+  "seasons": {
+    "1": {
+      "season_label": "2023",
+      "events_counted": "all",
+      "max_counted": 3,
+      "tier_system": false,
+      "notes": "Three EOL events; all count toward season total."
+    },
+    "2": {
+      "season_label": "2023/24",
+      "events_counted": "best",
+      "max_counted": 4,
+      "max_tier1_counted": 3,
+      "tier_system": true,
+      "tier1_event_ids": [
+        "s2-wow-2023",
+        "s2-wow-2024",
+        "s2-owar-2023",
+        "s2-owar-finals-2024",
+        "s2-swiss-2024",
+        "s2-fth-2024"
+      ],
+      "tier2_event_ids": [
+        "s2-sts-2024",
+        "s2-balaton-2024",
+        "s2-dog-2024",
+        "s2-mayrau-2024"
+      ],
+      "notes": "Best 4 results count; no more than 3 may come from Tier 1 events. 2023/24 had two Wanyi weekends (both normal races) and OWAR race + finals."
+    },
+    "3": {
+      "season_label": "2025",
+      "events_counted": "best",
+      "max_counted": 3,
+      "tier_system": false,
+      "notes": "Season total = best 3 event results."
+    },
+    "4": {
+      "season_label": "2026",
+      "events_counted": "best",
+      "max_counted": 3,
+      "tier_system": false,
+      "notes": "Season total = best 3 event results (season in progress)."
+    }
+  }
+}

@@ -1,3 +1,7 @@
+# Season source folders (symlink locally via scripts/rankings/link_seasons.sh)
+seasons/Season*/
+seasons/season*/
+
 site/node_modules/
 site/dist/
 .DS_Store

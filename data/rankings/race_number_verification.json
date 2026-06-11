@@ -1,0 +1,16 @@
+{
+  "passed": false,
+  "rider_count": 397,
+  "fresh_matches_stored": false,
+  "errors": [
+    "Adam Walding: stored #169 vs fresh #168 (s2-sts-2024)",
+    "Alex Campbell: stored #282 vs fresh #281 (s3-sts-2025)",
+    "Andras Varadi: stored #223 vs fresh #222 (s3-wacky-2025)",
+    "Andrew Foskett: stored #162 vs fresh #161 (s2-sts-2024)",
+    "Andy Lakin: stored #266 vs fresh #265 (s3-sts-2025)",
+    "Stored vs fresh recompute: 138 mismatches",
+    "daniel-turner: expected first event s2-wow-2023",
+    "jay-bucci: expected first event s2-sts-2024",
+    "maiko-wunderlin: expected first event s2-wow-2023"
+  ]
+}

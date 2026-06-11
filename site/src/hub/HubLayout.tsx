@@ -1,12 +1,6 @@
 import { useState } from "react";
 import { Link, NavLink, Outlet } from "react-router-dom";
-
-const NAV: { to: string; label: string; end?: boolean }[] = [
-  { to: "/", label: "Home", end: true },
-  { to: "/rankings", label: "Rankings" },
-  { to: "/divisions", label: "Divisions" },
-  { to: "/seeding", label: "Finals seeding" },
-];
+import { HEADER_NAV } from "./navConfig";
 
 export function HubLayout() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -16,8 +10,8 @@ export function HubLayout() {
       <header className="hub-header">
         <div className="hub-header__inner">
           <Link to="/" className="hub-brand" onClick={() => setMenuOpen(false)}>
-            <span className="hub-brand__title">EOL Hub</span>
-            <span className="hub-brand__sub">European Onewheel League tools</span>
+            <span className="hub-brand__title">EOL Racing Data</span>
+            <span className="hub-brand__sub">European Onewheel League</span>
           </Link>
 
           <button
@@ -36,19 +30,31 @@ export function HubLayout() {
           <nav
             id="hub-nav"
             className={`hub-nav${menuOpen ? " hub-nav--open" : ""}`}
-            aria-label="EOL Hub"
+            aria-label="EOL Racing Data"
           >
-            {NAV.map(({ to, label, end }) => (
+            <NavLink
+              to="/"
+              end
+              className={({ isActive }) =>
+                `hub-nav__link${isActive ? " hub-nav__link--active" : ""}`
+              }
+              onClick={() => setMenuOpen(false)}
+            >
+              <span className="hub-nav__label">Home</span>
+            </NavLink>
+            {HEADER_NAV.map(({ to, navLabel, navSublabel }) => (
               <NavLink
                 key={to}
                 to={to}
-                end={end}
                 className={({ isActive }) =>
                   `hub-nav__link${isActive ? " hub-nav__link--active" : ""}`
                 }
                 onClick={() => setMenuOpen(false)}
               >
-                {label}
+                <span className="hub-nav__label">{navLabel}</span>
+                {navSublabel && (
+                  <span className="hub-nav__sublabel">{navSublabel}</span>
+                )}
               </NavLink>
             ))}
           </nav>
@@ -58,13 +64,6 @@ export function HubLayout() {
       <main className="hub-main">
         <Outlet />
       </main>
-
-      <footer className="hub-footer">
-        <p>
-          Community tools for EOL organisers and riders — not the official league
-          website.
-        </p>
-      </footer>
     </div>
   );
 }

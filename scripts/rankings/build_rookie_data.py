@@ -9,9 +9,7 @@ from pathlib import Path
 
 import pandas as pd
 
-ROOT = Path(__file__).resolve().parents[1]
-DATA = ROOT / "data"
-SOURCE = ROOT.parent
+from hub_paths import DATA, PUBLIC, SEASONS as SOURCE
 
 TARGET_SEASON = 4
 MIN_RACES_IN_SEASON = 2
@@ -317,7 +315,7 @@ def main() -> None:
     riders = pd.read_csv(DATA / "riders.csv")
     events = pd.read_csv(DATA / "events.csv")
     payload = build_rookie_payload(er, riders, events)
-    out = ROOT / "site" / "public" / "rookie-of-year.json"
+    out = PUBLIC / "rookie-of-year.json"
     import json
     out.write_text(json.dumps(payload, separators=(",", ":")))
     print(f"Wrote {out} — pool {payload['summary']['poolCount']}, eligible {payload['summary']['eligibleCount']}")
