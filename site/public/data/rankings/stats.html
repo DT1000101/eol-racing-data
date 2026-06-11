@@ -1,0 +1,653 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>EOL League — Attendance &amp; Evolution</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&display=swap" rel="stylesheet" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.6/dist/chart.umd.min.js"></script>
+  <style>
+    :root {
+      --bg: #0f1114;
+      --surface: #181b21;
+      --surface2: #1e2229;
+      --border: #2a3038;
+      --text: #e8eaed;
+      --muted: #8b939e;
+      --accent: #3d8bfd;
+      --new: #5eb3ff;
+      --return: #7bc96f;
+      --open: #3d8bfd;
+      --female: #c678dd;
+      --groms: #e5c07b;
+      --font: "DM Sans", system-ui, sans-serif;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: var(--font);
+      font-size: 14px;
+      line-height: 1.45;
+      color: var(--text);
+      background: var(--bg);
+      -webkit-font-smoothing: antialiased;
+    }
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    .page {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 1.25rem 1rem 3rem;
+    }
+    header {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 1rem;
+      margin-bottom: 1.5rem;
+      padding-bottom: 1rem;
+      border-bottom: 1px solid var(--border);
+    }
+    header h1 {
+      margin: 0 0 0.25rem;
+      font-size: 1.5rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+    }
+    header p {
+      margin: 0;
+      color: var(--muted);
+      max-width: 36rem;
+    }
+    .nav-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      padding: 0.45rem 0.85rem;
+      border-radius: 8px;
+      background: var(--surface2);
+      border: 1px solid var(--border);
+      color: var(--text);
+      font-weight: 500;
+      white-space: nowrap;
+    }
+    .nav-link:hover { background: var(--surface); text-decoration: none; }
+    .kpis {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+      gap: 0.75rem;
+      margin-bottom: 1.5rem;
+    }
+    .kpi {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 0.85rem 1rem;
+    }
+    .kpi__label {
+      font-size: 0.72rem;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--muted);
+      margin-bottom: 0.25rem;
+    }
+    .kpi__value {
+      font-size: 1.55rem;
+      font-weight: 700;
+      letter-spacing: -0.03em;
+    }
+    .kpi__sub {
+      font-size: 0.75rem;
+      color: var(--muted);
+      margin-top: 0.15rem;
+    }
+    .controls {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 0.5rem;
+      margin-bottom: 1.25rem;
+    }
+    .controls label {
+      color: var(--muted);
+      font-size: 0.8rem;
+      margin-right: 0.25rem;
+    }
+    .pill {
+      padding: 0.35rem 0.75rem;
+      border-radius: 999px;
+      border: 1px solid var(--border);
+      background: var(--surface);
+      color: var(--muted);
+      cursor: pointer;
+      font-family: inherit;
+      font-size: 0.8rem;
+      font-weight: 500;
+    }
+    .pill--active {
+      background: var(--accent);
+      border-color: var(--accent);
+      color: #fff;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1rem;
+    }
+    @media (min-width: 900px) {
+      .grid--2 { grid-template-columns: 1fr 1fr; }
+    }
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 1rem 1rem 0.75rem;
+    }
+    .card h2 {
+      margin: 0 0 0.35rem;
+      font-size: 0.95rem;
+      font-weight: 600;
+    }
+    .card p.desc {
+      margin: 0 0 0.75rem;
+      font-size: 0.78rem;
+      color: var(--muted);
+    }
+    .chart-wrap {
+      position: relative;
+      height: 280px;
+    }
+    .chart-wrap--tall { height: 340px; }
+    .chart-wrap--xl { height: 420px; }
+    .error {
+      padding: 2rem;
+      text-align: center;
+      color: #f07178;
+    }
+    footer {
+      margin-top: 2rem;
+      padding-top: 1rem;
+      border-top: 1px solid var(--border);
+      font-size: 0.75rem;
+      color: var(--muted);
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <header>
+      <div>
+        <h1>Attendance &amp; evolution</h1>
+        <p>Unique riders per EOL event, new vs returning competitors, season growth, and recurring race series — built from official league results.</p>
+      </div>
+      <a class="nav-link" href="./index.html">← Rankings</a>
+    </header>
+
+    <div id="loading" class="error">Loading statistics…</div>
+    <div id="app" hidden>
+      <div class="kpis" id="kpis"></div>
+
+      <div class="controls">
+        <label>Category filter</label>
+        <button type="button" class="pill pill--active" data-cat="all">All</button>
+        <button type="button" class="pill" data-cat="open">Open / Men</button>
+        <button type="button" class="pill" data-cat="female">Women</button>
+        <button type="button" class="pill" data-cat="groms">Groms</button>
+      </div>
+
+      <div class="grid">
+        <div class="card">
+          <h2>Attendance by event</h2>
+          <p class="desc">Unique riders with a finish or points at each event, in chronological order.</p>
+          <div class="chart-wrap chart-wrap--xl"><canvas id="chartAttendance"></canvas></div>
+        </div>
+
+        <div class="card">
+          <h2>New vs returning riders</h2>
+          <p class="desc">New = first EOL race (EOL number assigned here). Returning = raced in a prior event.</p>
+          <div class="chart-wrap chart-wrap--xl"><canvas id="chartNewReturn"></canvas></div>
+        </div>
+
+        <div class="grid grid--2">
+          <div class="card">
+            <h2>Unique riders per season</h2>
+            <p class="desc">Distinct competitors across all events in each league season.</p>
+            <div class="chart-wrap"><canvas id="chartSeason"></canvas></div>
+          </div>
+          <div class="card">
+            <h2>Category mix by season</h2>
+            <p class="desc">How open, women, and groms fields compare each season.</p>
+            <div class="chart-wrap"><canvas id="chartSeasonCats"></canvas></div>
+          </div>
+        </div>
+
+        <div class="grid grid--2">
+          <div class="card">
+            <h2>Cumulative rider pool</h2>
+            <p class="desc">Running total of unique riders who have ever competed, after each event.</p>
+            <div class="chart-wrap"><canvas id="chartCumulative"></canvas></div>
+          </div>
+          <div class="card">
+            <h2>Return rate by event</h2>
+            <p class="desc">Share of the field who had raced at a previous EOL event.</p>
+            <div class="chart-wrap"><canvas id="chartReturnRate"></canvas></div>
+          </div>
+        </div>
+
+        <div class="card">
+          <h2>Recurring race series</h2>
+          <p class="desc">Attendance at events that have run more than once (STS, Swiss, FTH, etc.).</p>
+          <div class="chart-wrap chart-wrap--tall"><canvas id="chartSeries"></canvas></div>
+        </div>
+
+        <div class="grid grid--2">
+          <div class="card">
+            <h2>Events per rider</h2>
+            <p class="desc">How many EOL events each competitor has entered.</p>
+            <div class="chart-wrap"><canvas id="chartParticipation"></canvas></div>
+          </div>
+          <div class="card">
+            <h2>Season: new vs returning</h2>
+            <p class="desc">First-time league riders vs those who started in an earlier season.</p>
+            <div class="chart-wrap"><canvas id="chartSeasonNewReturn"></canvas></div>
+          </div>
+        </div>
+
+        <div class="card">
+          <h2>One-and-done riders by event</h2>
+          <p class="desc">Riders who entered exactly one EOL event — where that sole appearance was (and share of that event’s field).</p>
+          <div class="chart-wrap chart-wrap--xl"><canvas id="chartOneAndDone"></canvas></div>
+        </div>
+      </div>
+
+      <footer id="footer"></footer>
+    </div>
+  </div>
+
+  <script>
+    Chart.defaults.color = "#8b939e";
+    Chart.defaults.borderColor = "#2a3038";
+    Chart.defaults.font.family = '"DM Sans", system-ui, sans-serif';
+
+    const charts = {};
+    let data = null;
+    let category = "all";
+
+    const COLORS = {
+      new: "#5eb3ff",
+      returning: "#7bc96f",
+      open: "#3d8bfd",
+      female: "#c678dd",
+      groms: "#e5c07b",
+      cumulative: "#56b6c2",
+      accent: "#3d8bfd",
+      oneAndDone: "#d19a66",
+    };
+
+    const SERIES_PALETTE = [
+      "#3d8bfd", "#7bc96f", "#c678dd", "#e5c07b", "#56b6c2",
+      "#e06c75", "#d19a66", "#61afef", "#98c379", "#be5046",
+    ];
+
+    function eventMetrics(ev) {
+      if (category === "all") {
+        return { total: ev.total, new: ev.new, returning: ev.returning };
+      }
+      const c = ev.categories[category] || { total: 0, new: 0, returning: 0 };
+      return c;
+    }
+
+    function filteredEvents() {
+      return data.events.filter((ev) => {
+        if (category === "all") return ev.total > 0;
+        return (ev.categories[category]?.total || 0) > 0;
+      });
+    }
+
+    function renderKpis() {
+      const m = data.meta;
+      const items = [
+        { label: "Registered riders", value: m.totalRiders, sub: `${m.ridersWithResults} with results` },
+        { label: "Events held", value: m.eventsHeld, sub: `${m.totalFinishes.toLocaleString()} finishes` },
+        { label: "Avg attendance", value: m.avgAttendance, sub: "per event" },
+        { label: "Biggest event", value: m.biggestEvent?.total ?? "—", sub: m.biggestEvent?.name?.slice(0, 28) ?? "" },
+        { label: "Multi-event riders", value: m.multiEventRiders, sub: `${m.oneEventRiders} one-and-done` },
+        { label: "League seasons", value: data.seasons.length, sub: data.seasons.map((s) => s.label).join(" · ") },
+      ];
+      document.getElementById("kpis").innerHTML = items.map((k) => `
+        <div class="kpi">
+          <div class="kpi__label">${k.label}</div>
+          <div class="kpi__value">${k.value}</div>
+          ${k.sub ? `<div class="kpi__sub">${k.sub}</div>` : ""}
+        </div>
+      `).join("");
+    }
+
+    function destroyCharts() {
+      Object.values(charts).forEach((c) => c.destroy());
+      for (const k of Object.keys(charts)) delete charts[k];
+    }
+
+    function labels(events) {
+      return events.map((e) => `${e.shortLabel} (${e.seasonLabel})`);
+    }
+
+    function renderCharts() {
+      destroyCharts();
+      const events = filteredEvents();
+      const lbl = labels(events);
+
+      charts.attendance = new Chart(document.getElementById("chartAttendance"), {
+        type: "bar",
+        data: {
+          labels: lbl,
+          datasets: [{
+            label: "Unique riders",
+            data: events.map((e) => eventMetrics(e).total),
+            backgroundColor: events.map((e) => e.isFinals ? "#e5c07b" : COLORS.accent),
+            borderRadius: 4,
+          }],
+        },
+        options: {
+          responsive: true,
+          maintainAspectRatio: false,
+          plugins: { legend: { display: false } },
+          scales: {
+            x: { ticks: { maxRotation: 55, minRotation: 45, font: { size: 10 } } },
+            y: { beginAtZero: true, title: { display: true, text: "Riders" } },
+          },
+        },
+      });
+
+      charts.newReturn = new Chart(document.getElementById("chartNewReturn"), {
+        type: "bar",
+        data: {
+          labels: lbl,
+          datasets: [
+            {
+              label: "New",
+              data: events.map((e) => eventMetrics(e).new),
+              backgroundColor: COLORS.new,
+              borderRadius: 2,
+            },
+            {
+              label: "Returning",
+              data: events.map((e) => eventMetrics(e).returning),
+              backgroundColor: COLORS.returning,
+              borderRadius: 2,
+            },
+          ],
+        },
+        options: {
+          responsive: true,
+          maintainAspectRatio: false,
+          plugins: { legend: { position: "top" } },
+          scales: {
+            x: { stacked: true, ticks: { maxRotation: 55, minRotation: 45, font: { size: 10 } } },
+            y: { stacked: true, beginAtZero: true },
+          },
+        },
+      });
+
+      const seasons = data.seasons;
+      charts.season = new Chart(document.getElementById("chartSeason"), {
+        type: "bar",
+        data: {
+          labels: seasons.map((s) => s.label),
+          datasets: [{
+            label: "Unique riders",
+            data: seasons.map((s) =>
+              category === "all" ? s.uniqueRiders : (s.byCategory[category] || 0)
+            ),
+            backgroundColor: COLORS.accent,
+            borderRadius: 6,
+          }],
+        },
+        options: {
+          responsive: true,
+          maintainAspectRatio: false,
+          plugins: { legend: { display: false } },
+          scales: { y: { beginAtZero: true } },
+        },
+      });
+
+      charts.seasonCats = new Chart(document.getElementById("chartSeasonCats"), {
+        type: "bar",
+        data: {
+          labels: seasons.map((s) => s.label),
+          datasets: ["open", "female", "groms"].map((cat) => ({
+            label: data.meta.categoryLabels[cat],
+            data: seasons.map((s) => s.byCategory[cat] || 0),
+            backgroundColor: COLORS[cat],
+            borderRadius: 2,
+          })),
+        },
+        options: {
+          responsive: true,
+          maintainAspectRatio: false,
+          scales: {
+            x: { stacked: true },
+            y: { stacked: true, beginAtZero: true },
+          },
+        },
+      });
+
+      const cum = data.cumulative.filter((c) =>
+        events.some((e) => e.id === c.eventId)
+      );
+      charts.cumulative = new Chart(document.getElementById("chartCumulative"), {
+        type: "line",
+        data: {
+          labels: cum.map((c) => c.label),
+          datasets: [{
+            label: "Cumulative riders",
+            data: cum.map((c) => c.cumulativeRiders),
+            borderColor: COLORS.cumulative,
+            backgroundColor: "rgba(86, 182, 194, 0.12)",
+            fill: true,
+            tension: 0.25,
+            pointRadius: 2,
+          }],
+        },
+        options: {
+          responsive: true,
+          maintainAspectRatio: false,
+          plugins: { legend: { display: false } },
+          scales: { y: { beginAtZero: false } },
+        },
+      });
+
+      charts.returnRate = new Chart(document.getElementById("chartReturnRate"), {
+        type: "line",
+        data: {
+          labels: lbl,
+          datasets: [{
+            label: "Return rate %",
+            data: events.map((e) => {
+              const m = eventMetrics(e);
+              return m.total ? Math.round((m.returning / m.total) * 100) : 0;
+            }),
+            borderColor: COLORS.returning,
+            backgroundColor: "rgba(123, 201, 111, 0.1)",
+            fill: true,
+            tension: 0.3,
+            pointRadius: 3,
+          }],
+        },
+        options: {
+          responsive: true,
+          maintainAspectRatio: false,
+          plugins: { legend: { display: false } },
+          scales: {
+            y: { min: 0, max: 100, ticks: { callback: (v) => v + "%" } },
+            x: { ticks: { maxRotation: 55, minRotation: 45, font: { size: 10 } } },
+          },
+        },
+      });
+
+      const seriesList = data.series.filter((s) =>
+        s.editions.some((ed) => {
+          if (category === "all") return ed.total > 0;
+          const ev = data.events.find((e) => e.sortKey === ed.sortKey);
+          return ev && (ev.categories[category]?.total || 0) > 0;
+        })
+      );
+      charts.series = new Chart(document.getElementById("chartSeries"), {
+        type: "line",
+        data: {
+          labels: [...new Set(seriesList.flatMap((s) => s.editions.map((e) => e.seasonLabel)))].sort((a, b) => {
+            const order = data.seasons.map((s) => s.label);
+            return order.indexOf(a) - order.indexOf(b);
+          }),
+          datasets: seriesList.map((s, i) => ({
+            label: s.name,
+            data: [...new Set(data.seasons.map((x) => x.label))].map((sl) => {
+              const ed = s.editions.find((e) => e.seasonLabel === sl);
+              if (!ed) return null;
+              if (category === "all") return ed.total;
+              const ev = data.events.find((e) => e.sortKey === ed.sortKey);
+              return ev ? (ev.categories[category]?.total || null) : null;
+            }),
+            borderColor: SERIES_PALETTE[i % SERIES_PALETTE.length],
+            tension: 0.25,
+            spanGaps: true,
+            pointRadius: 4,
+          })),
+        },
+        options: {
+          responsive: true,
+          maintainAspectRatio: false,
+          plugins: { legend: { position: "top", labels: { boxWidth: 12, font: { size: 11 } } } },
+          scales: { y: { beginAtZero: true } },
+        },
+      });
+
+      const hist = data.participationHistogram;
+      charts.participation = new Chart(document.getElementById("chartParticipation"), {
+        type: "bar",
+        data: {
+          labels: hist.map((h) => h.eventsAttended + (h.eventsAttended === 1 ? " event" : " events")),
+          datasets: [{
+            label: "Riders",
+            data: hist.map((h) => h.riderCount),
+            backgroundColor: COLORS.accent,
+            borderRadius: 4,
+          }],
+        },
+        options: {
+          responsive: true,
+          maintainAspectRatio: false,
+          plugins: { legend: { display: false } },
+          scales: { y: { beginAtZero: true } },
+        },
+      });
+
+      charts.seasonNewReturn = new Chart(document.getElementById("chartSeasonNewReturn"), {
+        type: "bar",
+        data: {
+          labels: seasons.map((s) => s.label),
+          datasets: [
+            {
+              label: "New to league",
+              data: seasons.map((s) => s.newRiders),
+              backgroundColor: COLORS.new,
+            },
+            {
+              label: "From prior season",
+              data: seasons.map((s) => s.returningRiders),
+              backgroundColor: COLORS.returning,
+            },
+          ],
+        },
+        options: {
+          responsive: true,
+          maintainAspectRatio: false,
+          scales: { x: { stacked: true }, y: { stacked: true, beginAtZero: true } },
+        },
+      });
+
+      const oadAll = (data.oneAndDoneByEvent || []).filter((row) => {
+        const n = category === "all" ? row.total : (row.byCategory[category] || 0);
+        return category === "all" ? row.total >= 0 : n > 0;
+      });
+      const oadLabels = oadAll.map((r) => `${r.shortLabel} (${r.seasonLabel})`);
+      const oadCounts = oadAll.map((r) =>
+        category === "all" ? r.total : (r.byCategory[category] || 0)
+      );
+
+      charts.oneAndDone = new Chart(document.getElementById("chartOneAndDone"), {
+        type: "bar",
+        data: {
+          labels: oadLabels,
+          datasets: [{
+            label: "One-and-done riders",
+            data: oadCounts,
+            backgroundColor: oadAll.map((r) => r.isFinals ? "#e5c07b" : COLORS.oneAndDone),
+            borderRadius: 4,
+          }],
+        },
+        options: {
+          responsive: true,
+          maintainAspectRatio: false,
+          plugins: {
+            legend: { display: false },
+            tooltip: {
+              callbacks: {
+                afterLabel(ctx) {
+                  const row = oadAll[ctx.dataIndex];
+                  const ev = data.events.find((e) => e.id === row.eventId);
+                  const field = category === "all"
+                    ? ev?.total
+                    : ev?.categories[category]?.total;
+                  const count = ctx.parsed.y;
+                  if (!field) return "";
+                  return `${Math.round((count / field) * 100)}% of event field · ${row.name}`;
+                },
+              },
+            },
+          },
+          scales: {
+            x: { ticks: { maxRotation: 55, minRotation: 45, font: { size: 10 } } },
+            y: { beginAtZero: true, title: { display: true, text: "Riders" } },
+          },
+        },
+      });
+    }
+
+    function init() {
+      renderKpis();
+      renderCharts();
+      document.getElementById("footer").textContent =
+        `Generated ${new Date(data.meta.generatedAt).toLocaleString()} · ${data.events.length} events with results`;
+    }
+
+    document.querySelectorAll(".pill[data-cat]").forEach((btn) => {
+      btn.addEventListener("click", () => {
+        category = btn.dataset.cat;
+        document.querySelectorAll(".pill[data-cat]").forEach((b) => {
+          b.classList.toggle("pill--active", b === btn);
+        });
+        renderCharts();
+      });
+    });
+
+    fetch("./attendance-stats.json")
+      .then((r) => {
+        if (!r.ok) throw new Error("Failed to load attendance-stats.json — run build_site_data.py");
+        return r.json();
+      })
+      .then((d) => {
+        data = d;
+        document.getElementById("loading").hidden = true;
+        document.getElementById("app").hidden = false;
+        init();
+      })
+      .catch((e) => {
+        document.getElementById("loading").textContent = e.message;
+      });
+  </script>
+</body>
+</html>

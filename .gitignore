@@ -1,0 +1,9 @@
+site/node_modules/
+site/dist/
+.DS_Store
+__pycache__/
+*.pyc
+.venv/
+data/rankings/*.csv
+data/rankings/build_summary.json
+data/rankings/alignment_report.md

@@ -1,0 +1,2040 @@
+{
+  "id": "sts-2026",
+  "name": "Shred the Shires 2026",
+  "description": "Time trials from Time Trials sheet (Open K/L/P, Women T/U/Y, Groms AC/AD/AH)",
+  "defaultCategories": [
+    "Open",
+    "Women"
+  ],
+  "categories": [
+    "Groms",
+    "Open",
+    "Women"
+  ],
+  "ridersByCategory": {
+    "Open": [
+      {
+        "race_number": 52,
+        "name": "Jay Kenward",
+        "category": "Open",
+        "tt_pos_in_category": 1,
+        "fastest_seconds": 126.9,
+        "fastest_time": "02:06.900",
+        "rank": 1
+      },
+      {
+        "race_number": 18,
+        "name": "Henry Bisping",
+        "category": "Open",
+        "tt_pos_in_category": 2,
+        "fastest_seconds": 134.28,
+        "fastest_time": "02:14.280",
+        "rank": 3
+      },
+      {
+        "race_number": 75,
+        "name": "Daniel Turner",
+        "category": "Open",
+        "tt_pos_in_category": 3,
+        "fastest_seconds": 134.377,
+        "fastest_time": "02:14.377",
+        "rank": 4
+      },
+      {
+        "race_number": 123,
+        "name": "Alexis Matton",
+        "category": "Open",
+        "tt_pos_in_category": 4,
+        "fastest_seconds": 134.693,
+        "fastest_time": "02:14.693",
+        "rank": 5
+      },
+      {
+        "race_number": 40,
+        "name": "Jeffrey Gamon",
+        "category": "Open",
+        "tt_pos_in_category": 5,
+        "fastest_seconds": 141.097,
+        "fastest_time": "02:21.097",
+        "rank": 6
+      },
+      {
+        "race_number": 137,
+        "name": "Henry Dunn",
+        "category": "Open",
+        "tt_pos_in_category": 6,
+        "fastest_seconds": 142.73,
+        "fastest_time": "02:22.730",
+        "rank": 7
+      },
+      {
+        "race_number": 50,
+        "name": "Joel Jones",
+        "category": "Open",
+        "tt_pos_in_category": 7,
+        "fastest_seconds": 144.31,
+        "fastest_time": "02:24.310",
+        "rank": 8
+      },
+      {
+        "race_number": 64,
+        "name": "Samuel OConnell",
+        "category": "Open",
+        "tt_pos_in_category": 8,
+        "fastest_seconds": 145.213,
+        "fastest_time": "02:25.213",
+        "rank": 9
+      },
+      {
+        "race_number": 135,
+        "name": "Matthieu Grenette",
+        "category": "Open",
+        "tt_pos_in_category": 9,
+        "fastest_seconds": 146.727,
+        "fastest_time": "02:26.727",
+        "rank": 10
+      },
+      {
+        "race_number": 67,
+        "name": "Quirine Posno",
+        "category": "Open",
+        "tt_pos_in_category": 10,
+        "fastest_seconds": 147.053,
+        "fastest_time": "02:27.053",
+        "rank": 11
+      },
+      {
+        "race_number": 68,
+        "name": "Thorkild Rasmussen",
+        "category": "Open",
+        "tt_pos_in_category": 11,
+        "fastest_seconds": 147.533,
+        "fastest_time": "02:27.533",
+        "rank": 12
+      },
+      {
+        "race_number": 81,
+        "name": "Paul Webb",
+        "category": "Open",
+        "tt_pos_in_category": 12,
+        "fastest_seconds": 150.63,
+        "fastest_time": "02:30.630",
+        "rank": 13
+      },
+      {
+        "race_number": 69,
+        "name": "Gerard Rinc\u00f3n",
+        "category": "Open",
+        "tt_pos_in_category": 13,
+        "fastest_seconds": 152.107,
+        "fastest_time": "02:32.107",
+        "rank": 14
+      },
+      {
+        "race_number": 141,
+        "name": "Camil Despr\u00e9s",
+        "category": "Open",
+        "tt_pos_in_category": 14,
+        "fastest_seconds": 153.123,
+        "fastest_time": "02:33.123",
+        "rank": 15
+      },
+      {
+        "race_number": 61,
+        "name": "Zack McFarlane",
+        "category": "Open",
+        "tt_pos_in_category": 15,
+        "fastest_seconds": 153.683,
+        "fastest_time": "02:33.683",
+        "rank": 16
+      },
+      {
+        "race_number": 49,
+        "name": "Jacob Jones",
+        "category": "Open",
+        "tt_pos_in_category": 16,
+        "fastest_seconds": 154.657,
+        "fastest_time": "02:34.657",
+        "rank": 18
+      },
+      {
+        "race_number": 129,
+        "name": "Radim Kla\u0161ka",
+        "category": "Open",
+        "tt_pos_in_category": 17,
+        "fastest_seconds": 156.927,
+        "fastest_time": "02:36.927",
+        "rank": 19
+      },
+      {
+        "race_number": 51,
+        "name": "Charles Kelly",
+        "category": "Open",
+        "tt_pos_in_category": 18,
+        "fastest_seconds": 159.693,
+        "fastest_time": "02:39.693",
+        "rank": 20
+      },
+      {
+        "race_number": 70,
+        "name": "Fabio Santos Costa",
+        "category": "Open",
+        "tt_pos_in_category": 19,
+        "fastest_seconds": 160.417,
+        "fastest_time": "02:40.417",
+        "rank": 21
+      },
+      {
+        "race_number": 63,
+        "name": "Harley Moss",
+        "category": "Open",
+        "tt_pos_in_category": 20,
+        "fastest_seconds": 161.49,
+        "fastest_time": "02:41.490",
+        "rank": 22
+      },
+      {
+        "race_number": 72,
+        "name": "Nico Stuart",
+        "category": "Open",
+        "tt_pos_in_category": 21,
+        "fastest_seconds": 162.853,
+        "fastest_time": "02:42.853",
+        "rank": 23
+      },
+      {
+        "race_number": 125,
+        "name": "Darren Stevenson",
+        "category": "Open",
+        "tt_pos_in_category": 22,
+        "fastest_seconds": 163.967,
+        "fastest_time": "02:43.967",
+        "rank": 25
+      },
+      {
+        "race_number": 32,
+        "name": "Sergio Espinosa",
+        "category": "Open",
+        "tt_pos_in_category": 23,
+        "fastest_seconds": 166.483,
+        "fastest_time": "02:46.483",
+        "rank": 26
+      },
+      {
+        "race_number": 5,
+        "name": "James Grant",
+        "category": "Open",
+        "tt_pos_in_category": 24,
+        "fastest_seconds": 166.94,
+        "fastest_time": "02:46.940",
+        "rank": 27
+      },
+      {
+        "race_number": 130,
+        "name": "Max Lee",
+        "category": "Open",
+        "tt_pos_in_category": 25,
+        "fastest_seconds": 168.333,
+        "fastest_time": "02:48.333",
+        "rank": 28
+      },
+      {
+        "race_number": 121,
+        "name": "Matthieu Cauchois",
+        "category": "Open",
+        "tt_pos_in_category": 26,
+        "fastest_seconds": 168.373,
+        "fastest_time": "02:48.373",
+        "rank": 29
+      },
+      {
+        "race_number": 58,
+        "name": "Louis Lovelace",
+        "category": "Open",
+        "tt_pos_in_category": 27,
+        "fastest_seconds": 169.883,
+        "fastest_time": "02:49.883",
+        "rank": 30
+      },
+      {
+        "race_number": 66,
+        "name": "James Pitcher",
+        "category": "Open",
+        "tt_pos_in_category": 28,
+        "fastest_seconds": 171.193,
+        "fastest_time": "02:51.193",
+        "rank": 31
+      },
+      {
+        "race_number": 13,
+        "name": "Jonas Andersen",
+        "category": "Open",
+        "tt_pos_in_category": 29,
+        "fastest_seconds": 171.777,
+        "fastest_time": "02:51.777",
+        "rank": 33
+      },
+      {
+        "race_number": 38,
+        "name": "Adam Freeman",
+        "category": "Open",
+        "tt_pos_in_category": 30,
+        "fastest_seconds": 173.843,
+        "fastest_time": "02:53.843",
+        "rank": 35
+      },
+      {
+        "race_number": 65,
+        "name": "Thomas Pieters",
+        "category": "Open",
+        "tt_pos_in_category": 31,
+        "fastest_seconds": 174.777,
+        "fastest_time": "02:54.777",
+        "rank": 37
+      },
+      {
+        "race_number": 9,
+        "name": "Kate Paxton",
+        "category": "Open",
+        "tt_pos_in_category": 32,
+        "fastest_seconds": 174.867,
+        "fastest_time": "02:54.867",
+        "rank": 38
+      },
+      {
+        "race_number": 4,
+        "name": "Martin Dinnage",
+        "category": "Open",
+        "tt_pos_in_category": 33,
+        "fastest_seconds": 175.037,
+        "fastest_time": "02:55.037",
+        "rank": 39
+      },
+      {
+        "race_number": 6,
+        "name": "Jorge Jimenez",
+        "category": "Open",
+        "tt_pos_in_category": 34,
+        "fastest_seconds": 176.87,
+        "fastest_time": "02:56.870",
+        "rank": 41
+      },
+      {
+        "race_number": 59,
+        "name": "Tom\u00e1\u0161 Mach",
+        "category": "Open",
+        "tt_pos_in_category": 35,
+        "fastest_seconds": 176.897,
+        "fastest_time": "02:56.897",
+        "rank": 42
+      },
+      {
+        "race_number": 73,
+        "name": "Andy Thompson",
+        "category": "Open",
+        "tt_pos_in_category": 36,
+        "fastest_seconds": 177.707,
+        "fastest_time": "02:57.707",
+        "rank": 43
+      },
+      {
+        "race_number": 82,
+        "name": "Travis Wilson",
+        "category": "Open",
+        "tt_pos_in_category": 37,
+        "fastest_seconds": 177.81,
+        "fastest_time": "02:57.810",
+        "rank": 44
+      },
+      {
+        "race_number": 122,
+        "name": "Leo Chatenet",
+        "category": "Open",
+        "tt_pos_in_category": 38,
+        "fastest_seconds": 178.063,
+        "fastest_time": "02:58.063",
+        "rank": 45
+      },
+      {
+        "race_number": 14,
+        "name": "Thomas Astbury",
+        "category": "Open",
+        "tt_pos_in_category": 39,
+        "fastest_seconds": 178.927,
+        "fastest_time": "02:58.927",
+        "rank": 46
+      },
+      {
+        "race_number": 57,
+        "name": "Patrick Lopez",
+        "category": "Open",
+        "tt_pos_in_category": 40,
+        "fastest_seconds": 180.133,
+        "fastest_time": "03:00.133",
+        "rank": 47
+      },
+      {
+        "race_number": 27,
+        "name": "Maarten De Booser",
+        "category": "Open",
+        "tt_pos_in_category": 41,
+        "fastest_seconds": 180.577,
+        "fastest_time": "03:00.577",
+        "rank": 48
+      },
+      {
+        "race_number": 77,
+        "name": "Lars Vloemans",
+        "category": "Open",
+        "tt_pos_in_category": 42,
+        "fastest_seconds": 181.177,
+        "fastest_time": "03:01.177",
+        "rank": 49
+      },
+      {
+        "race_number": 71,
+        "name": "Wayne Stewart",
+        "category": "Open",
+        "tt_pos_in_category": 43,
+        "fastest_seconds": 181.527,
+        "fastest_time": "03:01.527",
+        "rank": 50
+      },
+      {
+        "race_number": 10,
+        "name": "Eduardo Queralto",
+        "category": "Open",
+        "tt_pos_in_category": 44,
+        "fastest_seconds": 183.597,
+        "fastest_time": "03:03.597",
+        "rank": 53
+      },
+      {
+        "race_number": 60,
+        "name": "Luke Massey",
+        "category": "Open",
+        "tt_pos_in_category": 45,
+        "fastest_seconds": 185.357,
+        "fastest_time": "03:05.357",
+        "rank": 55
+      },
+      {
+        "race_number": 29,
+        "name": "Lennart Duijn",
+        "category": "Open",
+        "tt_pos_in_category": 46,
+        "fastest_seconds": 185.41,
+        "fastest_time": "03:05.410",
+        "rank": 56
+      },
+      {
+        "race_number": 35,
+        "name": "Xavier Fichou",
+        "category": "Open",
+        "tt_pos_in_category": 47,
+        "fastest_seconds": 185.493,
+        "fastest_time": "03:05.493",
+        "rank": 57
+      },
+      {
+        "race_number": 44,
+        "name": "Valdis Gutmanis",
+        "category": "Open",
+        "tt_pos_in_category": 48,
+        "fastest_seconds": 186.47,
+        "fastest_time": "03:06.470",
+        "rank": 58
+      },
+      {
+        "race_number": 140,
+        "name": "Anthony Ybarra",
+        "category": "Open",
+        "tt_pos_in_category": 49,
+        "fastest_seconds": 186.583,
+        "fastest_time": "03:06.583",
+        "rank": 59
+      },
+      {
+        "race_number": 138,
+        "name": "Dustin Refazo",
+        "category": "Open",
+        "tt_pos_in_category": 50,
+        "fastest_seconds": 188.543,
+        "fastest_time": "03:08.543",
+        "rank": 60
+      },
+      {
+        "race_number": 8,
+        "name": "Nick Oppenheimer",
+        "category": "Open",
+        "tt_pos_in_category": 51,
+        "fastest_seconds": 188.977,
+        "fastest_time": "03:08.977",
+        "rank": 61
+      },
+      {
+        "race_number": 37,
+        "name": "James Frampton",
+        "category": "Open",
+        "tt_pos_in_category": 52,
+        "fastest_seconds": 194.69,
+        "fastest_time": "03:14.690",
+        "rank": 62
+      },
+      {
+        "race_number": 128,
+        "name": "Mark Fowler",
+        "category": "Open",
+        "tt_pos_in_category": 53,
+        "fastest_seconds": 195.177,
+        "fastest_time": "03:15.177",
+        "rank": 63
+      },
+      {
+        "race_number": 30,
+        "name": "Matthew Eaton",
+        "category": "Open",
+        "tt_pos_in_category": 54,
+        "fastest_seconds": 198.533,
+        "fastest_time": "03:18.533",
+        "rank": 65
+      },
+      {
+        "race_number": 16,
+        "name": "Duncan Beattie",
+        "category": "Open",
+        "tt_pos_in_category": 55,
+        "fastest_seconds": 199.453,
+        "fastest_time": "03:19.453",
+        "rank": 66
+      },
+      {
+        "race_number": 124,
+        "name": "George Ellwood",
+        "category": "Open",
+        "tt_pos_in_category": 56,
+        "fastest_seconds": 201.72,
+        "fastest_time": "03:21.720",
+        "rank": 68
+      },
+      {
+        "race_number": 2,
+        "name": "Mark Coningsby",
+        "category": "Open",
+        "tt_pos_in_category": 57,
+        "fastest_seconds": 202.827,
+        "fastest_time": "03:22.827",
+        "rank": 69
+      },
+      {
+        "race_number": 136,
+        "name": "Joe Smith",
+        "category": "Open",
+        "tt_pos_in_category": 58,
+        "fastest_seconds": 203.063,
+        "fastest_time": "03:23.063",
+        "rank": 70
+      },
+      {
+        "race_number": 33,
+        "name": "David Farries",
+        "category": "Open",
+        "tt_pos_in_category": 59,
+        "fastest_seconds": 203.25,
+        "fastest_time": "03:23.250",
+        "rank": 71
+      },
+      {
+        "race_number": 53,
+        "name": "Andy Lakin",
+        "category": "Open",
+        "tt_pos_in_category": 60,
+        "fastest_seconds": 204.403,
+        "fastest_time": "03:24.403",
+        "rank": 72
+      },
+      {
+        "race_number": 34,
+        "name": "Paul Fear",
+        "category": "Open",
+        "tt_pos_in_category": 61,
+        "fastest_seconds": 205.307,
+        "fastest_time": "03:25.307",
+        "rank": 73
+      },
+      {
+        "race_number": 127,
+        "name": "Jelle Keizer",
+        "category": "Open",
+        "tt_pos_in_category": 62,
+        "fastest_seconds": 206.32,
+        "fastest_time": "03:26.320",
+        "rank": 74
+      },
+      {
+        "race_number": 46,
+        "name": "Dave Hughes",
+        "category": "Open",
+        "tt_pos_in_category": 63,
+        "fastest_seconds": 208.853,
+        "fastest_time": "03:28.853",
+        "rank": 75
+      },
+      {
+        "race_number": 80,
+        "name": "Chris Wallace",
+        "category": "Open",
+        "tt_pos_in_category": 64,
+        "fastest_seconds": 211.37,
+        "fastest_time": "03:31.370",
+        "rank": 76
+      },
+      {
+        "race_number": 26,
+        "name": "Marcin Cugier",
+        "category": "Open",
+        "tt_pos_in_category": 65,
+        "fastest_seconds": 211.967,
+        "fastest_time": "03:31.967",
+        "rank": 77
+      },
+      {
+        "race_number": 41,
+        "name": "Paul Gould",
+        "category": "Open",
+        "tt_pos_in_category": 66,
+        "fastest_seconds": 212.23,
+        "fastest_time": "03:32.230",
+        "rank": 78
+      },
+      {
+        "race_number": 47,
+        "name": "Mark Hughes",
+        "category": "Open",
+        "tt_pos_in_category": 67,
+        "fastest_seconds": 213.393,
+        "fastest_time": "03:33.393",
+        "rank": 79
+      },
+      {
+        "race_number": 142,
+        "name": "David Whiston",
+        "category": "Open",
+        "tt_pos_in_category": 68,
+        "fastest_seconds": 214.48,
+        "fastest_time": "03:34.480",
+        "rank": 80
+      },
+      {
+        "race_number": 25,
+        "name": "Max Cramer",
+        "category": "Open",
+        "tt_pos_in_category": 69,
+        "fastest_seconds": 214.83,
+        "fastest_time": "03:34.830",
+        "rank": 81
+      },
+      {
+        "race_number": 21,
+        "name": "Alex Campbell",
+        "category": "Open",
+        "tt_pos_in_category": 70,
+        "fastest_seconds": 219.257,
+        "fastest_time": "03:39.257",
+        "rank": 82
+      },
+      {
+        "race_number": 39,
+        "name": "Jack Freeman",
+        "category": "Open",
+        "tt_pos_in_category": 71,
+        "fastest_seconds": 219.66,
+        "fastest_time": "03:39.660",
+        "rank": 83
+      },
+      {
+        "race_number": 42,
+        "name": "Seth Gould",
+        "category": "Open",
+        "tt_pos_in_category": 72,
+        "fastest_seconds": 223.417,
+        "fastest_time": "03:43.417",
+        "rank": 84
+      },
+      {
+        "race_number": 78,
+        "name": "Tom Vloemans",
+        "category": "Open",
+        "tt_pos_in_category": 73,
+        "fastest_seconds": 225.007,
+        "fastest_time": "03:45.007",
+        "rank": 85
+      },
+      {
+        "race_number": 23,
+        "name": "Neil Collins",
+        "category": "Open",
+        "tt_pos_in_category": 74,
+        "fastest_seconds": 228.273,
+        "fastest_time": "03:48.273",
+        "rank": 87
+      },
+      {
+        "race_number": 1,
+        "name": "Gary Bucci",
+        "category": "Open",
+        "tt_pos_in_category": 75,
+        "fastest_seconds": 231.317,
+        "fastest_time": "03:51.317",
+        "rank": 88
+      },
+      {
+        "race_number": 62,
+        "name": "Ben Moore",
+        "category": "Open",
+        "tt_pos_in_category": 76,
+        "fastest_seconds": 233.443,
+        "fastest_time": "03:53.443",
+        "rank": 89
+      },
+      {
+        "race_number": 134,
+        "name": "Nick Bornt",
+        "category": "Open",
+        "tt_pos_in_category": 77,
+        "fastest_seconds": 238.92,
+        "fastest_time": "03:58.920",
+        "rank": 91
+      },
+      {
+        "race_number": 15,
+        "name": "Adrian Aston",
+        "category": "Open",
+        "tt_pos_in_category": 78,
+        "fastest_seconds": 239.417,
+        "fastest_time": "03:59.417",
+        "rank": 93
+      },
+      {
+        "race_number": 74,
+        "name": "Jonathan Tims",
+        "category": "Open",
+        "tt_pos_in_category": 79,
+        "fastest_seconds": 241.743,
+        "fastest_time": "04:01.743",
+        "rank": 95
+      },
+      {
+        "race_number": 31,
+        "name": "Gary Elford",
+        "category": "Open",
+        "tt_pos_in_category": 80,
+        "fastest_seconds": 247.18,
+        "fastest_time": "04:07.180",
+        "rank": 97
+      },
+      {
+        "race_number": 20,
+        "name": "Jason Bright",
+        "category": "Open",
+        "tt_pos_in_category": 81,
+        "fastest_seconds": 249.013,
+        "fastest_time": "04:09.013",
+        "rank": 98
+      },
+      {
+        "race_number": 133,
+        "name": "Lia Rhae",
+        "category": "Open",
+        "tt_pos_in_category": 82,
+        "fastest_seconds": 261.813,
+        "fastest_time": "04:21.813",
+        "rank": 100
+      },
+      {
+        "race_number": 56,
+        "name": "Martin Longley",
+        "category": "Open",
+        "tt_pos_in_category": 83,
+        "fastest_seconds": 262.153,
+        "fastest_time": "04:22.153",
+        "rank": 101
+      },
+      {
+        "race_number": 28,
+        "name": "Chris Downham",
+        "category": "Open",
+        "tt_pos_in_category": 84,
+        "fastest_seconds": 269.65,
+        "fastest_time": "04:29.650",
+        "rank": 102
+      },
+      {
+        "race_number": 11,
+        "name": "James Allen",
+        "category": "Open",
+        "tt_pos_in_category": 85,
+        "fastest_seconds": 270.197,
+        "fastest_time": "04:30.197",
+        "rank": 103
+      },
+      {
+        "race_number": 22,
+        "name": "Edward Cheel",
+        "category": "Open",
+        "tt_pos_in_category": 86,
+        "fastest_seconds": 287.367,
+        "fastest_time": "04:47.367",
+        "rank": 104
+      },
+      {
+        "race_number": 48,
+        "name": "Jack Huntley",
+        "category": "Open",
+        "tt_pos_in_category": 87,
+        "fastest_seconds": 289.663,
+        "fastest_time": "04:49.663",
+        "rank": 105
+      },
+      {
+        "race_number": 54,
+        "name": "Paul Lambert",
+        "category": "Open",
+        "tt_pos_in_category": 88,
+        "fastest_seconds": 862.36,
+        "fastest_time": "14:22.360",
+        "rank": 112
+      }
+    ],
+    "Women": [
+      {
+        "race_number": 86,
+        "name": "Chantelle Warner-Wells",
+        "category": "Women",
+        "tt_pos_in_category": 1,
+        "fastest_seconds": 175.477,
+        "fastest_time": "02:55.477",
+        "rank": 40
+      },
+      {
+        "race_number": 83,
+        "name": "Anna Carson",
+        "category": "Women",
+        "tt_pos_in_category": 2,
+        "fastest_seconds": 239.023,
+        "fastest_time": "03:59.023",
+        "rank": 92
+      },
+      {
+        "race_number": 85,
+        "name": "Mollie Stuart",
+        "category": "Women",
+        "tt_pos_in_category": 3,
+        "fastest_seconds": 240.323,
+        "fastest_time": "04:00.323",
+        "rank": 94
+      },
+      {
+        "race_number": 84,
+        "name": "Joy Jarvis",
+        "category": "Women",
+        "tt_pos_in_category": 4,
+        "fastest_seconds": 325.347,
+        "fastest_time": "05:25.347",
+        "rank": 107
+      }
+    ],
+    "Groms": [
+      {
+        "race_number": 108,
+        "name": "Indiana McFarlane",
+        "category": "Groms",
+        "tt_pos_in_category": 1,
+        "fastest_seconds": 133.96,
+        "fastest_time": "02:13.960",
+        "rank": 2
+      },
+      {
+        "race_number": 99,
+        "name": "Sep De Booser",
+        "category": "Groms",
+        "tt_pos_in_category": 2,
+        "fastest_seconds": 154.4,
+        "fastest_time": "02:34.400",
+        "rank": 17
+      },
+      {
+        "race_number": 102,
+        "name": "Noah Gamon",
+        "category": "Groms",
+        "tt_pos_in_category": 3,
+        "fastest_seconds": 163.457,
+        "fastest_time": "02:43.457",
+        "rank": 24
+      },
+      {
+        "race_number": 110,
+        "name": "Zak Moss",
+        "category": "Groms",
+        "tt_pos_in_category": 4,
+        "fastest_seconds": 171.197,
+        "fastest_time": "02:51.197",
+        "rank": 32
+      },
+      {
+        "race_number": 144,
+        "name": "Joshua Billinghurst",
+        "category": "Groms",
+        "tt_pos_in_category": 5,
+        "fastest_seconds": 172.563,
+        "fastest_time": "02:52.563",
+        "rank": 34
+      },
+      {
+        "race_number": 97,
+        "name": "Matthew Coningsby",
+        "category": "Groms",
+        "tt_pos_in_category": 6,
+        "fastest_seconds": 173.847,
+        "fastest_time": "02:53.847",
+        "rank": 36
+      },
+      {
+        "race_number": 96,
+        "name": "Daniel Coningsby",
+        "category": "Groms",
+        "tt_pos_in_category": 7,
+        "fastest_seconds": 181.607,
+        "fastest_time": "03:01.607",
+        "rank": 51
+      },
+      {
+        "race_number": 107,
+        "name": "Josiah Jones",
+        "category": "Groms",
+        "tt_pos_in_category": 8,
+        "fastest_seconds": 183.177,
+        "fastest_time": "03:03.177",
+        "rank": 52
+      },
+      {
+        "race_number": 111,
+        "name": "Miles Musgrave",
+        "category": "Groms",
+        "tt_pos_in_category": 9,
+        "fastest_seconds": 183.953,
+        "fastest_time": "03:03.953",
+        "rank": 54
+      },
+      {
+        "race_number": 132,
+        "name": "Isaac Walton",
+        "category": "Groms",
+        "tt_pos_in_category": 10,
+        "fastest_seconds": 196.77,
+        "fastest_time": "03:16.770",
+        "rank": 64
+      },
+      {
+        "race_number": 91,
+        "name": "Jay Bucci",
+        "category": "Groms",
+        "tt_pos_in_category": 11,
+        "fastest_seconds": 201.613,
+        "fastest_time": "03:21.613",
+        "rank": 67
+      },
+      {
+        "race_number": 106,
+        "name": "Harry Hughes",
+        "category": "Groms",
+        "tt_pos_in_category": 12,
+        "fastest_seconds": 227.13,
+        "fastest_time": "03:47.130",
+        "rank": 86
+      },
+      {
+        "race_number": 117,
+        "name": "Lilly-May Wallis",
+        "category": "Groms",
+        "tt_pos_in_category": 13,
+        "fastest_seconds": 236.127,
+        "fastest_time": "03:56.127",
+        "rank": 90
+      },
+      {
+        "race_number": 116,
+        "name": "Ted Slater-Penny",
+        "category": "Groms",
+        "tt_pos_in_category": 14,
+        "fastest_seconds": 242.273,
+        "fastest_time": "04:02.273",
+        "rank": 96
+      },
+      {
+        "race_number": 114,
+        "name": "Ruby Queralto",
+        "category": "Groms",
+        "tt_pos_in_category": 15,
+        "fastest_seconds": 259.537,
+        "fastest_time": "04:19.537",
+        "rank": 99
+      },
+      {
+        "race_number": 119,
+        "name": "Coby Webb",
+        "category": "Groms",
+        "tt_pos_in_category": 16,
+        "fastest_seconds": 305.257,
+        "fastest_time": "05:05.257",
+        "rank": 106
+      },
+      {
+        "race_number": 120,
+        "name": "Willow Wilson",
+        "category": "Groms",
+        "tt_pos_in_category": 17,
+        "fastest_seconds": 345.16,
+        "fastest_time": "05:45.160",
+        "rank": 108
+      },
+      {
+        "race_number": 105,
+        "name": "Nikko Gutmanis",
+        "category": "Groms",
+        "tt_pos_in_category": 18,
+        "fastest_seconds": 408.183,
+        "fastest_time": "06:48.183",
+        "rank": 109
+      },
+      {
+        "race_number": 104,
+        "name": "Naomi Gutmane",
+        "category": "Groms",
+        "tt_pos_in_category": 19,
+        "fastest_seconds": 500.69,
+        "fastest_time": "08:20.690",
+        "rank": 110
+      },
+      {
+        "race_number": 100,
+        "name": "Stanley Downham",
+        "category": "Groms",
+        "tt_pos_in_category": 20,
+        "fastest_seconds": 540.65,
+        "fastest_time": "09:00.650",
+        "rank": 111
+      }
+    ]
+  },
+  "riders": [
+    {
+      "race_number": 52,
+      "name": "Jay Kenward",
+      "category": "Open",
+      "tt_pos_in_category": 1,
+      "fastest_seconds": 126.9,
+      "fastest_time": "02:06.900",
+      "rank": 1
+    },
+    {
+      "race_number": 108,
+      "name": "Indiana McFarlane",
+      "category": "Groms",
+      "tt_pos_in_category": 1,
+      "fastest_seconds": 133.96,
+      "fastest_time": "02:13.960",
+      "rank": 2
+    },
+    {
+      "race_number": 18,
+      "name": "Henry Bisping",
+      "category": "Open",
+      "tt_pos_in_category": 2,
+      "fastest_seconds": 134.28,
+      "fastest_time": "02:14.280",
+      "rank": 3
+    },
+    {
+      "race_number": 75,
+      "name": "Daniel Turner",
+      "category": "Open",
+      "tt_pos_in_category": 3,
+      "fastest_seconds": 134.377,
+      "fastest_time": "02:14.377",
+      "rank": 4
+    },
+    {
+      "race_number": 123,
+      "name": "Alexis Matton",
+      "category": "Open",
+      "tt_pos_in_category": 4,
+      "fastest_seconds": 134.693,
+      "fastest_time": "02:14.693",
+      "rank": 5
+    },
+    {
+      "race_number": 40,
+      "name": "Jeffrey Gamon",
+      "category": "Open",
+      "tt_pos_in_category": 5,
+      "fastest_seconds": 141.097,
+      "fastest_time": "02:21.097",
+      "rank": 6
+    },
+    {
+      "race_number": 137,
+      "name": "Henry Dunn",
+      "category": "Open",
+      "tt_pos_in_category": 6,
+      "fastest_seconds": 142.73,
+      "fastest_time": "02:22.730",
+      "rank": 7
+    },
+    {
+      "race_number": 50,
+      "name": "Joel Jones",
+      "category": "Open",
+      "tt_pos_in_category": 7,
+      "fastest_seconds": 144.31,
+      "fastest_time": "02:24.310",
+      "rank": 8
+    },
+    {
+      "race_number": 64,
+      "name": "Samuel OConnell",
+      "category": "Open",
+      "tt_pos_in_category": 8,
+      "fastest_seconds": 145.213,
+      "fastest_time": "02:25.213",
+      "rank": 9
+    },
+    {
+      "race_number": 135,
+      "name": "Matthieu Grenette",
+      "category": "Open",
+      "tt_pos_in_category": 9,
+      "fastest_seconds": 146.727,
+      "fastest_time": "02:26.727",
+      "rank": 10
+    },
+    {
+      "race_number": 67,
+      "name": "Quirine Posno",
+      "category": "Open",
+      "tt_pos_in_category": 10,
+      "fastest_seconds": 147.053,
+      "fastest_time": "02:27.053",
+      "rank": 11
+    },
+    {
+      "race_number": 68,
+      "name": "Thorkild Rasmussen",
+      "category": "Open",
+      "tt_pos_in_category": 11,
+      "fastest_seconds": 147.533,
+      "fastest_time": "02:27.533",
+      "rank": 12
+    },
+    {
+      "race_number": 81,
+      "name": "Paul Webb",
+      "category": "Open",
+      "tt_pos_in_category": 12,
+      "fastest_seconds": 150.63,
+      "fastest_time": "02:30.630",
+      "rank": 13
+    },
+    {
+      "race_number": 69,
+      "name": "Gerard Rinc\u00f3n",
+      "category": "Open",
+      "tt_pos_in_category": 13,
+      "fastest_seconds": 152.107,
+      "fastest_time": "02:32.107",
+      "rank": 14
+    },
+    {
+      "race_number": 141,
+      "name": "Camil Despr\u00e9s",
+      "category": "Open",
+      "tt_pos_in_category": 14,
+      "fastest_seconds": 153.123,
+      "fastest_time": "02:33.123",
+      "rank": 15
+    },
+    {
+      "race_number": 61,
+      "name": "Zack McFarlane",
+      "category": "Open",
+      "tt_pos_in_category": 15,
+      "fastest_seconds": 153.683,
+      "fastest_time": "02:33.683",
+      "rank": 16
+    },
+    {
+      "race_number": 99,
+      "name": "Sep De Booser",
+      "category": "Groms",
+      "tt_pos_in_category": 2,
+      "fastest_seconds": 154.4,
+      "fastest_time": "02:34.400",
+      "rank": 17
+    },
+    {
+      "race_number": 49,
+      "name": "Jacob Jones",
+      "category": "Open",
+      "tt_pos_in_category": 16,
+      "fastest_seconds": 154.657,
+      "fastest_time": "02:34.657",
+      "rank": 18
+    },
+    {
+      "race_number": 129,
+      "name": "Radim Kla\u0161ka",
+      "category": "Open",
+      "tt_pos_in_category": 17,
+      "fastest_seconds": 156.927,
+      "fastest_time": "02:36.927",
+      "rank": 19
+    },
+    {
+      "race_number": 51,
+      "name": "Charles Kelly",
+      "category": "Open",
+      "tt_pos_in_category": 18,
+      "fastest_seconds": 159.693,
+      "fastest_time": "02:39.693",
+      "rank": 20
+    },
+    {
+      "race_number": 70,
+      "name": "Fabio Santos Costa",
+      "category": "Open",
+      "tt_pos_in_category": 19,
+      "fastest_seconds": 160.417,
+      "fastest_time": "02:40.417",
+      "rank": 21
+    },
+    {
+      "race_number": 63,
+      "name": "Harley Moss",
+      "category": "Open",
+      "tt_pos_in_category": 20,
+      "fastest_seconds": 161.49,
+      "fastest_time": "02:41.490",
+      "rank": 22
+    },
+    {
+      "race_number": 72,
+      "name": "Nico Stuart",
+      "category": "Open",
+      "tt_pos_in_category": 21,
+      "fastest_seconds": 162.853,
+      "fastest_time": "02:42.853",
+      "rank": 23
+    },
+    {
+      "race_number": 102,
+      "name": "Noah Gamon",
+      "category": "Groms",
+      "tt_pos_in_category": 3,
+      "fastest_seconds": 163.457,
+      "fastest_time": "02:43.457",
+      "rank": 24
+    },
+    {
+      "race_number": 125,
+      "name": "Darren Stevenson",
+      "category": "Open",
+      "tt_pos_in_category": 22,
+      "fastest_seconds": 163.967,
+      "fastest_time": "02:43.967",
+      "rank": 25
+    },
+    {
+      "race_number": 32,
+      "name": "Sergio Espinosa",
+      "category": "Open",
+      "tt_pos_in_category": 23,
+      "fastest_seconds": 166.483,
+      "fastest_time": "02:46.483",
+      "rank": 26
+    },
+    {
+      "race_number": 5,
+      "name": "James Grant",
+      "category": "Open",
+      "tt_pos_in_category": 24,
+      "fastest_seconds": 166.94,
+      "fastest_time": "02:46.940",
+      "rank": 27
+    },
+    {
+      "race_number": 130,
+      "name": "Max Lee",
+      "category": "Open",
+      "tt_pos_in_category": 25,
+      "fastest_seconds": 168.333,
+      "fastest_time": "02:48.333",
+      "rank": 28
+    },
+    {
+      "race_number": 121,
+      "name": "Matthieu Cauchois",
+      "category": "Open",
+      "tt_pos_in_category": 26,
+      "fastest_seconds": 168.373,
+      "fastest_time": "02:48.373",
+      "rank": 29
+    },
+    {
+      "race_number": 58,
+      "name": "Louis Lovelace",
+      "category": "Open",
+      "tt_pos_in_category": 27,
+      "fastest_seconds": 169.883,
+      "fastest_time": "02:49.883",
+      "rank": 30
+    },
+    {
+      "race_number": 66,
+      "name": "James Pitcher",
+      "category": "Open",
+      "tt_pos_in_category": 28,
+      "fastest_seconds": 171.193,
+      "fastest_time": "02:51.193",
+      "rank": 31
+    },
+    {
+      "race_number": 110,
+      "name": "Zak Moss",
+      "category": "Groms",
+      "tt_pos_in_category": 4,
+      "fastest_seconds": 171.197,
+      "fastest_time": "02:51.197",
+      "rank": 32
+    },
+    {
+      "race_number": 13,
+      "name": "Jonas Andersen",
+      "category": "Open",
+      "tt_pos_in_category": 29,
+      "fastest_seconds": 171.777,
+      "fastest_time": "02:51.777",
+      "rank": 33
+    },
+    {
+      "race_number": 144,
+      "name": "Joshua Billinghurst",
+      "category": "Groms",
+      "tt_pos_in_category": 5,
+      "fastest_seconds": 172.563,
+      "fastest_time": "02:52.563",
+      "rank": 34
+    },
+    {
+      "race_number": 38,
+      "name": "Adam Freeman",
+      "category": "Open",
+      "tt_pos_in_category": 30,
+      "fastest_seconds": 173.843,
+      "fastest_time": "02:53.843",
+      "rank": 35
+    },
+    {
+      "race_number": 97,
+      "name": "Matthew Coningsby",
+      "category": "Groms",
+      "tt_pos_in_category": 6,
+      "fastest_seconds": 173.847,
+      "fastest_time": "02:53.847",
+      "rank": 36
+    },
+    {
+      "race_number": 65,
+      "name": "Thomas Pieters",
+      "category": "Open",
+      "tt_pos_in_category": 31,
+      "fastest_seconds": 174.777,
+      "fastest_time": "02:54.777",
+      "rank": 37
+    },
+    {
+      "race_number": 9,
+      "name": "Kate Paxton",
+      "category": "Open",
+      "tt_pos_in_category": 32,
+      "fastest_seconds": 174.867,
+      "fastest_time": "02:54.867",
+      "rank": 38
+    },
+    {
+      "race_number": 4,
+      "name": "Martin Dinnage",
+      "category": "Open",
+      "tt_pos_in_category": 33,
+      "fastest_seconds": 175.037,
+      "fastest_time": "02:55.037",
+      "rank": 39
+    },
+    {
+      "race_number": 86,
+      "name": "Chantelle Warner-Wells",
+      "category": "Women",
+      "tt_pos_in_category": 1,
+      "fastest_seconds": 175.477,
+      "fastest_time": "02:55.477",
+      "rank": 40
+    },
+    {
+      "race_number": 6,
+      "name": "Jorge Jimenez",
+      "category": "Open",
+      "tt_pos_in_category": 34,
+      "fastest_seconds": 176.87,
+      "fastest_time": "02:56.870",
+      "rank": 41
+    },
+    {
+      "race_number": 59,
+      "name": "Tom\u00e1\u0161 Mach",
+      "category": "Open",
+      "tt_pos_in_category": 35,
+      "fastest_seconds": 176.897,
+      "fastest_time": "02:56.897",
+      "rank": 42
+    },
+    {
+      "race_number": 73,
+      "name": "Andy Thompson",
+      "category": "Open",
+      "tt_pos_in_category": 36,
+      "fastest_seconds": 177.707,
+      "fastest_time": "02:57.707",
+      "rank": 43
+    },
+    {
+      "race_number": 82,
+      "name": "Travis Wilson",
+      "category": "Open",
+      "tt_pos_in_category": 37,
+      "fastest_seconds": 177.81,
+      "fastest_time": "02:57.810",
+      "rank": 44
+    },
+    {
+      "race_number": 122,
+      "name": "Leo Chatenet",
+      "category": "Open",
+      "tt_pos_in_category": 38,
+      "fastest_seconds": 178.063,
+      "fastest_time": "02:58.063",
+      "rank": 45
+    },
+    {
+      "race_number": 14,
+      "name": "Thomas Astbury",
+      "category": "Open",
+      "tt_pos_in_category": 39,
+      "fastest_seconds": 178.927,
+      "fastest_time": "02:58.927",
+      "rank": 46
+    },
+    {
+      "race_number": 57,
+      "name": "Patrick Lopez",
+      "category": "Open",
+      "tt_pos_in_category": 40,
+      "fastest_seconds": 180.133,
+      "fastest_time": "03:00.133",
+      "rank": 47
+    },
+    {
+      "race_number": 27,
+      "name": "Maarten De Booser",
+      "category": "Open",
+      "tt_pos_in_category": 41,
+      "fastest_seconds": 180.577,
+      "fastest_time": "03:00.577",
+      "rank": 48
+    },
+    {
+      "race_number": 77,
+      "name": "Lars Vloemans",
+      "category": "Open",
+      "tt_pos_in_category": 42,
+      "fastest_seconds": 181.177,
+      "fastest_time": "03:01.177",
+      "rank": 49
+    },
+    {
+      "race_number": 71,
+      "name": "Wayne Stewart",
+      "category": "Open",
+      "tt_pos_in_category": 43,
+      "fastest_seconds": 181.527,
+      "fastest_time": "03:01.527",
+      "rank": 50
+    },
+    {
+      "race_number": 96,
+      "name": "Daniel Coningsby",
+      "category": "Groms",
+      "tt_pos_in_category": 7,
+      "fastest_seconds": 181.607,
+      "fastest_time": "03:01.607",
+      "rank": 51
+    },
+    {
+      "race_number": 107,
+      "name": "Josiah Jones",
+      "category": "Groms",
+      "tt_pos_in_category": 8,
+      "fastest_seconds": 183.177,
+      "fastest_time": "03:03.177",
+      "rank": 52
+    },
+    {
+      "race_number": 10,
+      "name": "Eduardo Queralto",
+      "category": "Open",
+      "tt_pos_in_category": 44,
+      "fastest_seconds": 183.597,
+      "fastest_time": "03:03.597",
+      "rank": 53
+    },
+    {
+      "race_number": 111,
+      "name": "Miles Musgrave",
+      "category": "Groms",
+      "tt_pos_in_category": 9,
+      "fastest_seconds": 183.953,
+      "fastest_time": "03:03.953",
+      "rank": 54
+    },
+    {
+      "race_number": 60,
+      "name": "Luke Massey",
+      "category": "Open",
+      "tt_pos_in_category": 45,
+      "fastest_seconds": 185.357,
+      "fastest_time": "03:05.357",
+      "rank": 55
+    },
+    {
+      "race_number": 29,
+      "name": "Lennart Duijn",
+      "category": "Open",
+      "tt_pos_in_category": 46,
+      "fastest_seconds": 185.41,
+      "fastest_time": "03:05.410",
+      "rank": 56
+    },
+    {
+      "race_number": 35,
+      "name": "Xavier Fichou",
+      "category": "Open",
+      "tt_pos_in_category": 47,
+      "fastest_seconds": 185.493,
+      "fastest_time": "03:05.493",
+      "rank": 57
+    },
+    {
+      "race_number": 44,
+      "name": "Valdis Gutmanis",
+      "category": "Open",
+      "tt_pos_in_category": 48,
+      "fastest_seconds": 186.47,
+      "fastest_time": "03:06.470",
+      "rank": 58
+    },
+    {
+      "race_number": 140,
+      "name": "Anthony Ybarra",
+      "category": "Open",
+      "tt_pos_in_category": 49,
+      "fastest_seconds": 186.583,
+      "fastest_time": "03:06.583",
+      "rank": 59
+    },
+    {
+      "race_number": 138,
+      "name": "Dustin Refazo",
+      "category": "Open",
+      "tt_pos_in_category": 50,
+      "fastest_seconds": 188.543,
+      "fastest_time": "03:08.543",
+      "rank": 60
+    },
+    {
+      "race_number": 8,
+      "name": "Nick Oppenheimer",
+      "category": "Open",
+      "tt_pos_in_category": 51,
+      "fastest_seconds": 188.977,
+      "fastest_time": "03:08.977",
+      "rank": 61
+    },
+    {
+      "race_number": 37,
+      "name": "James Frampton",
+      "category": "Open",
+      "tt_pos_in_category": 52,
+      "fastest_seconds": 194.69,
+      "fastest_time": "03:14.690",
+      "rank": 62
+    },
+    {
+      "race_number": 128,
+      "name": "Mark Fowler",
+      "category": "Open",
+      "tt_pos_in_category": 53,
+      "fastest_seconds": 195.177,
+      "fastest_time": "03:15.177",
+      "rank": 63
+    },
+    {
+      "race_number": 132,
+      "name": "Isaac Walton",
+      "category": "Groms",
+      "tt_pos_in_category": 10,
+      "fastest_seconds": 196.77,
+      "fastest_time": "03:16.770",
+      "rank": 64
+    },
+    {
+      "race_number": 30,
+      "name": "Matthew Eaton",
+      "category": "Open",
+      "tt_pos_in_category": 54,
+      "fastest_seconds": 198.533,
+      "fastest_time": "03:18.533",
+      "rank": 65
+    },
+    {
+      "race_number": 16,
+      "name": "Duncan Beattie",
+      "category": "Open",
+      "tt_pos_in_category": 55,
+      "fastest_seconds": 199.453,
+      "fastest_time": "03:19.453",
+      "rank": 66
+    },
+    {
+      "race_number": 91,
+      "name": "Jay Bucci",
+      "category": "Groms",
+      "tt_pos_in_category": 11,
+      "fastest_seconds": 201.613,
+      "fastest_time": "03:21.613",
+      "rank": 67
+    },
+    {
+      "race_number": 124,
+      "name": "George Ellwood",
+      "category": "Open",
+      "tt_pos_in_category": 56,
+      "fastest_seconds": 201.72,
+      "fastest_time": "03:21.720",
+      "rank": 68
+    },
+    {
+      "race_number": 2,
+      "name": "Mark Coningsby",
+      "category": "Open",
+      "tt_pos_in_category": 57,
+      "fastest_seconds": 202.827,
+      "fastest_time": "03:22.827",
+      "rank": 69
+    },
+    {
+      "race_number": 136,
+      "name": "Joe Smith",
+      "category": "Open",
+      "tt_pos_in_category": 58,
+      "fastest_seconds": 203.063,
+      "fastest_time": "03:23.063",
+      "rank": 70
+    },
+    {
+      "race_number": 33,
+      "name": "David Farries",
+      "category": "Open",
+      "tt_pos_in_category": 59,
+      "fastest_seconds": 203.25,
+      "fastest_time": "03:23.250",
+      "rank": 71
+    },
+    {
+      "race_number": 53,
+      "name": "Andy Lakin",
+      "category": "Open",
+      "tt_pos_in_category": 60,
+      "fastest_seconds": 204.403,
+      "fastest_time": "03:24.403",
+      "rank": 72
+    },
+    {
+      "race_number": 34,
+      "name": "Paul Fear",
+      "category": "Open",
+      "tt_pos_in_category": 61,
+      "fastest_seconds": 205.307,
+      "fastest_time": "03:25.307",
+      "rank": 73
+    },
+    {
+      "race_number": 127,
+      "name": "Jelle Keizer",
+      "category": "Open",
+      "tt_pos_in_category": 62,
+      "fastest_seconds": 206.32,
+      "fastest_time": "03:26.320",
+      "rank": 74
+    },
+    {
+      "race_number": 46,
+      "name": "Dave Hughes",
+      "category": "Open",
+      "tt_pos_in_category": 63,
+      "fastest_seconds": 208.853,
+      "fastest_time": "03:28.853",
+      "rank": 75
+    },
+    {
+      "race_number": 80,
+      "name": "Chris Wallace",
+      "category": "Open",
+      "tt_pos_in_category": 64,
+      "fastest_seconds": 211.37,
+      "fastest_time": "03:31.370",
+      "rank": 76
+    },
+    {
+      "race_number": 26,
+      "name": "Marcin Cugier",
+      "category": "Open",
+      "tt_pos_in_category": 65,
+      "fastest_seconds": 211.967,
+      "fastest_time": "03:31.967",
+      "rank": 77
+    },
+    {
+      "race_number": 41,
+      "name": "Paul Gould",
+      "category": "Open",
+      "tt_pos_in_category": 66,
+      "fastest_seconds": 212.23,
+      "fastest_time": "03:32.230",
+      "rank": 78
+    },
+    {
+      "race_number": 47,
+      "name": "Mark Hughes",
+      "category": "Open",
+      "tt_pos_in_category": 67,
+      "fastest_seconds": 213.393,
+      "fastest_time": "03:33.393",
+      "rank": 79
+    },
+    {
+      "race_number": 142,
+      "name": "David Whiston",
+      "category": "Open",
+      "tt_pos_in_category": 68,
+      "fastest_seconds": 214.48,
+      "fastest_time": "03:34.480",
+      "rank": 80
+    },
+    {
+      "race_number": 25,
+      "name": "Max Cramer",
+      "category": "Open",
+      "tt_pos_in_category": 69,
+      "fastest_seconds": 214.83,
+      "fastest_time": "03:34.830",
+      "rank": 81
+    },
+    {
+      "race_number": 21,
+      "name": "Alex Campbell",
+      "category": "Open",
+      "tt_pos_in_category": 70,
+      "fastest_seconds": 219.257,
+      "fastest_time": "03:39.257",
+      "rank": 82
+    },
+    {
+      "race_number": 39,
+      "name": "Jack Freeman",
+      "category": "Open",
+      "tt_pos_in_category": 71,
+      "fastest_seconds": 219.66,
+      "fastest_time": "03:39.660",
+      "rank": 83
+    },
+    {
+      "race_number": 42,
+      "name": "Seth Gould",
+      "category": "Open",
+      "tt_pos_in_category": 72,
+      "fastest_seconds": 223.417,
+      "fastest_time": "03:43.417",
+      "rank": 84
+    },
+    {
+      "race_number": 78,
+      "name": "Tom Vloemans",
+      "category": "Open",
+      "tt_pos_in_category": 73,
+      "fastest_seconds": 225.007,
+      "fastest_time": "03:45.007",
+      "rank": 85
+    },
+    {
+      "race_number": 106,
+      "name": "Harry Hughes",
+      "category": "Groms",
+      "tt_pos_in_category": 12,
+      "fastest_seconds": 227.13,
+      "fastest_time": "03:47.130",
+      "rank": 86
+    },
+    {
+      "race_number": 23,
+      "name": "Neil Collins",
+      "category": "Open",
+      "tt_pos_in_category": 74,
+      "fastest_seconds": 228.273,
+      "fastest_time": "03:48.273",
+      "rank": 87
+    },
+    {
+      "race_number": 1,
+      "name": "Gary Bucci",
+      "category": "Open",
+      "tt_pos_in_category": 75,
+      "fastest_seconds": 231.317,
+      "fastest_time": "03:51.317",
+      "rank": 88
+    },
+    {
+      "race_number": 62,
+      "name": "Ben Moore",
+      "category": "Open",
+      "tt_pos_in_category": 76,
+      "fastest_seconds": 233.443,
+      "fastest_time": "03:53.443",
+      "rank": 89
+    },
+    {
+      "race_number": 117,
+      "name": "Lilly-May Wallis",
+      "category": "Groms",
+      "tt_pos_in_category": 13,
+      "fastest_seconds": 236.127,
+      "fastest_time": "03:56.127",
+      "rank": 90
+    },
+    {
+      "race_number": 134,
+      "name": "Nick Bornt",
+      "category": "Open",
+      "tt_pos_in_category": 77,
+      "fastest_seconds": 238.92,
+      "fastest_time": "03:58.920",
+      "rank": 91
+    },
+    {
+      "race_number": 83,
+      "name": "Anna Carson",
+      "category": "Women",
+      "tt_pos_in_category": 2,
+      "fastest_seconds": 239.023,
+      "fastest_time": "03:59.023",
+      "rank": 92
+    },
+    {
+      "race_number": 15,
+      "name": "Adrian Aston",
+      "category": "Open",
+      "tt_pos_in_category": 78,
+      "fastest_seconds": 239.417,
+      "fastest_time": "03:59.417",
+      "rank": 93
+    },
+    {
+      "race_number": 85,
+      "name": "Mollie Stuart",
+      "category": "Women",
+      "tt_pos_in_category": 3,
+      "fastest_seconds": 240.323,
+      "fastest_time": "04:00.323",
+      "rank": 94
+    },
+    {
+      "race_number": 74,
+      "name": "Jonathan Tims",
+      "category": "Open",
+      "tt_pos_in_category": 79,
+      "fastest_seconds": 241.743,
+      "fastest_time": "04:01.743",
+      "rank": 95
+    },
+    {
+      "race_number": 116,
+      "name": "Ted Slater-Penny",
+      "category": "Groms",
+      "tt_pos_in_category": 14,
+      "fastest_seconds": 242.273,
+      "fastest_time": "04:02.273",
+      "rank": 96
+    },
+    {
+      "race_number": 31,
+      "name": "Gary Elford",
+      "category": "Open",
+      "tt_pos_in_category": 80,
+      "fastest_seconds": 247.18,
+      "fastest_time": "04:07.180",
+      "rank": 97
+    },
+    {
+      "race_number": 20,
+      "name": "Jason Bright",
+      "category": "Open",
+      "tt_pos_in_category": 81,
+      "fastest_seconds": 249.013,
+      "fastest_time": "04:09.013",
+      "rank": 98
+    },
+    {
+      "race_number": 114,
+      "name": "Ruby Queralto",
+      "category": "Groms",
+      "tt_pos_in_category": 15,
+      "fastest_seconds": 259.537,
+      "fastest_time": "04:19.537",
+      "rank": 99
+    },
+    {
+      "race_number": 133,
+      "name": "Lia Rhae",
+      "category": "Open",
+      "tt_pos_in_category": 82,
+      "fastest_seconds": 261.813,
+      "fastest_time": "04:21.813",
+      "rank": 100
+    },
+    {
+      "race_number": 56,
+      "name": "Martin Longley",
+      "category": "Open",
+      "tt_pos_in_category": 83,
+      "fastest_seconds": 262.153,
+      "fastest_time": "04:22.153",
+      "rank": 101
+    },
+    {
+      "race_number": 28,
+      "name": "Chris Downham",
+      "category": "Open",
+      "tt_pos_in_category": 84,
+      "fastest_seconds": 269.65,
+      "fastest_time": "04:29.650",
+      "rank": 102
+    },
+    {
+      "race_number": 11,
+      "name": "James Allen",
+      "category": "Open",
+      "tt_pos_in_category": 85,
+      "fastest_seconds": 270.197,
+      "fastest_time": "04:30.197",
+      "rank": 103
+    },
+    {
+      "race_number": 22,
+      "name": "Edward Cheel",
+      "category": "Open",
+      "tt_pos_in_category": 86,
+      "fastest_seconds": 287.367,
+      "fastest_time": "04:47.367",
+      "rank": 104
+    },
+    {
+      "race_number": 48,
+      "name": "Jack Huntley",
+      "category": "Open",
+      "tt_pos_in_category": 87,
+      "fastest_seconds": 289.663,
+      "fastest_time": "04:49.663",
+      "rank": 105
+    },
+    {
+      "race_number": 119,
+      "name": "Coby Webb",
+      "category": "Groms",
+      "tt_pos_in_category": 16,
+      "fastest_seconds": 305.257,
+      "fastest_time": "05:05.257",
+      "rank": 106
+    },
+    {
+      "race_number": 84,
+      "name": "Joy Jarvis",
+      "category": "Women",
+      "tt_pos_in_category": 4,
+      "fastest_seconds": 325.347,
+      "fastest_time": "05:25.347",
+      "rank": 107
+    },
+    {
+      "race_number": 120,
+      "name": "Willow Wilson",
+      "category": "Groms",
+      "tt_pos_in_category": 17,
+      "fastest_seconds": 345.16,
+      "fastest_time": "05:45.160",
+      "rank": 108
+    },
+    {
+      "race_number": 105,
+      "name": "Nikko Gutmanis",
+      "category": "Groms",
+      "tt_pos_in_category": 18,
+      "fastest_seconds": 408.183,
+      "fastest_time": "06:48.183",
+      "rank": 109
+    },
+    {
+      "race_number": 104,
+      "name": "Naomi Gutmane",
+      "category": "Groms",
+      "tt_pos_in_category": 19,
+      "fastest_seconds": 500.69,
+      "fastest_time": "08:20.690",
+      "rank": 110
+    },
+    {
+      "race_number": 100,
+      "name": "Stanley Downham",
+      "category": "Groms",
+      "tt_pos_in_category": 20,
+      "fastest_seconds": 540.65,
+      "fastest_time": "09:00.650",
+      "rank": 111
+    },
+    {
+      "race_number": 54,
+      "name": "Paul Lambert",
+      "category": "Open",
+      "tt_pos_in_category": 88,
+      "fastest_seconds": 862.36,
+      "fastest_time": "14:22.360",
+      "rank": 112
+    }
+  ]
+}

@@ -1,0 +1,1705 @@
+{
+  "meta": {
+    "generatedAt": "2026-06-01T00:05:52.813730+00:00",
+    "totalRiders": 397,
+    "ridersWithResults": 397,
+    "eventsHeld": 24,
+    "totalFinishes": 1079,
+    "avgAttendance": 44.9,
+    "biggestEvent": {
+      "name": "Shred The Shires",
+      "total": 113,
+      "seasonLabel": "2026"
+    },
+    "oneEventRiders": 192,
+    "multiEventRiders": 205,
+    "categoryLabels": {
+      "open": "Open / Men",
+      "female": "Women",
+      "groms": "Groms"
+    }
+  },
+  "events": [
+    {
+      "id": "s1-gattinara-2023",
+      "name": "Gattinara Wine & Trails",
+      "shortLabel": "GW&T",
+      "seasonId": 1,
+      "seasonLabel": "2023",
+      "sortKey": 100,
+      "isFinals": false,
+      "series": "Gattinara Wine & Trails",
+      "total": 53,
+      "new": 53,
+      "returning": 0,
+      "returnRate": 0.0,
+      "byCategory": {
+        "open": 50,
+        "female": 3,
+        "groms": 0
+      },
+      "categories": {
+        "open": {
+          "total": 50,
+          "new": 50,
+          "returning": 0
+        },
+        "female": {
+          "total": 3,
+          "new": 3,
+          "returning": 0
+        },
+        "groms": {
+          "total": 0,
+          "new": 0,
+          "returning": 0
+        }
+      }
+    },
+    {
+      "id": "s1-swiss-2023",
+      "name": "Swiss Onewheel Race",
+      "shortLabel": "SOR",
+      "seasonId": 1,
+      "seasonLabel": "2023",
+      "sortKey": 101,
+      "isFinals": false,
+      "series": "Swiss Onewheel Race",
+      "total": 36,
+      "new": 18,
+      "returning": 18,
+      "returnRate": 0.5,
+      "byCategory": {
+        "open": 31,
+        "female": 5,
+        "groms": 0
+      },
+      "categories": {
+        "open": {
+          "total": 31,
+          "new": 15,
+          "returning": 16
+        },
+        "female": {
+          "total": 5,
+          "new": 3,
+          "returning": 2
+        },
+        "groms": {
+          "total": 0,
+          "new": 0,
+          "returning": 0
+        }
+      }
+    },
+    {
+      "id": "s1-fth-2023",
+      "name": "Float The Highlands",
+      "shortLabel": "FTH",
+      "seasonId": 1,
+      "seasonLabel": "2023",
+      "sortKey": 102,
+      "isFinals": false,
+      "series": "Float The Highlands",
+      "total": 57,
+      "new": 46,
+      "returning": 11,
+      "returnRate": 0.193,
+      "byCategory": {
+        "open": 49,
+        "female": 8,
+        "groms": 0
+      },
+      "categories": {
+        "open": {
+          "total": 49,
+          "new": 38,
+          "returning": 11
+        },
+        "female": {
+          "total": 8,
+          "new": 8,
+          "returning": 0
+        },
+        "groms": {
+          "total": 0,
+          "new": 0,
+          "returning": 0
+        }
+      }
+    },
+    {
+      "id": "s2-wow-2023",
+      "name": "Wanyi Onewheel Weekend",
+      "shortLabel": "WOW",
+      "seasonId": 2,
+      "seasonLabel": "2023/24",
+      "sortKey": 200,
+      "isFinals": false,
+      "series": "Wanyi Onewheel Weekend",
+      "total": 52,
+      "new": 17,
+      "returning": 35,
+      "returnRate": 0.673,
+      "byCategory": {
+        "open": 48,
+        "female": 4,
+        "groms": 0
+      },
+      "categories": {
+        "open": {
+          "total": 48,
+          "new": 16,
+          "returning": 32
+        },
+        "female": {
+          "total": 4,
+          "new": 1,
+          "returning": 3
+        },
+        "groms": {
+          "total": 0,
+          "new": 0,
+          "returning": 0
+        }
+      }
+    },
+    {
+      "id": "s2-owar-2023",
+      "name": "Onewheel Algarve Race (2023/24)",
+      "shortLabel": "OWAR",
+      "seasonId": 2,
+      "seasonLabel": "2023/24",
+      "sortKey": 201,
+      "isFinals": false,
+      "series": "Onewheel Algarve Race (2023/24)",
+      "total": 45,
+      "new": 18,
+      "returning": 27,
+      "returnRate": 0.6,
+      "byCategory": {
+        "open": 42,
+        "female": 3,
+        "groms": 0
+      },
+      "categories": {
+        "open": {
+          "total": 42,
+          "new": 16,
+          "returning": 26
+        },
+        "female": {
+          "total": 3,
+          "new": 2,
+          "returning": 1
+        },
+        "groms": {
+          "total": 0,
+          "new": 0,
+          "returning": 0
+        }
+      }
+    },
+    {
+      "id": "s2-sts-2024",
+      "name": "Shred The Shires",
+      "shortLabel": "STS",
+      "seasonId": 2,
+      "seasonLabel": "2023/24",
+      "sortKey": 203,
+      "isFinals": false,
+      "series": "Shred The Shires",
+      "total": 49,
+      "new": 19,
+      "returning": 30,
+      "returnRate": 0.612,
+      "byCategory": {
+        "open": 44,
+        "female": 5,
+        "groms": 0
+      },
+      "categories": {
+        "open": {
+          "total": 44,
+          "new": 19,
+          "returning": 25
+        },
+        "female": {
+          "total": 5,
+          "new": 0,
+          "returning": 5
+        },
+        "groms": {
+          "total": 0,
+          "new": 0,
+          "returning": 0
+        }
+      }
+    },
+    {
+      "id": "s2-swiss-2024",
+      "name": "Swiss OneWheel Race",
+      "shortLabel": "SOR",
+      "seasonId": 2,
+      "seasonLabel": "2023/24",
+      "sortKey": 204,
+      "isFinals": false,
+      "series": "Swiss OneWheel Race",
+      "total": 34,
+      "new": 9,
+      "returning": 25,
+      "returnRate": 0.735,
+      "byCategory": {
+        "open": 30,
+        "female": 4,
+        "groms": 0
+      },
+      "categories": {
+        "open": {
+          "total": 30,
+          "new": 8,
+          "returning": 22
+        },
+        "female": {
+          "total": 4,
+          "new": 1,
+          "returning": 3
+        },
+        "groms": {
+          "total": 0,
+          "new": 0,
+          "returning": 0
+        }
+      }
+    },
+    {
+      "id": "s2-fth-2024",
+      "name": "Float The Highlands",
+      "shortLabel": "FTH",
+      "seasonId": 2,
+      "seasonLabel": "2023/24",
+      "sortKey": 205,
+      "isFinals": false,
+      "series": "Float The Highlands",
+      "total": 45,
+      "new": 8,
+      "returning": 37,
+      "returnRate": 0.822,
+      "byCategory": {
+        "open": 39,
+        "female": 6,
+        "groms": 0
+      },
+      "categories": {
+        "open": {
+          "total": 39,
+          "new": 8,
+          "returning": 31
+        },
+        "female": {
+          "total": 6,
+          "new": 0,
+          "returning": 6
+        },
+        "groms": {
+          "total": 0,
+          "new": 0,
+          "returning": 0
+        }
+      }
+    },
+    {
+      "id": "s2-wow-2024",
+      "name": "Wanyi Onewheel Weekend (2024)",
+      "shortLabel": "WOW2",
+      "seasonId": 2,
+      "seasonLabel": "2023/24",
+      "sortKey": 206,
+      "isFinals": false,
+      "series": "Wanyi Onewheel Weekend",
+      "total": 31,
+      "new": 3,
+      "returning": 28,
+      "returnRate": 0.903,
+      "byCategory": {
+        "open": 24,
+        "female": 7,
+        "groms": 0
+      },
+      "categories": {
+        "open": {
+          "total": 24,
+          "new": 2,
+          "returning": 22
+        },
+        "female": {
+          "total": 7,
+          "new": 1,
+          "returning": 6
+        },
+        "groms": {
+          "total": 0,
+          "new": 0,
+          "returning": 0
+        }
+      }
+    },
+    {
+      "id": "s2-balaton-2024",
+      "name": "Balaton Karika",
+      "shortLabel": "Balaton Ka",
+      "seasonId": 2,
+      "seasonLabel": "2023/24",
+      "sortKey": 207,
+      "isFinals": false,
+      "series": "Balaton Karika",
+      "total": 17,
+      "new": 11,
+      "returning": 6,
+      "returnRate": 0.353,
+      "byCategory": {
+        "open": 16,
+        "female": 1,
+        "groms": 0
+      },
+      "categories": {
+        "open": {
+          "total": 16,
+          "new": 10,
+          "returning": 6
+        },
+        "female": {
+          "total": 1,
+          "new": 1,
+          "returning": 0
+        },
+        "groms": {
+          "total": 0,
+          "new": 0,
+          "returning": 0
+        }
+      }
+    },
+    {
+      "id": "s2-dog-2024",
+      "name": "Danish Onewheel Games",
+      "shortLabel": "DOG",
+      "seasonId": 2,
+      "seasonLabel": "2023/24",
+      "sortKey": 208,
+      "isFinals": false,
+      "series": "Danish Onewheel Games",
+      "total": 17,
+      "new": 7,
+      "returning": 10,
+      "returnRate": 0.588,
+      "byCategory": {
+        "open": 17,
+        "female": 0,
+        "groms": 0
+      },
+      "categories": {
+        "open": {
+          "total": 17,
+          "new": 7,
+          "returning": 10
+        },
+        "female": {
+          "total": 0,
+          "new": 0,
+          "returning": 0
+        },
+        "groms": {
+          "total": 0,
+          "new": 0,
+          "returning": 0
+        }
+      }
+    },
+    {
+      "id": "s2-mayrau-2024",
+      "name": "Mayrau Shred Fest",
+      "shortLabel": "MSF",
+      "seasonId": 2,
+      "seasonLabel": "2023/24",
+      "sortKey": 209,
+      "isFinals": false,
+      "series": "Mayrau Shred Fest",
+      "total": 19,
+      "new": 9,
+      "returning": 10,
+      "returnRate": 0.526,
+      "byCategory": {
+        "open": 17,
+        "female": 2,
+        "groms": 0
+      },
+      "categories": {
+        "open": {
+          "total": 17,
+          "new": 7,
+          "returning": 10
+        },
+        "female": {
+          "total": 2,
+          "new": 2,
+          "returning": 0
+        },
+        "groms": {
+          "total": 0,
+          "new": 0,
+          "returning": 0
+        }
+      }
+    },
+    {
+      "id": "s2-owar-finals-2024",
+      "name": "EOL Finals 2023/24 (OWAR)",
+      "shortLabel": "FINALS",
+      "seasonId": 2,
+      "seasonLabel": "2023/24",
+      "sortKey": 299,
+      "isFinals": true,
+      "series": "EOL Finals",
+      "total": 49,
+      "new": 0,
+      "returning": 49,
+      "returnRate": 1.0,
+      "byCategory": {
+        "open": 41,
+        "female": 8,
+        "groms": 0
+      },
+      "categories": {
+        "open": {
+          "total": 41,
+          "new": 0,
+          "returning": 41
+        },
+        "female": {
+          "total": 8,
+          "new": 0,
+          "returning": 8
+        },
+        "groms": {
+          "total": 0,
+          "new": 0,
+          "returning": 0
+        }
+      }
+    },
+    {
+      "id": "s3-wacky-2025",
+      "name": "Wacky Wheels",
+      "shortLabel": "Wacky Whee",
+      "seasonId": 3,
+      "seasonLabel": "2025",
+      "sortKey": 300,
+      "isFinals": false,
+      "series": "Wacky Wheels",
+      "total": 25,
+      "new": 12,
+      "returning": 13,
+      "returnRate": 0.52,
+      "byCategory": {
+        "open": 25,
+        "female": 0,
+        "groms": 0
+      },
+      "categories": {
+        "open": {
+          "total": 25,
+          "new": 12,
+          "returning": 13
+        },
+        "female": {
+          "total": 0,
+          "new": 0,
+          "returning": 0
+        },
+        "groms": {
+          "total": 0,
+          "new": 0,
+          "returning": 0
+        }
+      }
+    },
+    {
+      "id": "s3-sts-2025",
+      "name": "Shred The Shires",
+      "shortLabel": "STS",
+      "seasonId": 3,
+      "seasonLabel": "2025",
+      "sortKey": 301,
+      "isFinals": false,
+      "series": "Shred The Shires",
+      "total": 94,
+      "new": 32,
+      "returning": 62,
+      "returnRate": 0.66,
+      "byCategory": {
+        "open": 66,
+        "female": 12,
+        "groms": 16
+      },
+      "categories": {
+        "open": {
+          "total": 66,
+          "new": 26,
+          "returning": 40
+        },
+        "female": {
+          "total": 12,
+          "new": 6,
+          "returning": 6
+        },
+        "groms": {
+          "total": 16,
+          "new": 0,
+          "returning": 16
+        }
+      }
+    },
+    {
+      "id": "s3-tfc-2025",
+      "name": "The Float Connection",
+      "shortLabel": "TFC",
+      "seasonId": 3,
+      "seasonLabel": "2025",
+      "sortKey": 302,
+      "isFinals": false,
+      "series": "The Float Connection",
+      "total": 56,
+      "new": 28,
+      "returning": 28,
+      "returnRate": 0.5,
+      "byCategory": {
+        "open": 49,
+        "female": 4,
+        "groms": 3
+      },
+      "categories": {
+        "open": {
+          "total": 49,
+          "new": 26,
+          "returning": 23
+        },
+        "female": {
+          "total": 4,
+          "new": 2,
+          "returning": 2
+        },
+        "groms": {
+          "total": 3,
+          "new": 0,
+          "returning": 3
+        }
+      }
+    },
+    {
+      "id": "s3-swiss-2025",
+      "name": "Swiss Race Tournament",
+      "shortLabel": "SRT",
+      "seasonId": 3,
+      "seasonLabel": "2025",
+      "sortKey": 303,
+      "isFinals": false,
+      "series": "Swiss Race Tournament",
+      "total": 56,
+      "new": 12,
+      "returning": 44,
+      "returnRate": 0.786,
+      "byCategory": {
+        "open": 45,
+        "female": 8,
+        "groms": 4
+      },
+      "categories": {
+        "open": {
+          "total": 45,
+          "new": 11,
+          "returning": 34
+        },
+        "female": {
+          "total": 8,
+          "new": 1,
+          "returning": 7
+        },
+        "groms": {
+          "total": 4,
+          "new": 0,
+          "returning": 4
+        }
+      }
+    },
+    {
+      "id": "s3-mayrau-2025",
+      "name": "Mayrau Shred Fest",
+      "shortLabel": "MSF",
+      "seasonId": 3,
+      "seasonLabel": "2025",
+      "sortKey": 304,
+      "isFinals": false,
+      "series": "Mayrau Shred Fest",
+      "total": 34,
+      "new": 9,
+      "returning": 25,
+      "returnRate": 0.735,
+      "byCategory": {
+        "open": 30,
+        "female": 4,
+        "groms": 0
+      },
+      "categories": {
+        "open": {
+          "total": 30,
+          "new": 8,
+          "returning": 22
+        },
+        "female": {
+          "total": 4,
+          "new": 1,
+          "returning": 3
+        },
+        "groms": {
+          "total": 0,
+          "new": 0,
+          "returning": 0
+        }
+      }
+    },
+    {
+      "id": "s3-dog-2025",
+      "name": "Danish Onewheel Games",
+      "shortLabel": "DOG",
+      "seasonId": 3,
+      "seasonLabel": "2025",
+      "sortKey": 305,
+      "isFinals": false,
+      "series": "Danish Onewheel Games",
+      "total": 22,
+      "new": 4,
+      "returning": 18,
+      "returnRate": 0.818,
+      "byCategory": {
+        "open": 16,
+        "female": 3,
+        "groms": 3
+      },
+      "categories": {
+        "open": {
+          "total": 16,
+          "new": 3,
+          "returning": 13
+        },
+        "female": {
+          "total": 3,
+          "new": 1,
+          "returning": 2
+        },
+        "groms": {
+          "total": 3,
+          "new": 0,
+          "returning": 3
+        }
+      }
+    },
+    {
+      "id": "s3-sis-2025",
+      "name": "Send it Surrey",
+      "shortLabel": "SIS",
+      "seasonId": 3,
+      "seasonLabel": "2025",
+      "sortKey": 306,
+      "isFinals": false,
+      "series": "Send it Surrey",
+      "total": 56,
+      "new": 2,
+      "returning": 54,
+      "returnRate": 0.964,
+      "byCategory": {
+        "open": 35,
+        "female": 6,
+        "groms": 15
+      },
+      "categories": {
+        "open": {
+          "total": 35,
+          "new": 2,
+          "returning": 33
+        },
+        "female": {
+          "total": 6,
+          "new": 0,
+          "returning": 6
+        },
+        "groms": {
+          "total": 15,
+          "new": 0,
+          "returning": 15
+        }
+      }
+    },
+    {
+      "id": "s3-finals-2025",
+      "name": "EOL Finals 2025",
+      "shortLabel": "EF2",
+      "seasonId": 3,
+      "seasonLabel": "2025",
+      "sortKey": 307,
+      "isFinals": true,
+      "series": "EOL Finals",
+      "total": 48,
+      "new": 9,
+      "returning": 39,
+      "returnRate": 0.812,
+      "byCategory": {
+        "open": 32,
+        "female": 8,
+        "groms": 8
+      },
+      "categories": {
+        "open": {
+          "total": 32,
+          "new": 0,
+          "returning": 32
+        },
+        "female": {
+          "total": 8,
+          "new": 1,
+          "returning": 7
+        },
+        "groms": {
+          "total": 8,
+          "new": 8,
+          "returning": 0
+        }
+      }
+    },
+    {
+      "id": "s4-wacky-2026",
+      "name": "Wacky Wheels",
+      "shortLabel": "Wacky Whee",
+      "seasonId": 4,
+      "seasonLabel": "2026",
+      "sortKey": 400,
+      "isFinals": false,
+      "series": "Wacky Wheels",
+      "total": 26,
+      "new": 7,
+      "returning": 19,
+      "returnRate": 0.731,
+      "byCategory": {
+        "open": 26,
+        "female": 0,
+        "groms": 0
+      },
+      "categories": {
+        "open": {
+          "total": 26,
+          "new": 7,
+          "returning": 19
+        },
+        "female": {
+          "total": 0,
+          "new": 0,
+          "returning": 0
+        },
+        "groms": {
+          "total": 0,
+          "new": 0,
+          "returning": 0
+        }
+      }
+    },
+    {
+      "id": "s4-sts-2026",
+      "name": "Shred The Shires",
+      "shortLabel": "STS",
+      "seasonId": 4,
+      "seasonLabel": "2026",
+      "sortKey": 401,
+      "isFinals": false,
+      "series": "Shred The Shires",
+      "total": 113,
+      "new": 44,
+      "returning": 69,
+      "returnRate": 0.611,
+      "byCategory": {
+        "open": 89,
+        "female": 4,
+        "groms": 20
+      },
+      "categories": {
+        "open": {
+          "total": 89,
+          "new": 25,
+          "returning": 64
+        },
+        "female": {
+          "total": 4,
+          "new": 2,
+          "returning": 2
+        },
+        "groms": {
+          "total": 20,
+          "new": 17,
+          "returning": 3
+        }
+      }
+    },
+    {
+      "id": "s4-tfc-2026",
+      "name": "The Float Connection",
+      "shortLabel": "TFC",
+      "seasonId": 4,
+      "seasonLabel": "2026",
+      "sortKey": 402,
+      "isFinals": false,
+      "series": "The Float Connection",
+      "total": 44,
+      "new": 11,
+      "returning": 33,
+      "returnRate": 0.75,
+      "byCategory": {
+        "open": 41,
+        "female": 3,
+        "groms": 0
+      },
+      "categories": {
+        "open": {
+          "total": 41,
+          "new": 9,
+          "returning": 32
+        },
+        "female": {
+          "total": 3,
+          "new": 2,
+          "returning": 1
+        },
+        "groms": {
+          "total": 0,
+          "new": 0,
+          "returning": 0
+        }
+      }
+    }
+  ],
+  "seasons": [
+    {
+      "id": 1,
+      "label": "2023",
+      "uniqueRiders": 117,
+      "newRiders": 117,
+      "returningRiders": 0,
+      "eventCount": 3,
+      "byCategory": {
+        "open": 103,
+        "female": 14,
+        "groms": 0
+      }
+    },
+    {
+      "id": 2,
+      "label": "2023/24",
+      "uniqueRiders": 172,
+      "newRiders": 101,
+      "returningRiders": 71,
+      "eventCount": 10,
+      "byCategory": {
+        "open": 155,
+        "female": 17,
+        "groms": 0
+      }
+    },
+    {
+      "id": 3,
+      "label": "2025",
+      "uniqueRiders": 227,
+      "newRiders": 124,
+      "returningRiders": 103,
+      "eventCount": 8,
+      "byCategory": {
+        "open": 179,
+        "female": 24,
+        "groms": 25
+      }
+    },
+    {
+      "id": 4,
+      "label": "2026",
+      "uniqueRiders": 156,
+      "newRiders": 55,
+      "returningRiders": 101,
+      "eventCount": 3,
+      "byCategory": {
+        "open": 130,
+        "female": 6,
+        "groms": 20
+      }
+    }
+  ],
+  "cumulative": [
+    {
+      "sortKey": 100,
+      "eventId": "s1-gattinara-2023",
+      "label": "GW&T",
+      "seasonLabel": "2023",
+      "cumulativeRiders": 53
+    },
+    {
+      "sortKey": 101,
+      "eventId": "s1-swiss-2023",
+      "label": "SOR",
+      "seasonLabel": "2023",
+      "cumulativeRiders": 71
+    },
+    {
+      "sortKey": 102,
+      "eventId": "s1-fth-2023",
+      "label": "FTH",
+      "seasonLabel": "2023",
+      "cumulativeRiders": 117
+    },
+    {
+      "sortKey": 200,
+      "eventId": "s2-wow-2023",
+      "label": "WOW",
+      "seasonLabel": "2023/24",
+      "cumulativeRiders": 134
+    },
+    {
+      "sortKey": 201,
+      "eventId": "s2-owar-2023",
+      "label": "OWAR",
+      "seasonLabel": "2023/24",
+      "cumulativeRiders": 152
+    },
+    {
+      "sortKey": 203,
+      "eventId": "s2-sts-2024",
+      "label": "STS",
+      "seasonLabel": "2023/24",
+      "cumulativeRiders": 171
+    },
+    {
+      "sortKey": 204,
+      "eventId": "s2-swiss-2024",
+      "label": "SOR",
+      "seasonLabel": "2023/24",
+      "cumulativeRiders": 180
+    },
+    {
+      "sortKey": 205,
+      "eventId": "s2-fth-2024",
+      "label": "FTH",
+      "seasonLabel": "2023/24",
+      "cumulativeRiders": 188
+    },
+    {
+      "sortKey": 206,
+      "eventId": "s2-wow-2024",
+      "label": "WOW2",
+      "seasonLabel": "2023/24",
+      "cumulativeRiders": 191
+    },
+    {
+      "sortKey": 207,
+      "eventId": "s2-balaton-2024",
+      "label": "Balaton Ka",
+      "seasonLabel": "2023/24",
+      "cumulativeRiders": 202
+    },
+    {
+      "sortKey": 208,
+      "eventId": "s2-dog-2024",
+      "label": "DOG",
+      "seasonLabel": "2023/24",
+      "cumulativeRiders": 209
+    },
+    {
+      "sortKey": 209,
+      "eventId": "s2-mayrau-2024",
+      "label": "MSF",
+      "seasonLabel": "2023/24",
+      "cumulativeRiders": 218
+    },
+    {
+      "sortKey": 299,
+      "eventId": "s2-owar-finals-2024",
+      "label": "FINALS",
+      "seasonLabel": "2023/24",
+      "cumulativeRiders": 218
+    },
+    {
+      "sortKey": 300,
+      "eventId": "s3-wacky-2025",
+      "label": "Wacky Whee",
+      "seasonLabel": "2025",
+      "cumulativeRiders": 230
+    },
+    {
+      "sortKey": 301,
+      "eventId": "s3-sts-2025",
+      "label": "STS",
+      "seasonLabel": "2025",
+      "cumulativeRiders": 278
+    },
+    {
+      "sortKey": 302,
+      "eventId": "s3-tfc-2025",
+      "label": "TFC",
+      "seasonLabel": "2025",
+      "cumulativeRiders": 306
+    },
+    {
+      "sortKey": 303,
+      "eventId": "s3-swiss-2025",
+      "label": "SRT",
+      "seasonLabel": "2025",
+      "cumulativeRiders": 321
+    },
+    {
+      "sortKey": 304,
+      "eventId": "s3-mayrau-2025",
+      "label": "MSF",
+      "seasonLabel": "2025",
+      "cumulativeRiders": 330
+    },
+    {
+      "sortKey": 305,
+      "eventId": "s3-dog-2025",
+      "label": "DOG",
+      "seasonLabel": "2025",
+      "cumulativeRiders": 337
+    },
+    {
+      "sortKey": 306,
+      "eventId": "s3-sis-2025",
+      "label": "SIS",
+      "seasonLabel": "2025",
+      "cumulativeRiders": 341
+    },
+    {
+      "sortKey": 307,
+      "eventId": "s3-finals-2025",
+      "label": "EF2",
+      "seasonLabel": "2025",
+      "cumulativeRiders": 342
+    },
+    {
+      "sortKey": 400,
+      "eventId": "s4-wacky-2026",
+      "label": "Wacky Whee",
+      "seasonLabel": "2026",
+      "cumulativeRiders": 349
+    },
+    {
+      "sortKey": 401,
+      "eventId": "s4-sts-2026",
+      "label": "STS",
+      "seasonLabel": "2026",
+      "cumulativeRiders": 386
+    },
+    {
+      "sortKey": 402,
+      "eventId": "s4-tfc-2026",
+      "label": "TFC",
+      "seasonLabel": "2026",
+      "cumulativeRiders": 397
+    }
+  ],
+  "series": [
+    {
+      "name": "Danish Onewheel Games",
+      "editions": [
+        {
+          "seasonLabel": "2023/24",
+          "seasonId": 2,
+          "sortKey": 208,
+          "total": 17,
+          "eventName": "Danish Onewheel Games"
+        },
+        {
+          "seasonLabel": "2025",
+          "seasonId": 3,
+          "sortKey": 305,
+          "total": 22,
+          "eventName": "Danish Onewheel Games"
+        }
+      ]
+    },
+    {
+      "name": "EOL Finals",
+      "editions": [
+        {
+          "seasonLabel": "2023/24",
+          "seasonId": 2,
+          "sortKey": 299,
+          "total": 49,
+          "eventName": "EOL Finals 2023/24 (OWAR)"
+        },
+        {
+          "seasonLabel": "2025",
+          "seasonId": 3,
+          "sortKey": 307,
+          "total": 48,
+          "eventName": "EOL Finals 2025"
+        }
+      ]
+    },
+    {
+      "name": "Float The Highlands",
+      "editions": [
+        {
+          "seasonLabel": "2023",
+          "seasonId": 1,
+          "sortKey": 102,
+          "total": 57,
+          "eventName": "Float The Highlands"
+        },
+        {
+          "seasonLabel": "2023/24",
+          "seasonId": 2,
+          "sortKey": 205,
+          "total": 45,
+          "eventName": "Float The Highlands"
+        }
+      ]
+    },
+    {
+      "name": "Mayrau Shred Fest",
+      "editions": [
+        {
+          "seasonLabel": "2023/24",
+          "seasonId": 2,
+          "sortKey": 209,
+          "total": 19,
+          "eventName": "Mayrau Shred Fest"
+        },
+        {
+          "seasonLabel": "2025",
+          "seasonId": 3,
+          "sortKey": 304,
+          "total": 34,
+          "eventName": "Mayrau Shred Fest"
+        }
+      ]
+    },
+    {
+      "name": "Shred The Shires",
+      "editions": [
+        {
+          "seasonLabel": "2023/24",
+          "seasonId": 2,
+          "sortKey": 203,
+          "total": 49,
+          "eventName": "Shred The Shires"
+        },
+        {
+          "seasonLabel": "2025",
+          "seasonId": 3,
+          "sortKey": 301,
+          "total": 94,
+          "eventName": "Shred The Shires"
+        },
+        {
+          "seasonLabel": "2026",
+          "seasonId": 4,
+          "sortKey": 401,
+          "total": 113,
+          "eventName": "Shred The Shires"
+        }
+      ]
+    },
+    {
+      "name": "The Float Connection",
+      "editions": [
+        {
+          "seasonLabel": "2025",
+          "seasonId": 3,
+          "sortKey": 302,
+          "total": 56,
+          "eventName": "The Float Connection"
+        },
+        {
+          "seasonLabel": "2026",
+          "seasonId": 4,
+          "sortKey": 402,
+          "total": 44,
+          "eventName": "The Float Connection"
+        }
+      ]
+    },
+    {
+      "name": "Wacky Wheels",
+      "editions": [
+        {
+          "seasonLabel": "2025",
+          "seasonId": 3,
+          "sortKey": 300,
+          "total": 25,
+          "eventName": "Wacky Wheels"
+        },
+        {
+          "seasonLabel": "2026",
+          "seasonId": 4,
+          "sortKey": 400,
+          "total": 26,
+          "eventName": "Wacky Wheels"
+        }
+      ]
+    },
+    {
+      "name": "Wanyi Onewheel Weekend",
+      "editions": [
+        {
+          "seasonLabel": "2023/24",
+          "seasonId": 2,
+          "sortKey": 200,
+          "total": 52,
+          "eventName": "Wanyi Onewheel Weekend"
+        },
+        {
+          "seasonLabel": "2023/24",
+          "seasonId": 2,
+          "sortKey": 206,
+          "total": 31,
+          "eventName": "Wanyi Onewheel Weekend (2024)"
+        }
+      ]
+    }
+  ],
+  "participationHistogram": [
+    {
+      "eventsAttended": 1,
+      "riderCount": 192
+    },
+    {
+      "eventsAttended": 2,
+      "riderCount": 72
+    },
+    {
+      "eventsAttended": 3,
+      "riderCount": 42
+    },
+    {
+      "eventsAttended": 4,
+      "riderCount": 24
+    },
+    {
+      "eventsAttended": 5,
+      "riderCount": 18
+    },
+    {
+      "eventsAttended": 6,
+      "riderCount": 15
+    },
+    {
+      "eventsAttended": 7,
+      "riderCount": 11
+    },
+    {
+      "eventsAttended": 8,
+      "riderCount": 5
+    },
+    {
+      "eventsAttended": 9,
+      "riderCount": 3
+    },
+    {
+      "eventsAttended": 10,
+      "riderCount": 2
+    },
+    {
+      "eventsAttended": 11,
+      "riderCount": 4
+    },
+    {
+      "eventsAttended": 12,
+      "riderCount": 1
+    },
+    {
+      "eventsAttended": 13,
+      "riderCount": 3
+    },
+    {
+      "eventsAttended": 14,
+      "riderCount": 2
+    },
+    {
+      "eventsAttended": 16,
+      "riderCount": 1
+    },
+    {
+      "eventsAttended": 17,
+      "riderCount": 1
+    },
+    {
+      "eventsAttended": 20,
+      "riderCount": 1
+    }
+  ],
+  "oneAndDoneByEvent": [
+    {
+      "eventId": "s1-gattinara-2023",
+      "sortKey": 100,
+      "shortLabel": "GW&T",
+      "seasonLabel": "2023",
+      "name": "Gattinara Wine & Trails",
+      "isFinals": false,
+      "total": 14,
+      "shareOfField": 0.264,
+      "byCategory": {
+        "open": 14,
+        "female": 0,
+        "groms": 0
+      }
+    },
+    {
+      "eventId": "s1-swiss-2023",
+      "sortKey": 101,
+      "shortLabel": "SOR",
+      "seasonLabel": "2023",
+      "name": "Swiss Onewheel Race",
+      "isFinals": false,
+      "total": 7,
+      "shareOfField": 0.194,
+      "byCategory": {
+        "open": 5,
+        "female": 2,
+        "groms": 0
+      }
+    },
+    {
+      "eventId": "s1-fth-2023",
+      "sortKey": 102,
+      "shortLabel": "FTH",
+      "seasonLabel": "2023",
+      "name": "Float The Highlands",
+      "isFinals": false,
+      "total": 17,
+      "shareOfField": 0.298,
+      "byCategory": {
+        "open": 14,
+        "female": 3,
+        "groms": 0
+      }
+    },
+    {
+      "eventId": "s2-wow-2023",
+      "sortKey": 200,
+      "shortLabel": "WOW",
+      "seasonLabel": "2023/24",
+      "name": "Wanyi Onewheel Weekend",
+      "isFinals": false,
+      "total": 7,
+      "shareOfField": 0.135,
+      "byCategory": {
+        "open": 7,
+        "female": 0,
+        "groms": 0
+      }
+    },
+    {
+      "eventId": "s2-owar-2023",
+      "sortKey": 201,
+      "shortLabel": "OWAR",
+      "seasonLabel": "2023/24",
+      "name": "Onewheel Algarve Race (2023/24)",
+      "isFinals": false,
+      "total": 2,
+      "shareOfField": 0.044,
+      "byCategory": {
+        "open": 1,
+        "female": 1,
+        "groms": 0
+      }
+    },
+    {
+      "eventId": "s2-sts-2024",
+      "sortKey": 203,
+      "shortLabel": "STS",
+      "seasonLabel": "2023/24",
+      "name": "Shred The Shires",
+      "isFinals": false,
+      "total": 2,
+      "shareOfField": 0.041,
+      "byCategory": {
+        "open": 2,
+        "female": 0,
+        "groms": 0
+      }
+    },
+    {
+      "eventId": "s2-swiss-2024",
+      "sortKey": 204,
+      "shortLabel": "SOR",
+      "seasonLabel": "2023/24",
+      "name": "Swiss OneWheel Race",
+      "isFinals": false,
+      "total": 2,
+      "shareOfField": 0.059,
+      "byCategory": {
+        "open": 2,
+        "female": 0,
+        "groms": 0
+      }
+    },
+    {
+      "eventId": "s2-fth-2024",
+      "sortKey": 205,
+      "shortLabel": "FTH",
+      "seasonLabel": "2023/24",
+      "name": "Float The Highlands",
+      "isFinals": false,
+      "total": 6,
+      "shareOfField": 0.133,
+      "byCategory": {
+        "open": 6,
+        "female": 0,
+        "groms": 0
+      }
+    },
+    {
+      "eventId": "s2-wow-2024",
+      "sortKey": 206,
+      "shortLabel": "WOW2",
+      "seasonLabel": "2023/24",
+      "name": "Wanyi Onewheel Weekend (2024)",
+      "isFinals": false,
+      "total": 1,
+      "shareOfField": 0.032,
+      "byCategory": {
+        "open": 1,
+        "female": 0,
+        "groms": 0
+      }
+    },
+    {
+      "eventId": "s2-balaton-2024",
+      "sortKey": 207,
+      "shortLabel": "Balaton Ka",
+      "seasonLabel": "2023/24",
+      "name": "Balaton Karika",
+      "isFinals": false,
+      "total": 6,
+      "shareOfField": 0.353,
+      "byCategory": {
+        "open": 5,
+        "female": 1,
+        "groms": 0
+      }
+    },
+    {
+      "eventId": "s2-dog-2024",
+      "sortKey": 208,
+      "shortLabel": "DOG",
+      "seasonLabel": "2023/24",
+      "name": "Danish Onewheel Games",
+      "isFinals": false,
+      "total": 3,
+      "shareOfField": 0.176,
+      "byCategory": {
+        "open": 3,
+        "female": 0,
+        "groms": 0
+      }
+    },
+    {
+      "eventId": "s2-mayrau-2024",
+      "sortKey": 209,
+      "shortLabel": "MSF",
+      "seasonLabel": "2023/24",
+      "name": "Mayrau Shred Fest",
+      "isFinals": false,
+      "total": 3,
+      "shareOfField": 0.158,
+      "byCategory": {
+        "open": 2,
+        "female": 1,
+        "groms": 0
+      }
+    },
+    {
+      "eventId": "s2-owar-finals-2024",
+      "sortKey": 299,
+      "shortLabel": "FINALS",
+      "seasonLabel": "2023/24",
+      "name": "EOL Finals 2023/24 (OWAR)",
+      "isFinals": true,
+      "total": 0,
+      "shareOfField": 0.0,
+      "byCategory": {
+        "open": 0,
+        "female": 0,
+        "groms": 0
+      }
+    },
+    {
+      "eventId": "s3-wacky-2025",
+      "sortKey": 300,
+      "shortLabel": "Wacky Whee",
+      "seasonLabel": "2025",
+      "name": "Wacky Wheels",
+      "isFinals": false,
+      "total": 9,
+      "shareOfField": 0.36,
+      "byCategory": {
+        "open": 9,
+        "female": 0,
+        "groms": 0
+      }
+    },
+    {
+      "eventId": "s3-sts-2025",
+      "sortKey": 301,
+      "shortLabel": "STS",
+      "seasonLabel": "2025",
+      "name": "Shred The Shires",
+      "isFinals": false,
+      "total": 14,
+      "shareOfField": 0.149,
+      "byCategory": {
+        "open": 9,
+        "female": 4,
+        "groms": 1
+      }
+    },
+    {
+      "eventId": "s3-tfc-2025",
+      "sortKey": 302,
+      "shortLabel": "TFC",
+      "seasonLabel": "2025",
+      "name": "The Float Connection",
+      "isFinals": false,
+      "total": 17,
+      "shareOfField": 0.304,
+      "byCategory": {
+        "open": 16,
+        "female": 1,
+        "groms": 0
+      }
+    },
+    {
+      "eventId": "s3-swiss-2025",
+      "sortKey": 303,
+      "shortLabel": "SRT",
+      "seasonLabel": "2025",
+      "name": "Swiss Race Tournament",
+      "isFinals": false,
+      "total": 12,
+      "shareOfField": 0.214,
+      "byCategory": {
+        "open": 9,
+        "female": 0,
+        "groms": 3
+      }
+    },
+    {
+      "eventId": "s3-mayrau-2025",
+      "sortKey": 304,
+      "shortLabel": "MSF",
+      "seasonLabel": "2025",
+      "name": "Mayrau Shred Fest",
+      "isFinals": false,
+      "total": 9,
+      "shareOfField": 0.265,
+      "byCategory": {
+        "open": 8,
+        "female": 1,
+        "groms": 0
+      }
+    },
+    {
+      "eventId": "s3-dog-2025",
+      "sortKey": 305,
+      "shortLabel": "DOG",
+      "seasonLabel": "2025",
+      "name": "Danish Onewheel Games",
+      "isFinals": false,
+      "total": 6,
+      "shareOfField": 0.273,
+      "byCategory": {
+        "open": 3,
+        "female": 1,
+        "groms": 2
+      }
+    },
+    {
+      "eventId": "s3-sis-2025",
+      "sortKey": 306,
+      "shortLabel": "SIS",
+      "seasonLabel": "2025",
+      "name": "Send it Surrey",
+      "isFinals": false,
+      "total": 3,
+      "shareOfField": 0.054,
+      "byCategory": {
+        "open": 1,
+        "female": 0,
+        "groms": 2
+      }
+    },
+    {
+      "eventId": "s3-finals-2025",
+      "sortKey": 307,
+      "shortLabel": "EF2",
+      "seasonLabel": "2025",
+      "name": "EOL Finals 2025",
+      "isFinals": true,
+      "total": 1,
+      "shareOfField": 0.021,
+      "byCategory": {
+        "open": 0,
+        "female": 1,
+        "groms": 0
+      }
+    },
+    {
+      "eventId": "s4-wacky-2026",
+      "sortKey": 400,
+      "shortLabel": "Wacky Whee",
+      "seasonLabel": "2026",
+      "name": "Wacky Wheels",
+      "isFinals": false,
+      "total": 7,
+      "shareOfField": 0.269,
+      "byCategory": {
+        "open": 7,
+        "female": 0,
+        "groms": 0
+      }
+    },
+    {
+      "eventId": "s4-sts-2026",
+      "sortKey": 401,
+      "shortLabel": "STS",
+      "seasonLabel": "2026",
+      "name": "Shred The Shires",
+      "isFinals": false,
+      "total": 33,
+      "shareOfField": 0.292,
+      "byCategory": {
+        "open": 22,
+        "female": 1,
+        "groms": 10
+      }
+    },
+    {
+      "eventId": "s4-tfc-2026",
+      "sortKey": 402,
+      "shortLabel": "TFC",
+      "seasonLabel": "2026",
+      "name": "The Float Connection",
+      "isFinals": false,
+      "total": 11,
+      "shareOfField": 0.25,
+      "byCategory": {
+        "open": 9,
+        "female": 2,
+        "groms": 0
+      }
+    }
+  ]
+}

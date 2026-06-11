@@ -1,0 +1,57 @@
+.seeding-page {
+  max-width: 42rem;
+  margin: 0 auto;
+  padding: 1.25rem 1rem 2rem;
+}
+
+.seeding-page__header h1 {
+  margin: 0 0 0.35rem;
+  font-size: 1.35rem;
+  font-weight: 600;
+}
+
+.seeding-page__lead {
+  margin: 0;
+  font-size: 0.95rem;
+  color: var(--muted);
+  line-height: 1.45;
+}
+
+.seeding-page__section {
+  margin-top: 1.5rem;
+  padding: 1rem 1.1rem;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+}
+
+.seeding-page__section h2 {
+  margin: 0 0 0.6rem;
+  font-size: 0.95rem;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  flex-wrap: wrap;
+}
+
+.seeding-page__section p,
+.seeding-page__section li {
+  margin: 0 0 0.65rem;
+  font-size: 0.9rem;
+  line-height: 1.5;
+  color: var(--text);
+}
+
+.seeding-page__section ul {
+  margin: 0 0 0.65rem;
+  padding-left: 1.2rem;
+}
+
+.seeding-page__section--muted {
+  background: color-mix(in srgb, var(--surface) 85%, var(--bg));
+}
+
+.seeding-page__section a {
+  color: var(--accent);
+}

@@ -1,0 +1,83 @@
+{
+  "events": [
+    {
+      "id": "sts-2026",
+      "name": "Shred the Shires 2026",
+      "riderCount": 112,
+      "categories": [
+        "Groms",
+        "Open",
+        "Women"
+      ],
+      "defaultCategories": [
+        "Open",
+        "Women"
+      ],
+      "countsByCategory": {
+        "Open": 88,
+        "Women": 4,
+        "Groms": 20
+      }
+    },
+    {
+      "id": "owa-2025",
+      "name": "Onewheel Algarve 2025",
+      "riderCount": 50,
+      "categories": [
+        "Groms",
+        "Legends",
+        "Open",
+        "Wildcard",
+        "Women"
+      ],
+      "defaultCategories": [
+        "Open",
+        "Women"
+      ],
+      "countsByCategory": {
+        "Groms": 8,
+        "Open": 29,
+        "Wildcard": 3,
+        "Women": 8,
+        "Legends": 2
+      }
+    },
+    {
+      "id": "sts-2025",
+      "name": "Shred the Shires 2025",
+      "riderCount": 94,
+      "categories": [
+        "Groms",
+        "Open",
+        "Women"
+      ],
+      "defaultCategories": [
+        "Open",
+        "Women"
+      ],
+      "countsByCategory": {
+        "Open": 66,
+        "Groms": 16,
+        "Women": 12
+      }
+    },
+    {
+      "id": "sis-2025",
+      "name": "Send It Surrey 2025",
+      "riderCount": 39,
+      "categories": [
+        "Open",
+        "Women"
+      ],
+      "defaultCategories": [
+        "Open",
+        "Women"
+      ],
+      "countsByCategory": {
+        "Open": 34,
+        "Women": 5
+      }
+    }
+  ],
+  "defaultEventId": "sts-2026"
+}
