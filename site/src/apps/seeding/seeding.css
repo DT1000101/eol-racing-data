@@ -952,10 +952,6 @@
   font-size: 6px;
 }
 
-.seeding-viz__bracket-panel .seeding-slot__qual-badge {
-  font-size: 5px;
-}
-
 .seeding-viz__bracket-panel .seeding-slot__seed-dot {
   width: 5px;
   height: 5px;
@@ -986,10 +982,6 @@
 
 .seeding-viz .heat-block__title {
   font-size: 6px;
-}
-
-.seeding-slot__qual-badge {
-  font-size: 4px;
 }
 
 .seeding-slot__seed-dot {

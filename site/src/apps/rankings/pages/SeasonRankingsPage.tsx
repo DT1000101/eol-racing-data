@@ -82,7 +82,7 @@ export function SeasonRankingsPage() {
     <div className="rankings-page">
       <div className="rankings-page__toolbar">
         <PageHeader title={page.pageTitle} />
-        <RankingsMobileSettings variant="rankings" help={help} meta={settingsMeta} />
+        <RankingsMobileSettings help={help} meta={settingsMeta} />
       </div>
 
       {!isMobile && (

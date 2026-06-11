@@ -38,10 +38,6 @@ export function SeedingSlot({
   const color = isKnown ? riderColor(rider!, isLit) : PLACEHOLDER_ACCENT;
   const showResult = finishPlace != null;
 
-  const qualBadges: string[] = [];
-  if (!showResult && rider?.round1Pos) qualBadges.push(`R1:${rider.round1Pos}`);
-  if (!showResult && rider?.round2Pos) qualBadges.push(`R2:${rider.round2Pos}`);
-
   return (
     <div
       className="starting-grid__slot-wrap"
@@ -92,15 +88,6 @@ export function SeedingSlot({
                 </span>
               )}
             </div>
-            {qualBadges.length > 0 && (
-              <div className="seeding-slot__quals">
-                {qualBadges.map((b) => (
-                  <span key={b} className="seeding-slot__qual-badge">
-                    {b}
-                  </span>
-                ))}
-              </div>
-            )}
           </>
         ) : (
           <span className="starting-grid__placeholder">

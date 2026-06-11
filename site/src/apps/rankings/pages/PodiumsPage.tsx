@@ -1,7 +1,6 @@
 import { PageHeader } from "../../../hub/PageHeader";
 import { pageMeta } from "../../../hub/navConfig";
 import { PodiumsHallOfFameView } from "../components/PodiumsHallOfFameView";
-import { RankingsMobileSettings } from "../RankingsMobileSettings";
 import { useRankingsData } from "../RankingsDataContext";
 
 export function PodiumsPage() {
@@ -17,27 +16,10 @@ export function PodiumsPage() {
     );
   }
 
-  const help = (
-    <div className="settings-section settings-section--help">
-      <p className="settings-help-block">
-        Riders ranked by EOL podium finishes (1st–3rd). Season and category on each
-        badge — the same rider can appear in multiple categories over time.
-      </p>
-    </div>
-  );
-
-  const settingsMeta = (
-    <p className="settings-meta">
-      {podiums.summary.riderCount} riders · {podiums.summary.podiumCount} podiums ·
-      Updated {new Date(data.meta.generatedAt).toLocaleDateString()}
-    </p>
-  );
-
   return (
     <div className="rankings-page">
       <div className="rankings-page__toolbar">
         <PageHeader title={page.pageTitle} />
-        <RankingsMobileSettings help={help} meta={settingsMeta} />
       </div>
       <PodiumsHallOfFameView data={podiums} />
       {!isMobile && (
