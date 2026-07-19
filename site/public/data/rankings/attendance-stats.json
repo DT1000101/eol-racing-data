@@ -1,18 +1,18 @@
 {
   "meta": {
-    "generatedAt": "2026-06-11T13:52:51.474320+00:00",
-    "totalRiders": 397,
-    "ridersWithResults": 397,
-    "eventsHeld": 24,
-    "totalFinishes": 1079,
-    "avgAttendance": 44.9,
+    "generatedAt": "2026-07-19T19:26:31.648076+00:00",
+    "totalRiders": 406,
+    "ridersWithResults": 406,
+    "eventsHeld": 26,
+    "totalFinishes": 1155,
+    "avgAttendance": 44.4,
     "biggestEvent": {
       "name": "Shred The Shires",
       "total": 113,
       "seasonLabel": "2026"
     },
-    "oneEventRiders": 192,
-    "multiEventRiders": 205,
+    "oneEventRiders": 185,
+    "multiEventRiders": 221,
     "categoryLabels": {
       "open": "Open / Men",
       "female": "Women",
@@ -857,20 +857,20 @@
       "sortKey": 402,
       "isFinals": false,
       "series": "The Float Connection",
-      "total": 44,
-      "new": 11,
-      "returning": 33,
-      "returnRate": 0.75,
+      "total": 54,
+      "new": 13,
+      "returning": 41,
+      "returnRate": 0.759,
       "byCategory": {
-        "open": 41,
+        "open": 42,
         "female": 3,
-        "groms": 0
+        "groms": 9
       },
       "categories": {
         "open": {
-          "total": 41,
+          "total": 42,
           "new": 9,
-          "returning": 32
+          "returning": 33
         },
         "female": {
           "total": 3,
@@ -878,9 +878,81 @@
           "returning": 1
         },
         "groms": {
+          "total": 9,
+          "new": 2,
+          "returning": 7
+        }
+      }
+    },
+    {
+      "id": "s4-mayrau-2026",
+      "name": "Mayrau Shred Fest",
+      "shortLabel": "MSF",
+      "seasonId": 4,
+      "seasonLabel": "2026",
+      "sortKey": 403,
+      "isFinals": false,
+      "series": "Mayrau Shred Fest",
+      "total": 23,
+      "new": 3,
+      "returning": 20,
+      "returnRate": 0.87,
+      "byCategory": {
+        "open": 23,
+        "female": 0,
+        "groms": 0
+      },
+      "categories": {
+        "open": {
+          "total": 23,
+          "new": 3,
+          "returning": 20
+        },
+        "female": {
           "total": 0,
           "new": 0,
           "returning": 0
+        },
+        "groms": {
+          "total": 0,
+          "new": 0,
+          "returning": 0
+        }
+      }
+    },
+    {
+      "id": "s4-fth-2026",
+      "name": "Float The Highlands",
+      "shortLabel": "FTH",
+      "seasonId": 4,
+      "seasonLabel": "2026",
+      "sortKey": 404,
+      "isFinals": false,
+      "series": "Float The Highlands",
+      "total": 43,
+      "new": 4,
+      "returning": 39,
+      "returnRate": 0.907,
+      "byCategory": {
+        "open": 31,
+        "female": 4,
+        "groms": 8
+      },
+      "categories": {
+        "open": {
+          "total": 31,
+          "new": 3,
+          "returning": 28
+        },
+        "female": {
+          "total": 4,
+          "new": 1,
+          "returning": 3
+        },
+        "groms": {
+          "total": 8,
+          "new": 0,
+          "returning": 8
         }
       }
     }
@@ -928,14 +1000,14 @@
     {
       "id": 4,
       "label": "2026",
-      "uniqueRiders": 156,
-      "newRiders": 55,
-      "returningRiders": 101,
-      "eventCount": 3,
+      "uniqueRiders": 176,
+      "newRiders": 64,
+      "returningRiders": 112,
+      "eventCount": 5,
       "byCategory": {
-        "open": 130,
-        "female": 6,
-        "groms": 20
+        "open": 145,
+        "female": 7,
+        "groms": 24
       }
     }
   ],
@@ -1106,7 +1178,21 @@
       "eventId": "s4-tfc-2026",
       "label": "TFC",
       "seasonLabel": "2026",
-      "cumulativeRiders": 397
+      "cumulativeRiders": 399
+    },
+    {
+      "sortKey": 403,
+      "eventId": "s4-mayrau-2026",
+      "label": "MSF",
+      "seasonLabel": "2026",
+      "cumulativeRiders": 402
+    },
+    {
+      "sortKey": 404,
+      "eventId": "s4-fth-2026",
+      "label": "FTH",
+      "seasonLabel": "2026",
+      "cumulativeRiders": 406
     }
   ],
   "series": [
@@ -1164,6 +1250,13 @@
           "sortKey": 205,
           "total": 45,
           "eventName": "Float The Highlands"
+        },
+        {
+          "seasonLabel": "2026",
+          "seasonId": 4,
+          "sortKey": 404,
+          "total": 43,
+          "eventName": "Float The Highlands"
         }
       ]
     },
@@ -1182,6 +1275,13 @@
           "seasonId": 3,
           "sortKey": 304,
           "total": 34,
+          "eventName": "Mayrau Shred Fest"
+        },
+        {
+          "seasonLabel": "2026",
+          "seasonId": 4,
+          "sortKey": 403,
+          "total": 23,
           "eventName": "Mayrau Shred Fest"
         }
       ]
@@ -1226,7 +1326,7 @@
           "seasonLabel": "2026",
           "seasonId": 4,
           "sortKey": 402,
-          "total": 44,
+          "total": 54,
           "eventName": "The Float Connection"
         }
       ]
@@ -1273,19 +1373,19 @@
   "participationHistogram": [
     {
       "eventsAttended": 1,
-      "riderCount": 192
+      "riderCount": 185
     },
     {
       "eventsAttended": 2,
-      "riderCount": 72
+      "riderCount": 84
     },
     {
       "eventsAttended": 3,
-      "riderCount": 42
+      "riderCount": 43
     },
     {
       "eventsAttended": 4,
-      "riderCount": 24
+      "riderCount": 20
     },
     {
       "eventsAttended": 5,
@@ -1293,15 +1393,15 @@
     },
     {
       "eventsAttended": 6,
-      "riderCount": 15
+      "riderCount": 14
     },
     {
       "eventsAttended": 7,
-      "riderCount": 11
+      "riderCount": 13
     },
     {
       "eventsAttended": 8,
-      "riderCount": 5
+      "riderCount": 10
     },
     {
       "eventsAttended": 9,
@@ -1309,7 +1409,7 @@
     },
     {
       "eventsAttended": 10,
-      "riderCount": 2
+      "riderCount": 1
     },
     {
       "eventsAttended": 11,
@@ -1317,14 +1417,18 @@
     },
     {
       "eventsAttended": 12,
-      "riderCount": 1
+      "riderCount": 2
     },
     {
       "eventsAttended": 13,
-      "riderCount": 3
+      "riderCount": 2
     },
     {
       "eventsAttended": 14,
+      "riderCount": 1
+    },
+    {
+      "eventsAttended": 15,
       "riderCount": 2
     },
     {
@@ -1333,10 +1437,10 @@
     },
     {
       "eventsAttended": 17,
-      "riderCount": 1
+      "riderCount": 2
     },
     {
-      "eventsAttended": 20,
+      "eventsAttended": 22,
       "riderCount": 1
     }
   ],
@@ -1348,10 +1452,10 @@
       "seasonLabel": "2023",
       "name": "Gattinara Wine & Trails",
       "isFinals": false,
-      "total": 14,
-      "shareOfField": 0.264,
+      "total": 13,
+      "shareOfField": 0.245,
       "byCategory": {
-        "open": 14,
+        "open": 13,
         "female": 0,
         "groms": 0
       }
@@ -1453,10 +1557,10 @@
       "seasonLabel": "2023/24",
       "name": "Float The Highlands",
       "isFinals": false,
-      "total": 6,
-      "shareOfField": 0.133,
+      "total": 5,
+      "shareOfField": 0.111,
       "byCategory": {
-        "open": 6,
+        "open": 5,
         "female": 0,
         "groms": 0
       }
@@ -1603,10 +1707,10 @@
       "seasonLabel": "2025",
       "name": "Mayrau Shred Fest",
       "isFinals": false,
-      "total": 9,
-      "shareOfField": 0.265,
+      "total": 7,
+      "shareOfField": 0.206,
       "byCategory": {
-        "open": 8,
+        "open": 6,
         "female": 1,
         "groms": 0
       }
@@ -1618,11 +1722,11 @@
       "seasonLabel": "2025",
       "name": "Danish Onewheel Games",
       "isFinals": false,
-      "total": 6,
-      "shareOfField": 0.273,
+      "total": 5,
+      "shareOfField": 0.227,
       "byCategory": {
         "open": 3,
-        "female": 1,
+        "female": 0,
         "groms": 2
       }
     },
@@ -1663,10 +1767,10 @@
       "seasonLabel": "2026",
       "name": "Wacky Wheels",
       "isFinals": false,
-      "total": 7,
-      "shareOfField": 0.269,
+      "total": 5,
+      "shareOfField": 0.192,
       "byCategory": {
-        "open": 7,
+        "open": 5,
         "female": 0,
         "groms": 0
       }
@@ -1678,12 +1782,12 @@
       "seasonLabel": "2026",
       "name": "Shred The Shires",
       "isFinals": false,
-      "total": 33,
-      "shareOfField": 0.292,
+      "total": 25,
+      "shareOfField": 0.221,
       "byCategory": {
-        "open": 22,
+        "open": 18,
         "female": 1,
-        "groms": 10
+        "groms": 6
       }
     },
     {
@@ -1693,11 +1797,41 @@
       "seasonLabel": "2026",
       "name": "The Float Connection",
       "isFinals": false,
-      "total": 11,
-      "shareOfField": 0.25,
+      "total": 12,
+      "shareOfField": 0.222,
       "byCategory": {
         "open": 9,
         "female": 2,
+        "groms": 1
+      }
+    },
+    {
+      "eventId": "s4-mayrau-2026",
+      "sortKey": 403,
+      "shortLabel": "MSF",
+      "seasonLabel": "2026",
+      "name": "Mayrau Shred Fest",
+      "isFinals": false,
+      "total": 3,
+      "shareOfField": 0.13,
+      "byCategory": {
+        "open": 3,
+        "female": 0,
+        "groms": 0
+      }
+    },
+    {
+      "eventId": "s4-fth-2026",
+      "sortKey": 404,
+      "shortLabel": "FTH",
+      "seasonLabel": "2026",
+      "name": "Float The Highlands",
+      "isFinals": false,
+      "total": 4,
+      "shareOfField": 0.093,
+      "byCategory": {
+        "open": 3,
+        "female": 1,
         "groms": 0
       }
     }
