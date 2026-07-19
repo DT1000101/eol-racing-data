@@ -1,8 +1,8 @@
 {
   "meta": {
-    "generatedAt": "2026-07-19T19:26:31.648076+00:00",
-    "totalRiders": 406,
-    "ridersWithResults": 406,
+    "generatedAt": "2026-07-19T19:45:38.120769+00:00",
+    "totalRiders": 405,
+    "ridersWithResults": 405,
     "eventsHeld": 26,
     "totalFinishes": 1155,
     "avgAttendance": 44.4,
@@ -12,7 +12,7 @@
       "seasonLabel": "2026"
     },
     "oneEventRiders": 185,
-    "multiEventRiders": 221,
+    "multiEventRiders": 220,
     "categoryLabels": {
       "open": "Open / Men",
       "female": "Women",
@@ -822,9 +822,9 @@
       "isFinals": false,
       "series": "Shred The Shires",
       "total": 113,
-      "new": 44,
-      "returning": 69,
-      "returnRate": 0.611,
+      "new": 43,
+      "returning": 70,
+      "returnRate": 0.619,
       "byCategory": {
         "open": 89,
         "female": 4,
@@ -833,8 +833,8 @@
       "categories": {
         "open": {
           "total": 89,
-          "new": 25,
-          "returning": 64
+          "new": 24,
+          "returning": 65
         },
         "female": {
           "total": 4,
@@ -1001,8 +1001,8 @@
       "id": 4,
       "label": "2026",
       "uniqueRiders": 176,
-      "newRiders": 64,
-      "returningRiders": 112,
+      "newRiders": 63,
+      "returningRiders": 113,
       "eventCount": 5,
       "byCategory": {
         "open": 145,
@@ -1171,28 +1171,28 @@
       "eventId": "s4-sts-2026",
       "label": "STS",
       "seasonLabel": "2026",
-      "cumulativeRiders": 386
+      "cumulativeRiders": 385
     },
     {
       "sortKey": 402,
       "eventId": "s4-tfc-2026",
       "label": "TFC",
       "seasonLabel": "2026",
-      "cumulativeRiders": 399
+      "cumulativeRiders": 398
     },
     {
       "sortKey": 403,
       "eventId": "s4-mayrau-2026",
       "label": "MSF",
       "seasonLabel": "2026",
-      "cumulativeRiders": 402
+      "cumulativeRiders": 401
     },
     {
       "sortKey": 404,
       "eventId": "s4-fth-2026",
       "label": "FTH",
       "seasonLabel": "2026",
-      "cumulativeRiders": 406
+      "cumulativeRiders": 405
     }
   ],
   "series": [
@@ -1377,11 +1377,11 @@
     },
     {
       "eventsAttended": 2,
-      "riderCount": 84
+      "riderCount": 83
     },
     {
       "eventsAttended": 3,
-      "riderCount": 43
+      "riderCount": 42
     },
     {
       "eventsAttended": 4,
@@ -1389,7 +1389,7 @@
     },
     {
       "eventsAttended": 5,
-      "riderCount": 18
+      "riderCount": 19
     },
     {
       "eventsAttended": 6,

@@ -348,6 +348,7 @@ RIDER_ID_ALIASES = {
     "remigiusz-nowak": "remigius-nowak",
     "daithi-o-brandain": "daithi-o-brandon",
     "leylazi-henderson-jaye": "leyla-zi",
+    "henry-dunn": "henry-livingstone-dunn",
 }
 
 CANONICAL_OVERRIDES = {
@@ -361,6 +362,7 @@ CANONICAL_OVERRIDES = {
     "martin-dunnage": "Martin Dunnage",
     "rachel-schatzmann": "Rachel Schatzmann",
     "leyla-zi": "Leyla Zi",
+    "henry-livingstone-dunn": "Henry Livingstone Dunn",
 }
 
 LEAGUE_RULES = {
