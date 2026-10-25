@@ -403,17 +403,14 @@ def progress_rows(riders: list[dict]) -> str:
             delta_attr = str(delta)
             pct_attr = str(item["pct"])
             rank_attr = str(rank_2026)
-        best_year = item["best_year"]
-        bold_2026 = best_year in ("2026", "both")
-        bold_2025 = best_year in ("2025", "both")
         sec_2026 = "" if item["sec_2026"] is None else item["sec_2026"]
         sec_2025 = "" if item["sec_2025"] is None else item["sec_2025"]
         rows.append(
             f"""<tr data-name="{html.escape(fold(item['name']))}" data-best="{item['best']}" data-y2026="{sec_2026}" data-y2025="{sec_2025}" data-delta="{delta_attr}" data-pct="{pct_attr}" data-rank="{rank_attr}">
               <td class="name">{html.escape(item['name'])}</td>
               <td class="num year-best">{html.escape(item['best_time'])}</td>
-              {year_cell(item['time_2026'], bold_2026)}
-              {year_cell(item['time_2025'], bold_2025)}
+              {year_cell(item['time_2026'], False)}
+              {year_cell(item['time_2025'], False)}
               {change}
               {pct}
               {rank}
@@ -436,7 +433,7 @@ def progress_page(riders: list[dict], links: dict[str, str]) -> str:
     <header class="top">
       <p class="eyebrow">Onewheel Algarve</p>
       <h1>How the lap changed</h1>
-      <p class="lede">Sorted by each rider’s fastest lap from either year. The year that set it is in bold. To the right of the line, change is the 2026 lap minus the 2025 lap. A negative number is faster. n/a means they have no lap that year.</p>
+      <p class="lede">Sorted by each rider’s fastest lap from either year. To the right of the line, change is the 2026 lap minus the 2025 lap. A negative number is faster. n/a means they have no lap that year.</p>
       {nav("progress", links)}
     </header>
     <div class="kpis">
