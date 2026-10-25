@@ -46,6 +46,8 @@ ALIASES = {
     "adrian krige": "adrian krige",
     "lars lot trip": "lars lottrup",
     "lars lottrup": "lars lottrup",
+    "jeffrey jaffa gaming": "jaffa gamon",
+    "jaffa gamon": "jaffa gamon",
 }
 
 DISPLAY = {
@@ -63,6 +65,7 @@ DISPLAY = {
     "adrian krige": "Adrian Krige",
     "lars lottrup": "Lars Lottrup",
     "sam o connell": "Sam O'Connell",
+    "jaffa gamon": "Jaffa Gamon",
 }
 
 
@@ -330,7 +333,7 @@ def year_table(riders: list[dict], year: str) -> str:
         rows.append(
             f"""<tr>
               <td class="rank">{rider['rank']}</td>
-              <td class="name">{html.escape(rider['name'])}<span class="cat">{html.escape(rider['category'])}</span></td>
+              <td class="name">{html.escape(display_name(canon(rider['name']), rider))}<span class="cat">{html.escape(rider['category'])}</span></td>
               <td class="time">{html.escape(rider['fastest_time'])}</td>
               <td class="gap">{gap_text}</td>
             </tr>"""
@@ -465,7 +468,7 @@ def progress_page(riders: list[dict], links: dict[str, str]) -> str:
         </tbody>
       </table>
     </div>
-    <p class="note">Spelling differences are treated as the same rider, including Dan Turner / Daniel Turner, Henry Ld / Henry Livingstone Dunn, Florent Audrit / Florent Audit, and Quirine / Qurine Posno. 2026 legends short-track times are not used here. Rank is the place in that year’s full best-lap list. Green rank means a higher place in 2026.</p>
+    <p class="note">Spelling differences are treated as the same rider, including Dan Turner / Daniel Turner, Henry Ld / Henry Livingstone Dunn, Jeffrey Jaffa Gaming / Jaffa Gamon, Florent Audrit / Florent Audit, and Quirine / Qurine Posno. 2026 legends short-track times are not used here. Rank is the place in that year’s full best-lap list. Green rank means a higher place in 2026.</p>
     <script>
       const table = document.querySelector("#both tbody");
       const find = document.querySelector("#find");

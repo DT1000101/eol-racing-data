@@ -44,6 +44,8 @@ const ALIASES: Record<string, string> = {
   "adrian krige": "adrian krige",
   "lars lot trip": "lars lottrup",
   "lars lottrup": "lars lottrup",
+  "jeffrey jaffa gaming": "jaffa gamon",
+  "jaffa gamon": "jaffa gamon",
 };
 
 const DISPLAY: Record<string, string> = {
@@ -61,6 +63,7 @@ const DISPLAY: Record<string, string> = {
   "adrian krige": "Adrian Krige",
   "lars lottrup": "Lars Lottrup",
   "sam o connell": "Sam O'Connell",
+  "jaffa gamon": "Jaffa Gamon",
 };
 
 export function foldName(name: string): string {
