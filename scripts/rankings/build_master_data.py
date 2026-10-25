@@ -617,7 +617,10 @@ def parse_overall_xlsx(path: Path, season: int) -> tuple[list[dict], list[dict]]
                     team = str(tv).strip()
             rank = parse_num(df.iloc[r, 2])
             total = parse_num(df.iloc[r, total_col])
-            season_pos = parse_num(df.iloc[r, pos_col])
+            # 2026: column 6 is the EOL Finals finish (or a note such as *Injury*),
+            # not the season place. Season place is the rank in column 2.
+            raw_place = df.iloc[r, pos_col]
+            season_pos = None if is_s4 else parse_num(raw_place)
             ev_pts = {}
             point_values: list[float] = []
             for eid, cm in col_map.items():
@@ -645,6 +648,13 @@ def parse_overall_xlsx(path: Path, season: int) -> tuple[list[dict], list[dict]]
                 if not pos_i and not (pts_i and pts_i > 0):
                     continue
                 ev_pts[eid] = {"position": pos_i, "points": pts_i or 0}
+            if is_s4:
+                finals_pos = parse_num(raw_place)
+                if finals_pos and finals_pos > 0:
+                    ev_pts["s4-finals-2026"] = {
+                        "position": int(finals_pos),
+                        "points": 0,
+                    }
             for eid, ed in ev_pts.items():
                 if ed["position"] or ed["points"]:
                     events.append({

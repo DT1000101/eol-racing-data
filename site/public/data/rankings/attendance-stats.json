@@ -1,18 +1,18 @@
 {
   "meta": {
-    "generatedAt": "2026-07-19T19:45:38.120769+00:00",
-    "totalRiders": 405,
-    "ridersWithResults": 405,
-    "eventsHeld": 26,
-    "totalFinishes": 1155,
-    "avgAttendance": 44.4,
+    "generatedAt": "2026-10-25T15:11:36.694710+00:00",
+    "totalRiders": 410,
+    "ridersWithResults": 410,
+    "eventsHeld": 28,
+    "totalFinishes": 1223,
+    "avgAttendance": 43.6,
     "biggestEvent": {
       "name": "Shred The Shires",
       "total": 113,
       "seasonLabel": "2026"
     },
-    "oneEventRiders": 185,
-    "multiEventRiders": 220,
+    "oneEventRiders": 181,
+    "multiEventRiders": 229,
     "categoryLabels": {
       "open": "Open / Men",
       "female": "Women",
@@ -955,6 +955,78 @@
           "returning": 8
         }
       }
+    },
+    {
+      "id": "s4-dog-2026",
+      "name": "Danish Onewheel Games",
+      "shortLabel": "DOG",
+      "seasonId": 4,
+      "seasonLabel": "2026",
+      "sortKey": 405,
+      "isFinals": false,
+      "series": "Danish Onewheel Games",
+      "total": 24,
+      "new": 4,
+      "returning": 20,
+      "returnRate": 0.833,
+      "byCategory": {
+        "open": 22,
+        "female": 0,
+        "groms": 3
+      },
+      "categories": {
+        "open": {
+          "total": 22,
+          "new": 2,
+          "returning": 20
+        },
+        "female": {
+          "total": 0,
+          "new": 0,
+          "returning": 0
+        },
+        "groms": {
+          "total": 3,
+          "new": 2,
+          "returning": 1
+        }
+      }
+    },
+    {
+      "id": "s4-finals-2026",
+      "name": "EOL Finals 2026",
+      "shortLabel": "EF2",
+      "seasonId": 4,
+      "seasonLabel": "2026",
+      "sortKey": 406,
+      "isFinals": true,
+      "series": "EOL Finals",
+      "total": 43,
+      "new": 2,
+      "returning": 41,
+      "returnRate": 0.953,
+      "byCategory": {
+        "open": 32,
+        "female": 4,
+        "groms": 7
+      },
+      "categories": {
+        "open": {
+          "total": 32,
+          "new": 1,
+          "returning": 31
+        },
+        "female": {
+          "total": 4,
+          "new": 1,
+          "returning": 3
+        },
+        "groms": {
+          "total": 7,
+          "new": 0,
+          "returning": 7
+        }
+      }
     }
   ],
   "seasons": [
@@ -1000,14 +1072,14 @@
     {
       "id": 4,
       "label": "2026",
-      "uniqueRiders": 176,
-      "newRiders": 63,
-      "returningRiders": 113,
-      "eventCount": 5,
+      "uniqueRiders": 197,
+      "newRiders": 68,
+      "returningRiders": 129,
+      "eventCount": 7,
       "byCategory": {
-        "open": 145,
-        "female": 7,
-        "groms": 24
+        "open": 164,
+        "female": 8,
+        "groms": 26
       }
     }
   ],
@@ -1193,6 +1265,20 @@
       "label": "FTH",
       "seasonLabel": "2026",
       "cumulativeRiders": 405
+    },
+    {
+      "sortKey": 405,
+      "eventId": "s4-dog-2026",
+      "label": "DOG",
+      "seasonLabel": "2026",
+      "cumulativeRiders": 408
+    },
+    {
+      "sortKey": 406,
+      "eventId": "s4-finals-2026",
+      "label": "EF2",
+      "seasonLabel": "2026",
+      "cumulativeRiders": 410
     }
   ],
   "series": [
@@ -1211,6 +1297,13 @@
           "seasonId": 3,
           "sortKey": 305,
           "total": 22,
+          "eventName": "Danish Onewheel Games"
+        },
+        {
+          "seasonLabel": "2026",
+          "seasonId": 4,
+          "sortKey": 405,
+          "total": 24,
           "eventName": "Danish Onewheel Games"
         }
       ]
@@ -1231,6 +1324,13 @@
           "sortKey": 307,
           "total": 48,
           "eventName": "EOL Finals 2025"
+        },
+        {
+          "seasonLabel": "2026",
+          "seasonId": 4,
+          "sortKey": 406,
+          "total": 43,
+          "eventName": "EOL Finals 2026"
         }
       ]
     },
@@ -1373,31 +1473,31 @@
   "participationHistogram": [
     {
       "eventsAttended": 1,
-      "riderCount": 185
+      "riderCount": 181
     },
     {
       "eventsAttended": 2,
-      "riderCount": 83
+      "riderCount": 80
     },
     {
       "eventsAttended": 3,
-      "riderCount": 42
+      "riderCount": 52
     },
     {
       "eventsAttended": 4,
-      "riderCount": 20
+      "riderCount": 21
     },
     {
       "eventsAttended": 5,
-      "riderCount": 19
+      "riderCount": 12
     },
     {
       "eventsAttended": 6,
-      "riderCount": 14
+      "riderCount": 13
     },
     {
       "eventsAttended": 7,
-      "riderCount": 13
+      "riderCount": 17
     },
     {
       "eventsAttended": 8,
@@ -1405,31 +1505,31 @@
     },
     {
       "eventsAttended": 9,
-      "riderCount": 3
+      "riderCount": 5
     },
     {
       "eventsAttended": 10,
-      "riderCount": 1
-    },
-    {
-      "eventsAttended": 11,
       "riderCount": 4
     },
     {
-      "eventsAttended": 12,
+      "eventsAttended": 11,
       "riderCount": 2
+    },
+    {
+      "eventsAttended": 12,
+      "riderCount": 4
     },
     {
       "eventsAttended": 13,
-      "riderCount": 2
-    },
-    {
-      "eventsAttended": 14,
       "riderCount": 1
     },
     {
-      "eventsAttended": 15,
+      "eventsAttended": 14,
       "riderCount": 2
+    },
+    {
+      "eventsAttended": 15,
+      "riderCount": 1
     },
     {
       "eventsAttended": 16,
@@ -1437,10 +1537,14 @@
     },
     {
       "eventsAttended": 17,
+      "riderCount": 1
+    },
+    {
+      "eventsAttended": 18,
       "riderCount": 2
     },
     {
-      "eventsAttended": 22,
+      "eventsAttended": 23,
       "riderCount": 1
     }
   ],
@@ -1497,10 +1601,10 @@
       "seasonLabel": "2023/24",
       "name": "Wanyi Onewheel Weekend",
       "isFinals": false,
-      "total": 7,
-      "shareOfField": 0.135,
+      "total": 6,
+      "shareOfField": 0.115,
       "byCategory": {
-        "open": 7,
+        "open": 6,
         "female": 0,
         "groms": 0
       }
@@ -1692,10 +1796,10 @@
       "seasonLabel": "2025",
       "name": "Swiss Race Tournament",
       "isFinals": false,
-      "total": 12,
-      "shareOfField": 0.214,
+      "total": 11,
+      "shareOfField": 0.196,
       "byCategory": {
-        "open": 9,
+        "open": 8,
         "female": 0,
         "groms": 3
       }
@@ -1707,10 +1811,10 @@
       "seasonLabel": "2025",
       "name": "Mayrau Shred Fest",
       "isFinals": false,
-      "total": 7,
-      "shareOfField": 0.206,
+      "total": 5,
+      "shareOfField": 0.147,
       "byCategory": {
-        "open": 6,
+        "open": 4,
         "female": 1,
         "groms": 0
       }
@@ -1722,12 +1826,12 @@
       "seasonLabel": "2025",
       "name": "Danish Onewheel Games",
       "isFinals": false,
-      "total": 5,
-      "shareOfField": 0.227,
+      "total": 1,
+      "shareOfField": 0.045,
       "byCategory": {
-        "open": 3,
+        "open": 0,
         "female": 0,
-        "groms": 2
+        "groms": 1
       }
     },
     {
@@ -1827,10 +1931,40 @@
       "seasonLabel": "2026",
       "name": "Float The Highlands",
       "isFinals": false,
-      "total": 4,
-      "shareOfField": 0.093,
+      "total": 3,
+      "shareOfField": 0.07,
       "byCategory": {
-        "open": 3,
+        "open": 2,
+        "female": 1,
+        "groms": 0
+      }
+    },
+    {
+      "eventId": "s4-dog-2026",
+      "sortKey": 405,
+      "shortLabel": "DOG",
+      "seasonLabel": "2026",
+      "name": "Danish Onewheel Games",
+      "isFinals": false,
+      "total": 3,
+      "shareOfField": 0.125,
+      "byCategory": {
+        "open": 2,
+        "female": 0,
+        "groms": 1
+      }
+    },
+    {
+      "eventId": "s4-finals-2026",
+      "sortKey": 406,
+      "shortLabel": "EF2",
+      "seasonLabel": "2026",
+      "name": "EOL Finals 2026",
+      "isFinals": true,
+      "total": 2,
+      "shareOfField": 0.047,
+      "byCategory": {
+        "open": 1,
         "female": 1,
         "groms": 0
       }
