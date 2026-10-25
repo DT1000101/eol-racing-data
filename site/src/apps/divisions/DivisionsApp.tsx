@@ -128,7 +128,11 @@ export function DivisionsApp() {
         <p className="event-source">
           Best lap from every standard-track session at OWA 2026. Legends
           raced a shorter track and are a separate event.{" "}
-          <a href="/owa-2026-best-times.html">Open the full ranked table</a>
+          <a href="/owa-2026-best-times.html">Ranked table</a>
+          {" · "}
+          <a href="/owa-2025-vs-2026.html">2025 beside 2026</a>
+          {" · "}
+          <a href="/owa-progression.html">Who got faster</a>
         </p>
       )}
       {eventData?.id === "owa-2026-legends" && (

@@ -1,0 +1,718 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>OWA 2025 and 2026</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,600;9..40,700&display=swap" rel="stylesheet">
+  <style>
+:root {
+  --bg: #101114;
+  --card: #181b21;
+  --line: #2c313a;
+  --text: #f3f4f6;
+  --muted: #9aa3af;
+  --gold: #e0b84a;
+  --gold-dim: #8d7430;
+  --faster: #7dcea0;
+  --slower: #e08b8b;
+  --same: #9aa3af;
+  --row: #14171c;
+  --row-alt: #1b1f26;
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  font-family: "DM Sans", system-ui, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.4;
+}
+a { color: var(--gold); text-decoration: none; }
+a:hover { text-decoration: underline; }
+.wrap { max-width: 1180px; margin: 0 auto; padding: 1.5rem 1.1rem 3rem; }
+.wrap--wide { max-width: 1280px; }
+header.top { margin-bottom: 1.25rem; }
+.eyebrow {
+  margin: 0 0 0.25rem;
+  color: var(--gold);
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  font-size: 0.72rem;
+  font-weight: 700;
+}
+h1 { margin: 0 0 0.35rem; font-size: 1.85rem; letter-spacing: -0.03em; }
+.lede { margin: 0 0 0.8rem; color: var(--muted); max-width: 40rem; }
+nav.pages { display: flex; flex-wrap: wrap; gap: 0.45rem; margin: 0.2rem 0 0; }
+nav.pages a {
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  padding: 0.28rem 0.7rem;
+  color: var(--text);
+  font-size: 0.85rem;
+}
+nav.pages a[aria-current="page"] {
+  background: var(--gold);
+  border-color: var(--gold);
+  color: #1a1404;
+  font-weight: 700;
+}
+.split {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.9rem;
+  align-items: start;
+}
+@media (max-width: 860px) {
+  .split { grid-template-columns: 1fr; }
+}
+.panel {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  overflow: hidden;
+}
+.year {
+  position: sticky;
+  top: 0;
+  z-index: 3;
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 0.75rem;
+  padding: 0.75rem 0.9rem;
+  background: #141820;
+  border-bottom: 1px solid var(--line);
+}
+.year h2 { margin: 0; font-size: 1.15rem; }
+.year p { margin: 0; color: var(--muted); font-size: 0.8rem; }
+table { width: 100%; border-collapse: collapse; }
+th, td { padding: 0.42rem 0.65rem; text-align: left; }
+thead th {
+  position: sticky;
+  top: 49px;
+  z-index: 2;
+  background: #20242c;
+  color: var(--muted);
+  font-size: 0.68rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+.panel thead th { top: 49px; }
+tbody tr:nth-child(odd) { background: var(--row); }
+tbody tr:nth-child(even) { background: var(--row-alt); }
+.rank { color: var(--gold); font-variant-numeric: tabular-nums; font-weight: 700; width: 2.4rem; }
+.time, .num { font-variant-numeric: tabular-nums; font-family: "DM Sans", ui-monospace, monospace; }
+.name { font-weight: 600; }
+.gap { color: var(--muted); font-variant-numeric: tabular-nums; font-size: 0.85rem; }
+.cat {
+  display: inline-block;
+  margin-left: 0.35rem;
+  color: var(--muted);
+  font-size: 0.72rem;
+  font-weight: 500;
+}
+.kpis { display: flex; flex-wrap: wrap; gap: 0.6rem; margin: 0 0 1rem; }
+.kpi {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 0.7rem 0.85rem;
+  min-width: 8.5rem;
+}
+.kpi b { display: block; font-size: 1.25rem; letter-spacing: -0.03em; }
+.kpi span { color: var(--muted); font-size: 0.75rem; }
+.tools { display: flex; flex-wrap: wrap; gap: 0.6rem; align-items: center; margin-bottom: 0.7rem; }
+input[type="search"] {
+  background: var(--card);
+  color: var(--text);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 0.45rem 0.65rem;
+  font: inherit;
+  min-width: 14rem;
+}
+th button {
+  all: unset;
+  cursor: pointer;
+  color: inherit;
+  font: inherit;
+  letter-spacing: inherit;
+  text-transform: inherit;
+}
+th button:hover { color: var(--text); }
+.faster { color: var(--faster); font-weight: 700; }
+.slower { color: var(--slower); font-weight: 700; }
+.same { color: var(--same); }
+.section { margin-top: 1.6rem; }
+.section h2 { margin: 0 0 0.35rem; font-size: 1.05rem; }
+.section .hint { margin: 0 0 0.6rem; color: var(--muted); font-size: 0.85rem; }
+.note { margin-top: 1.2rem; color: var(--muted); font-size: 0.8rem; }
+</style>
+</head>
+<body>
+  <div class="wrap wrap--wide">
+    
+    <header class="top">
+      <p class="eyebrow">Onewheel Algarve</p>
+      <h1>2025 and 2026</h1>
+      <p class="lede">Each rider’s best lap. 2025 is on the left, 2026 on the right. Off leader is the gap to that year’s fastest lap.</p>
+      <nav class="pages"><a href="owa-2026-best-times.html">2026 ranking</a><a href="owa-2025-vs-2026.html" aria-current="page">2025 beside 2026</a><a href="owa-progression.html">Who got faster</a></nav>
+    </header>
+    <div class="split">
+      
+    <section class="panel" aria-label="2025">
+      <div class="year">
+        <h2>2025</h2>
+        <p>50 riders · fastest 05:05.137</p>
+      </div>
+      <table>
+        <thead>
+          <tr><th>Rank</th><th>Rider</th><th>Best lap</th><th>Off leader</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+              <td class="rank">1</td>
+              <td class="name">Jay Kenward<span class="cat">Open</span></td>
+              <td class="time">05:05.137</td>
+              <td class="gap">—</td>
+            </tr><tr>
+              <td class="rank">2</td>
+              <td class="name">Daniel Turner<span class="cat">Open</span></td>
+              <td class="time">05:17.357</td>
+              <td class="gap">+12.220</td>
+            </tr><tr>
+              <td class="rank">3</td>
+              <td class="name">Alexis Matton<span class="cat">Open</span></td>
+              <td class="time">05:23.403</td>
+              <td class="gap">+18.266</td>
+            </tr><tr>
+              <td class="rank">4</td>
+              <td class="name">Henry Bisping<span class="cat">Groms</span></td>
+              <td class="time">05:52.083</td>
+              <td class="gap">+46.946</td>
+            </tr><tr>
+              <td class="rank">5</td>
+              <td class="name">Joel Jones<span class="cat">Open</span></td>
+              <td class="time">05:54.267</td>
+              <td class="gap">+49.130</td>
+            </tr><tr>
+              <td class="rank">6</td>
+              <td class="name">Indiana Mcfarlane<span class="cat">Groms</span></td>
+              <td class="time">06:02.510</td>
+              <td class="gap">+57.373</td>
+            </tr><tr>
+              <td class="rank">7</td>
+              <td class="name">Jonas Pflüger<span class="cat">Open</span></td>
+              <td class="time">06:02.663</td>
+              <td class="gap">+57.526</td>
+            </tr><tr>
+              <td class="rank">8</td>
+              <td class="name">Nico Stuart<span class="cat">Open</span></td>
+              <td class="time">06:08.030</td>
+              <td class="gap">+01:02.893</td>
+            </tr><tr>
+              <td class="rank">9</td>
+              <td class="name">Sam O’Connell<span class="cat">Open</span></td>
+              <td class="time">06:10.443</td>
+              <td class="gap">+01:05.306</td>
+            </tr><tr>
+              <td class="rank">10</td>
+              <td class="name">Jacob Jones<span class="cat">Open</span></td>
+              <td class="time">06:13.500</td>
+              <td class="gap">+01:08.363</td>
+            </tr><tr>
+              <td class="rank">11</td>
+              <td class="name">Geky Del Curto<span class="cat">Open</span></td>
+              <td class="time">06:18.273</td>
+              <td class="gap">+01:13.136</td>
+            </tr><tr>
+              <td class="rank">12</td>
+              <td class="name">Benoit Rousseaux<span class="cat">Open</span></td>
+              <td class="time">06:18.660</td>
+              <td class="gap">+01:13.523</td>
+            </tr><tr>
+              <td class="rank">13</td>
+              <td class="name">Henry Livingstone Dunn<span class="cat">Groms</span></td>
+              <td class="time">06:19.807</td>
+              <td class="gap">+01:14.670</td>
+            </tr><tr>
+              <td class="rank">14</td>
+              <td class="name">Zack McFarlane<span class="cat">Groms</span></td>
+              <td class="time">06:25.053</td>
+              <td class="gap">+01:19.916</td>
+            </tr><tr>
+              <td class="rank">15</td>
+              <td class="name">Jeffrey Jaffa Gaming<span class="cat">Open</span></td>
+              <td class="time">06:27.307</td>
+              <td class="gap">+01:22.170</td>
+            </tr><tr>
+              <td class="rank">16</td>
+              <td class="name">Florent Audit<span class="cat">Open</span></td>
+              <td class="time">06:27.327</td>
+              <td class="gap">+01:22.190</td>
+            </tr><tr>
+              <td class="rank">17</td>
+              <td class="name">Noah Gamon<span class="cat">Groms</span></td>
+              <td class="time">06:31.967</td>
+              <td class="gap">+01:26.830</td>
+            </tr><tr>
+              <td class="rank">18</td>
+              <td class="name">Thorkild Rasmussen<span class="cat">Open</span></td>
+              <td class="time">06:49.130</td>
+              <td class="gap">+01:43.993</td>
+            </tr><tr>
+              <td class="rank">19</td>
+              <td class="name">Jessica Jones<span class="cat">Women</span></td>
+              <td class="time">06:49.270</td>
+              <td class="gap">+01:44.133</td>
+            </tr><tr>
+              <td class="rank">20</td>
+              <td class="name">Clint Lashley<span class="cat">Open</span></td>
+              <td class="time">06:56.280</td>
+              <td class="gap">+01:51.143</td>
+            </tr><tr>
+              <td class="rank">21</td>
+              <td class="name">Gerard Rincon<span class="cat">Open</span></td>
+              <td class="time">06:56.523</td>
+              <td class="gap">+01:51.386</td>
+            </tr><tr>
+              <td class="rank">22</td>
+              <td class="name">Adrian Kruger<span class="cat">Open</span></td>
+              <td class="time">07:00.170</td>
+              <td class="gap">+01:55.033</td>
+            </tr><tr>
+              <td class="rank">23</td>
+              <td class="name">Vid Gladovic<span class="cat">Open</span></td>
+              <td class="time">07:01.360</td>
+              <td class="gap">+01:56.223</td>
+            </tr><tr>
+              <td class="rank">24</td>
+              <td class="name">Radim Klaška<span class="cat">Open</span></td>
+              <td class="time">07:06.260</td>
+              <td class="gap">+02:01.123</td>
+            </tr><tr>
+              <td class="rank">25</td>
+              <td class="name">Thomas Skovgaard<span class="cat">Groms</span></td>
+              <td class="time">07:08.303</td>
+              <td class="gap">+02:03.166</td>
+            </tr><tr>
+              <td class="rank">26</td>
+              <td class="name">Joselito Dendoncker<span class="cat">Open</span></td>
+              <td class="time">07:11.177</td>
+              <td class="gap">+02:06.040</td>
+            </tr><tr>
+              <td class="rank">27</td>
+              <td class="name">James Grant<span class="cat">Open</span></td>
+              <td class="time">07:12.183</td>
+              <td class="gap">+02:07.046</td>
+            </tr><tr>
+              <td class="rank">28</td>
+              <td class="name">Wickor Sowinski<span class="cat">Open</span></td>
+              <td class="time">07:18.223</td>
+              <td class="gap">+02:13.086</td>
+            </tr><tr>
+              <td class="rank">29</td>
+              <td class="name">James Pitcher<span class="cat">Open</span></td>
+              <td class="time">07:18.907</td>
+              <td class="gap">+02:13.770</td>
+            </tr><tr>
+              <td class="rank">30</td>
+              <td class="name">Fabian Scherrer<span class="cat">Wildcard</span></td>
+              <td class="time">07:23.000</td>
+              <td class="gap">+02:17.863</td>
+            </tr><tr>
+              <td class="rank">31</td>
+              <td class="name">Radom Klaška<span class="cat">Wildcard</span></td>
+              <td class="time">07:23.330</td>
+              <td class="gap">+02:18.193</td>
+            </tr><tr>
+              <td class="rank">32</td>
+              <td class="name">Eduardo Stralis Pavese<span class="cat">Wildcard</span></td>
+              <td class="time">07:23.790</td>
+              <td class="gap">+02:18.653</td>
+            </tr><tr>
+              <td class="rank">33</td>
+              <td class="name">Barbara Tokarska<span class="cat">Women</span></td>
+              <td class="time">07:30.747</td>
+              <td class="gap">+02:25.610</td>
+            </tr><tr>
+              <td class="rank">34</td>
+              <td class="name">Eduardo Queralto<span class="cat">Open</span></td>
+              <td class="time">07:34.820</td>
+              <td class="gap">+02:29.683</td>
+            </tr><tr>
+              <td class="rank">35</td>
+              <td class="name">Leyla Zi<span class="cat">Women</span></td>
+              <td class="time">07:37.330</td>
+              <td class="gap">+02:32.193</td>
+            </tr><tr>
+              <td class="rank">36</td>
+              <td class="name">Max Mcfarlane<span class="cat">Groms</span></td>
+              <td class="time">07:37.690</td>
+              <td class="gap">+02:32.553</td>
+            </tr><tr>
+              <td class="rank">37</td>
+              <td class="name">Tobi Sünder<span class="cat">Open</span></td>
+              <td class="time">07:38.883</td>
+              <td class="gap">+02:33.746</td>
+            </tr><tr>
+              <td class="rank">38</td>
+              <td class="name">Fábio Costa<span class="cat">Open</span></td>
+              <td class="time">07:45.987</td>
+              <td class="gap">+02:40.850</td>
+            </tr><tr>
+              <td class="rank">39</td>
+              <td class="name">Chantelle Warner-wells<span class="cat">Women</span></td>
+              <td class="time">07:47.630</td>
+              <td class="gap">+02:42.493</td>
+            </tr><tr>
+              <td class="rank">40</td>
+              <td class="name">Lars Lottrup<span class="cat">Legends</span></td>
+              <td class="time">07:48.700</td>
+              <td class="gap">+02:43.563</td>
+            </tr><tr>
+              <td class="rank">41</td>
+              <td class="name">Tomáš Mach<span class="cat">Open</span></td>
+              <td class="time">07:50.370</td>
+              <td class="gap">+02:45.233</td>
+            </tr><tr>
+              <td class="rank">42</td>
+              <td class="name">Kate Paxton<span class="cat">Women</span></td>
+              <td class="time">07:51.250</td>
+              <td class="gap">+02:46.113</td>
+            </tr><tr>
+              <td class="rank">43</td>
+              <td class="name">Jonas Bukrinski Andersen<span class="cat">Open</span></td>
+              <td class="time">07:51.917</td>
+              <td class="gap">+02:46.780</td>
+            </tr><tr>
+              <td class="rank">44</td>
+              <td class="name">Qurine Posno<span class="cat">Women</span></td>
+              <td class="time">07:54.043</td>
+              <td class="gap">+02:48.906</td>
+            </tr><tr>
+              <td class="rank">45</td>
+              <td class="name">Si Oppenheimer<span class="cat">Legends</span></td>
+              <td class="time">08:11.040</td>
+              <td class="gap">+03:05.903</td>
+            </tr><tr>
+              <td class="rank">46</td>
+              <td class="name">Mollie Stuart<span class="cat">Women</span></td>
+              <td class="time">08:34.553</td>
+              <td class="gap">+03:29.416</td>
+            </tr><tr>
+              <td class="rank">47</td>
+              <td class="name">Lars Lot trip<span class="cat">Open</span></td>
+              <td class="time">08:39.437</td>
+              <td class="gap">+03:34.300</td>
+            </tr><tr>
+              <td class="rank">48</td>
+              <td class="name">Nick Oppy<span class="cat">Open</span></td>
+              <td class="time">08:50.373</td>
+              <td class="gap">+03:45.236</td>
+            </tr><tr>
+              <td class="rank">49</td>
+              <td class="name">Chloe Jager<span class="cat">Women</span></td>
+              <td class="time">08:51.127</td>
+              <td class="gap">+03:45.990</td>
+            </tr><tr>
+              <td class="rank">50</td>
+              <td class="name">Coby Webb<span class="cat">Groms</span></td>
+              <td class="time">13:28.890</td>
+              <td class="gap">+08:23.753</td>
+            </tr>
+        </tbody>
+      </table>
+    </section>
+    
+      
+    <section class="panel" aria-label="2026">
+      <div class="year">
+        <h2>2026</h2>
+        <p>53 riders · fastest 04:58.250</p>
+      </div>
+      <table>
+        <thead>
+          <tr><th>Rank</th><th>Rider</th><th>Best lap</th><th>Off leader</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+              <td class="rank">1</td>
+              <td class="name">Henry Bisping<span class="cat">Open</span></td>
+              <td class="time">04:58.250</td>
+              <td class="gap">—</td>
+            </tr><tr>
+              <td class="rank">2</td>
+              <td class="name">Henry Ld<span class="cat">Open</span></td>
+              <td class="time">05:06.980</td>
+              <td class="gap">+8.730</td>
+            </tr><tr>
+              <td class="rank">3</td>
+              <td class="name">Alexis Matton<span class="cat">Open</span></td>
+              <td class="time">05:10.480</td>
+              <td class="gap">+12.230</td>
+            </tr><tr>
+              <td class="rank">4</td>
+              <td class="name">Joel Jones<span class="cat">Open</span></td>
+              <td class="time">05:16.600</td>
+              <td class="gap">+18.350</td>
+            </tr><tr>
+              <td class="rank">5</td>
+              <td class="name">Sep De Booser<span class="cat">Groms</span></td>
+              <td class="time">05:32.640</td>
+              <td class="gap">+34.390</td>
+            </tr><tr>
+              <td class="rank">6</td>
+              <td class="name">Jacob Jones<span class="cat">Open</span></td>
+              <td class="time">05:41.313</td>
+              <td class="gap">+43.063</td>
+            </tr><tr>
+              <td class="rank">7</td>
+              <td class="name">Thomas Ventoulou<span class="cat">Open</span></td>
+              <td class="time">05:42.720</td>
+              <td class="gap">+44.470</td>
+            </tr><tr>
+              <td class="rank">8</td>
+              <td class="name">Quirine Posno<span class="cat">Open</span></td>
+              <td class="time">05:44.820</td>
+              <td class="gap">+46.570</td>
+            </tr><tr>
+              <td class="rank">9</td>
+              <td class="name">Radim Klaska<span class="cat">Open</span></td>
+              <td class="time">05:47.983</td>
+              <td class="gap">+49.733</td>
+            </tr><tr>
+              <td class="rank">10</td>
+              <td class="name">Cedric Ackermann<span class="cat">Open</span></td>
+              <td class="time">05:51.057</td>
+              <td class="gap">+52.807</td>
+            </tr><tr>
+              <td class="rank">11</td>
+              <td class="name">Thomas Harasse<span class="cat">Open</span></td>
+              <td class="time">05:52.320</td>
+              <td class="gap">+54.070</td>
+            </tr><tr>
+              <td class="rank">12</td>
+              <td class="name">Dan Turner<span class="cat">Open</span></td>
+              <td class="time">05:52.370</td>
+              <td class="gap">+54.120</td>
+            </tr><tr>
+              <td class="rank">13</td>
+              <td class="name">Sam O&#x27;Connell<span class="cat">Open</span></td>
+              <td class="time">05:54.750</td>
+              <td class="gap">+56.500</td>
+            </tr><tr>
+              <td class="rank">14</td>
+              <td class="name">Zack Mcfarlane<span class="cat">Open</span></td>
+              <td class="time">05:56.980</td>
+              <td class="gap">+58.730</td>
+            </tr><tr>
+              <td class="rank">15</td>
+              <td class="name">Thorkild Rasmussen<span class="cat">Open</span></td>
+              <td class="time">06:02.440</td>
+              <td class="gap">+01:04.190</td>
+            </tr><tr>
+              <td class="rank">16</td>
+              <td class="name">Andras Varadi-Szabo<span class="cat">Open</span></td>
+              <td class="time">06:02.730</td>
+              <td class="gap">+01:04.480</td>
+            </tr><tr>
+              <td class="rank">17</td>
+              <td class="name">Joshua Billinghurst<span class="cat">Groms</span></td>
+              <td class="time">06:07.470</td>
+              <td class="gap">+01:09.220</td>
+            </tr><tr>
+              <td class="rank">18</td>
+              <td class="name">Nico Stuart<span class="cat">Open</span></td>
+              <td class="time">06:19.440</td>
+              <td class="gap">+01:21.190</td>
+            </tr><tr>
+              <td class="rank">19</td>
+              <td class="name">Miles Musgrave<span class="cat">Groms</span></td>
+              <td class="time">06:27.630</td>
+              <td class="gap">+01:29.380</td>
+            </tr><tr>
+              <td class="rank">20</td>
+              <td class="name">Wiktor Sowinski<span class="cat">Groms</span></td>
+              <td class="time">06:30.650</td>
+              <td class="gap">+01:32.400</td>
+            </tr><tr>
+              <td class="rank">21</td>
+              <td class="name">James Grant<span class="cat">Open</span></td>
+              <td class="time">06:32.390</td>
+              <td class="gap">+01:34.140</td>
+            </tr><tr>
+              <td class="rank">22</td>
+              <td class="name">Jeffrey Gamon<span class="cat">Open</span></td>
+              <td class="time">06:34.030</td>
+              <td class="gap">+01:35.780</td>
+            </tr><tr>
+              <td class="rank">23</td>
+              <td class="name">Maarten De Booser<span class="cat">Open</span></td>
+              <td class="time">06:38.470</td>
+              <td class="gap">+01:40.220</td>
+            </tr><tr>
+              <td class="rank">24</td>
+              <td class="name">Remo Berli<span class="cat">Open</span></td>
+              <td class="time">06:40.490</td>
+              <td class="gap">+01:42.240</td>
+            </tr><tr>
+              <td class="rank">25</td>
+              <td class="name">James Pitcher<span class="cat">Open</span></td>
+              <td class="time">06:40.710</td>
+              <td class="gap">+01:42.460</td>
+            </tr><tr>
+              <td class="rank">26</td>
+              <td class="name">Florent Audrit<span class="cat">Open</span></td>
+              <td class="time">06:40.923</td>
+              <td class="gap">+01:42.673</td>
+            </tr><tr>
+              <td class="rank">27</td>
+              <td class="name">Thomas Sabinsky<span class="cat">Open</span></td>
+              <td class="time">06:43.527</td>
+              <td class="gap">+01:45.277</td>
+            </tr><tr>
+              <td class="rank">28</td>
+              <td class="name">Enrique Rufo Molero<span class="cat">Open</span></td>
+              <td class="time">06:48.460</td>
+              <td class="gap">+01:50.210</td>
+            </tr><tr>
+              <td class="rank">29</td>
+              <td class="name">Harley Moss<span class="cat">Open</span></td>
+              <td class="time">06:50.040</td>
+              <td class="gap">+01:51.790</td>
+            </tr><tr>
+              <td class="rank">30</td>
+              <td class="name">Zak Moss<span class="cat">Groms</span></td>
+              <td class="time">06:55.420</td>
+              <td class="gap">+01:57.170</td>
+            </tr><tr>
+              <td class="rank">31</td>
+              <td class="name">Fabio Costa<span class="cat">Open</span></td>
+              <td class="time">06:56.070</td>
+              <td class="gap">+01:57.820</td>
+            </tr><tr>
+              <td class="rank">32</td>
+              <td class="name">Adrian Krige<span class="cat">Open</span></td>
+              <td class="time">06:56.553</td>
+              <td class="gap">+01:58.303</td>
+            </tr><tr>
+              <td class="rank">33</td>
+              <td class="name">Muddi Shoooz<span class="cat">Open</span></td>
+              <td class="time">06:56.713</td>
+              <td class="gap">+01:58.463</td>
+            </tr><tr>
+              <td class="rank">34</td>
+              <td class="name">Jonas Andersen<span class="cat">Open</span></td>
+              <td class="time">06:58.170</td>
+              <td class="gap">+01:59.920</td>
+            </tr><tr>
+              <td class="rank">35</td>
+              <td class="name">Simon Oppenheimer<span class="cat">Open</span></td>
+              <td class="time">07:00.400</td>
+              <td class="gap">+02:02.150</td>
+            </tr><tr>
+              <td class="rank">36</td>
+              <td class="name">Chantelle Warner-Wells<span class="cat">Women</span></td>
+              <td class="time">07:04.580</td>
+              <td class="gap">+02:06.330</td>
+            </tr><tr>
+              <td class="rank">37</td>
+              <td class="name">Adam Freeman<span class="cat">Open</span></td>
+              <td class="time">07:14.780</td>
+              <td class="gap">+02:16.530</td>
+            </tr><tr>
+              <td class="rank">38</td>
+              <td class="name">Gilles De Somviele<span class="cat">Wildcard</span></td>
+              <td class="time">07:18.790</td>
+              <td class="gap">+02:20.540</td>
+            </tr><tr>
+              <td class="rank">39</td>
+              <td class="name">Kate Paxton<span class="cat">Open</span></td>
+              <td class="time">07:22.060</td>
+              <td class="gap">+02:23.810</td>
+            </tr><tr>
+              <td class="rank">40</td>
+              <td class="name">Travis Wilson<span class="cat">Open</span></td>
+              <td class="time">07:26.050</td>
+              <td class="gap">+02:27.800</td>
+            </tr><tr>
+              <td class="rank">41</td>
+              <td class="name">Thomas De Pauw<span class="cat">Wildcard</span></td>
+              <td class="time">07:26.080</td>
+              <td class="gap">+02:27.830</td>
+            </tr><tr>
+              <td class="rank">42</td>
+              <td class="name">Nick Oppy<span class="cat">Wildcard</span></td>
+              <td class="time">07:36.140</td>
+              <td class="gap">+02:37.890</td>
+            </tr><tr>
+              <td class="rank">43</td>
+              <td class="name">Mark Conningsby<span class="cat">Wildcard</span></td>
+              <td class="time">07:40.070</td>
+              <td class="gap">+02:41.820</td>
+            </tr><tr>
+              <td class="rank">44</td>
+              <td class="name">Bartosz Kozak<span class="cat">Wildcard</span></td>
+              <td class="time">07:47.890</td>
+              <td class="gap">+02:49.640</td>
+            </tr><tr>
+              <td class="rank">45</td>
+              <td class="name">Lars Vloemans<span class="cat">Wildcard</span></td>
+              <td class="time">07:53.860</td>
+              <td class="gap">+02:55.610</td>
+            </tr><tr>
+              <td class="rank">46</td>
+              <td class="name">Jonathan Tims<span class="cat">Wildcard</span></td>
+              <td class="time">07:54.590</td>
+              <td class="gap">+02:56.340</td>
+            </tr><tr>
+              <td class="rank">47</td>
+              <td class="name">Herman Dijkstra<span class="cat">Wildcard</span></td>
+              <td class="time">08:00.690</td>
+              <td class="gap">+03:02.440</td>
+            </tr><tr>
+              <td class="rank">48</td>
+              <td class="name">Willow Wilson<span class="cat">Groms</span></td>
+              <td class="time">08:08.850</td>
+              <td class="gap">+03:10.600</td>
+            </tr><tr>
+              <td class="rank">49</td>
+              <td class="name">Mollie Stuart<span class="cat">Women</span></td>
+              <td class="time">08:14.910</td>
+              <td class="gap">+03:16.660</td>
+            </tr><tr>
+              <td class="rank">50</td>
+              <td class="name">Coby Webb<span class="cat">Groms</span></td>
+              <td class="time">08:24.910</td>
+              <td class="gap">+03:26.660</td>
+            </tr><tr>
+              <td class="rank">51</td>
+              <td class="name">Kacper Kozak<span class="cat">Wildcard</span></td>
+              <td class="time">08:39.270</td>
+              <td class="gap">+03:41.020</td>
+            </tr><tr>
+              <td class="rank">52</td>
+              <td class="name">Anna Carson<span class="cat">Women</span></td>
+              <td class="time">08:56.970</td>
+              <td class="gap">+03:58.720</td>
+            </tr><tr>
+              <td class="rank">53</td>
+              <td class="name">Teresa Neves<span class="cat">Women</span></td>
+              <td class="time">12:19.860</td>
+              <td class="gap">+07:21.610</td>
+            </tr>
+        </tbody>
+      </table>
+    </section>
+    
+    </div>
+    <p class="note">2026 uses the standard track only. Mass race, team race, and chair race are excluded. Legends in 2026 raced a shorter course, so those times are not in the right-hand list.</p>
+    
+  </div>
+</body>
+</html>

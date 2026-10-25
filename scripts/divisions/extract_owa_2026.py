@@ -91,19 +91,6 @@ def rider_category(kinds: set[str]) -> str:
     return "Open"
 
 
-def class_category(seconds: float, fastest: float) -> str:
-    if fastest <= 0:
-        return "Class C"
-    percentage = (seconds / fastest) * 100
-    if percentage <= 115:
-        return "Pro"
-    if percentage <= 130:
-        return "Class A"
-    if percentage <= 150:
-        return "Class B"
-    return "Class C"
-
-
 def format_delay(seconds: float) -> str:
     if seconds < 60:
         return f"{seconds:.3f}"
@@ -209,10 +196,9 @@ def html_table(riders: list[dict]) -> str:
                     <th class="bib">Bib</th>
                     <th class="name">Name</th>
                     <th style="width: 10%;">Category</th>
-                    <th style="width: 8%;">Class</th>
                     <th class="time">Time</th>
                     <th class="percentage">% of Fastest</th>
-                    <th style="width: 10%;">Gap from Above</th>
+                    <th style="width: 11%;">Gap from Above</th>
                     <th class="delay-from-fastest">Delay</th>
                     <th class="race">Set in</th>
                 </tr>
@@ -220,17 +206,7 @@ def html_table(riders: list[dict]) -> str:
             <tbody>
 """
     ]
-    previous_class = None
     for rank, rider in enumerate(riders, start=1):
-        current = class_category(rider["fastest_seconds"], fastest)
-        if previous_class is not None and current != previous_class:
-            rows.append(
-                f"""
-                <tr class="class-separator">
-                    <td colspan="10">{html.escape(previous_class)} → {html.escape(current)}</td>
-                </tr>
-"""
-            )
         percentage = (rider["fastest_seconds"] / fastest) * 100 if fastest else 0
         if rank == 1:
             gap = "—"
@@ -240,7 +216,6 @@ def html_table(riders: list[dict]) -> str:
             )
         delay = rider["fastest_seconds"] - fastest
         badge = HTML_CAT.get(rider["category"], rider["category"])
-        class_css = current.replace(" ", "")
         race = rider.get("best_race") or ""
         if rider.get("penalty_seconds"):
             race = f"{race} (includes +{format_delay(rider['penalty_seconds'])} penalty)"
@@ -252,7 +227,6 @@ def html_table(riders: list[dict]) -> str:
                     <td class="bib">{bib}</td>
                     <td class="name">{html.escape(rider["name"])}</td>
                     <td><span class="category {html.escape(badge)}">{html.escape(badge)}</span></td>
-                    <td><span class="class-badge {html.escape(class_css)}">{html.escape(current)}</span></td>
                     <td class="time">{html.escape(rider["fastest_time"])}</td>
                     <td class="percentage">{percentage:.2f}%</td>
                     <td class="gap">{gap}</td>
@@ -261,12 +235,20 @@ def html_table(riders: list[dict]) -> str:
                 </tr>
 """
         )
-        previous_class = current
     rows.append("            </tbody>")
     return "<table>\n" + "".join(rows) + "\n        </table>"
 
 
-def render_html(standard: list[dict], legends: list[dict], updated_at: str) -> str:
+def render_html(
+    standard: list[dict],
+    legends: list[dict],
+    updated_at: str,
+    links: dict | None = None,
+) -> str:
+    links = links or {
+        "compare": "owa-2025-vs-2026.html",
+        "progress": "owa-progression.html",
+    }
     averages = []
     for label, category in (
         ("Overall", None),
@@ -411,36 +393,22 @@ def render_html(standard: list[dict], legends: list[dict], updated_at: str) -> s
         .category.GROM {{ background: #5a7a3a; color: #cceeaa; }}
         .category.LEGEND {{ background: #7a5a3a; color: #eeddaa; }}
         .category.WILDCARD {{ background: #3a7a5a; color: #aaeedd; }}
-        .class-separator {{
-            background: #3a3a3a !important;
-            border-top: 2px solid #D4AF37;
-            border-bottom: 2px solid #D4AF37;
-        }}
-        .class-separator td {{
-            padding: 4px;
-            font-weight: bold;
-            color: #D4AF37;
+        .nav {{
             text-align: center;
-            font-size: 0.8em;
+            margin-bottom: 14px;
         }}
-        .class-badge {{
-            padding: 2px 4px;
-            border-radius: 3px;
-            font-size: 0.7em;
-            font-weight: bold;
-            display: inline-block;
+        .nav a {{
+            color: #D4AF37;
+            margin: 0 0.6rem;
         }}
-        .class-badge.Pro {{ background: #FFD700; color: #1a1a1a; }}
-        .class-badge.ClassA {{ background: #C0C0C0; color: #1a1a1a; }}
-        .class-badge.ClassB {{ background: #CD7F32; color: #fff; }}
-        .class-badge.ClassC {{ background: #4a4a4a; color: #ddd; }}
     </style>
 </head>
 <body>
     <div class="container">
         <h1>OWA 2026 Best Times</h1>
+        <p class="nav"><a href="{html.escape(links['compare'])}">2025 beside 2026</a><a href="{html.escape(links['progress'])}">Who got faster</a></p>
         <div class="stats">{len(standard)} riders ranked on the standard track</div>
-        <p class="note">Best lap from seeding, heats, quarters, semis, finals, and wild card. Mass race, team race, and chair race are excluded. Classes use the same bands as 2025: Pro within 115% of the fastest lap, then Class A to 130%, Class B to 150%, Class C after that. Source feed updated {html.escape(updated_at)}.</p>
+        <p class="note">Best lap from seeding, heats, quarters, semis, finals, and wild card. Mass race, team race, and chair race are excluded. Source feed updated {html.escape(updated_at)}.</p>
         <p class="note">Average best lap — {html.escape(" · ".join(averages))}</p>
         {html_table(standard)}
         {legend_note}
@@ -515,15 +483,28 @@ def main() -> None:
     for index_path in (out_dir / "events.json", site_public / "events.json"):
         upsert_events(index_path, [standard_event, legends_event])
 
-    page = render_html(standard_riders, legend_riders, events_payload.get("updatedAt") or "")
+    updated = events_payload.get("updatedAt") or ""
+    public_page = render_html(standard_riders, legend_riders, updated)
+    local_page = render_html(
+        standard_riders,
+        legend_riders,
+        updated,
+        links={
+            "compare": "owa_2025_vs_2026.html",
+            "progress": "owa_progression.html",
+        },
+    )
     html_paths = [
-        HUB_ROOT / "site" / "public" / "owa-2026-best-times.html",
-        HUB_ROOT.parent
-        / "ORL_tables"
-        / "old_initial_analysis_stuff"
-        / "owa_2026_best_times_ranked.html",
+        (HUB_ROOT / "site" / "public" / "owa-2026-best-times.html", public_page),
+        (
+            HUB_ROOT.parent
+            / "ORL_tables"
+            / "old_initial_analysis_stuff"
+            / "owa_2026_best_times_ranked.html",
+            local_page,
+        ),
     ]
-    for path in html_paths:
+    for path, page in html_paths:
         path.write_text(page)
         print(f"HTML -> {path}")
 
