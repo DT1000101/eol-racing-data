@@ -469,7 +469,7 @@ def progress_page(riders: list[dict], links: dict[str, str]) -> str:
         </tbody>
       </table>
     </div>
-    <p class="note">Spelling differences are treated as the same rider, including Dan Turner / Daniel Turner, Henry Ld / Henry Livingstone Dunn, Jeffrey Jaffa Gaming / Jaffa Gamon, Florent Audrit / Florent Audit, and Quirine / Qurine Posno. 2026 legends short-track times are not used here. Rank is the place in that year’s full best-lap list. Green rank means a higher place in 2026.</p>
+    <p class="note">Spelling differences are treated as the same rider, including Dan Turner / Daniel Turner, Henry Ld / Henry Livingstone Dunn, Jeffrey Jaffa Gaming / Jaffa Gamon, Florent Audrit / Florent Audit, and Quirine / Qurine Posno. Dan Turner’s 2026 time is blank: that seeding lap had three crashes, and he broke his collarbone on the next one. 2026 legends short-track times are not used here. Rank is the place in that year’s full best-lap list. Green rank means a higher place in 2026.</p>
     <script>
       const table = document.querySelector("#both tbody");
       const find = document.querySelector("#find");
@@ -519,9 +519,16 @@ def progress_page(riders: list[dict], links: dict[str, str]) -> str:
     return shell("OWA lap change, 2025 to 2026", body, wide=True)
 
 
+# 2026 laps left out of the year-on-year comparison.
+# Dan: seeding lap with three crashes, then a broken collarbone on the next lap.
+OMIT_2026_COMPARISON = {"dan turner"}
+
+
 def build_pairs(y2025: list[dict], y2026: list[dict]) -> list[dict]:
     left = best_by_person(y2025)
-    right = best_by_person(y2026)
+    right = best_by_person(
+        [rider for rider in y2026 if canon(rider["name"]) not in OMIT_2026_COMPARISON]
+    )
     rows = []
     for key in set(left) | set(right):
         earlier = left.get(key)

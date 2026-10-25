@@ -99,9 +99,17 @@ function bestByPerson(riders: LapRider[]): Map<string, LapRider> {
   return chosen;
 }
 
+/** 2026 laps left out of the year-on-year comparison. */
+const OMIT_2026 = new Set([
+  // Seeding lap with three crashes, then a broken collarbone on the next lap.
+  "dan turner",
+]);
+
 export function buildLapRows(y2025: LapRider[], y2026: LapRider[]): LapRow[] {
   const earlier = bestByPerson(y2025);
-  const later = bestByPerson(y2026);
+  const later = bestByPerson(
+    y2026.filter((rider) => !OMIT_2026.has(foldName(rider.name))),
+  );
   const keys = new Set([...earlier.keys(), ...later.keys()]);
   const rows: LapRow[] = [];
 

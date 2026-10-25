@@ -172,11 +172,11 @@ th button:hover { color: var(--text); }
     </header>
     <div class="kpis">
       <div class="kpi"><b>75</b><span>riders</span></div>
-      <div class="kpi"><b>26</b><span>rode both years</span></div>
+      <div class="kpi"><b>25</b><span>rode both years</span></div>
       <div class="kpi"><b class="faster">22</b><span>faster in 2026</span></div>
-      <div class="kpi"><b class="slower">4</b><span>slower in 2026</span></div>
-      <div class="kpi"><b class="faster">−38.995s</b><span>median change</span></div>
-      <div class="kpi"><b class="faster">−46.701s</b><span>average change</span></div>
+      <div class="kpi"><b class="slower">3</b><span>slower in 2026</span></div>
+      <div class="kpi"><b class="faster">−39.793s</b><span>median change</span></div>
+      <div class="kpi"><b class="faster">−49.970s</b><span>average change</span></div>
     </div>
     <div class="tools">
       <input id="find" type="search" placeholder="Find a rider" aria-label="Find a rider">
@@ -240,14 +240,14 @@ th button:hover { color: var(--text); }
               <td class="num faster">−10.6%</td>
               <td class="num faster">5 → 4</td>
             </tr>
-<tr data-name="dan turner" data-best="317.357" data-y2026="352.37" data-y2025="317.357" data-delta="35.01299999999998" data-pct="11.032685587524451" data-rank="12">
+<tr data-name="dan turner" data-best="317.357" data-y2026="" data-y2025="317.357" data-delta="" data-pct="" data-rank="">
               <td class="name">Dan Turner</td>
               <td class="num year-best">05:17.357</td>
-              <td class="num">05:52.370</td>
+              <td class="num na">n/a</td>
               <td class="num">05:17.357</td>
-              <td class="num progress slower">+35.013s</td>
-              <td class="num slower">+11.0%</td>
-              <td class="num slower">2 → 12</td>
+              <td class="num na progress">n/a</td>
+              <td class="num na">n/a</td>
+              <td class="num na">2 → n/a</td>
             </tr>
 <tr data-name="sep de booser" data-best="332.64" data-y2026="332.64" data-y2025="" data-delta="" data-pct="" data-rank="">
               <td class="name">Sep De Booser</td>
@@ -873,7 +873,7 @@ th button:hover { color: var(--text); }
         </tbody>
       </table>
     </div>
-    <p class="note">Spelling differences are treated as the same rider, including Dan Turner / Daniel Turner, Henry Ld / Henry Livingstone Dunn, Jeffrey Jaffa Gaming / Jaffa Gamon, Florent Audrit / Florent Audit, and Quirine / Qurine Posno. 2026 legends short-track times are not used here. Rank is the place in that year’s full best-lap list. Green rank means a higher place in 2026.</p>
+    <p class="note">Spelling differences are treated as the same rider, including Dan Turner / Daniel Turner, Henry Ld / Henry Livingstone Dunn, Jeffrey Jaffa Gaming / Jaffa Gamon, Florent Audrit / Florent Audit, and Quirine / Qurine Posno. Dan Turner’s 2026 time is blank: that seeding lap had three crashes, and he broke his collarbone on the next one. 2026 legends short-track times are not used here. Rank is the place in that year’s full best-lap list. Green rank means a higher place in 2026.</p>
     <script>
       const table = document.querySelector("#both tbody");
       const find = document.querySelector("#find");

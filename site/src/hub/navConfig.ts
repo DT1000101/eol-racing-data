@@ -93,7 +93,7 @@ export const SITE_NAV: SiteNavItem[] = [
     pageSubtitle: "OWA 2025 and 2026",
     description:
       "Best OWA lap from 2025 and 2026, and how much that lap changed. A negative change is faster.",
-    help: "Spelling differences are treated as the same rider, including Dan Turner / Daniel Turner, Henry Ld / Henry Livingstone Dunn, and Jeffrey Jaffa Gaming / Jaffa Gamon. 2026 legends short-track times are not included. Rank is the place in that year’s full best-lap list.",
+    help: "Spelling differences are treated as the same rider, including Dan Turner / Daniel Turner, Henry Ld / Henry Livingstone Dunn, and Jeffrey Jaffa Gaming / Jaffa Gamon. Dan Turner’s 2026 time is blank: that seeding lap had three crashes, and he broke his collarbone on the next one. 2026 legends short-track times are not included. Rank is the place in that year’s full best-lap list.",
   },
   {
     to: "/seeding",
