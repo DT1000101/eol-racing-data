@@ -212,7 +212,7 @@ table { width: 100%; border-collapse: collapse; }
 th, td { padding: 0.42rem 0.65rem; text-align: left; }
 thead th {
   position: sticky;
-  top: 49px;
+  top: 0;
   z-index: 2;
   background: #20242c;
   color: var(--muted);
@@ -221,7 +221,15 @@ thead th {
   text-transform: uppercase;
   font-weight: 600;
 }
-.panel thead th { top: 49px; }
+.split thead th { top: 49px; }
+#progress { overflow: visible; }
+#progress thead th { top: 0; background: #20242c; }
+.year-best { font-weight: 700; color: #fff; }
+.na { color: var(--muted); }
+th.progress, td.progress {
+  border-left: 3px solid var(--gold);
+  padding-left: 0.85rem;
+}
 tbody tr:nth-child(odd) { background: var(--row); }
 tbody tr:nth-child(even) { background: var(--row-alt); }
 .rank { color: var(--gold); font-variant-numeric: tabular-nums; font-weight: 700; width: 2.4rem; }
@@ -363,61 +371,63 @@ def compare_page(y2025: list[dict], y2026: list[dict], links: dict[str, str]) ->
     return shell("OWA 2025 and 2026", body, wide=True)
 
 
-def progress_rows(both: list[dict]) -> str:
+def year_cell(time: str | None, is_best: bool) -> str:
+    if time is None:
+        return '<td class="num na">n/a</td>'
+    kind = "num year-best" if is_best else "num"
+    return f'<td class="{kind}">{html.escape(time)}</td>'
+
+
+def progress_rows(riders: list[dict]) -> str:
     rows = []
-    for item in both:
+    for item in riders:
         delta = item["delta"]
-        kind = tone(delta)
-        rank_delta = item["rank_2025"] - item["rank_2026"]
-        rank_kind = "faster" if rank_delta > 0 else "slower" if rank_delta < 0 else "same"
-        rank_label = f"{item['rank_2025']} → {item['rank_2026']}"
+        if delta is None:
+            change = '<td class="num na progress">n/a</td>'
+            pct = '<td class="num na">n/a</td>'
+            left_rank = "n/a" if item["rank_2025"] is None else str(item["rank_2025"])
+            right_rank = "n/a" if item["rank_2026"] is None else str(item["rank_2026"])
+            rank = f'<td class="num na">{left_rank} → {right_rank}</td>'
+            delta_attr = ""
+            pct_attr = ""
+            rank_attr = ""
+        else:
+            kind = tone(delta)
+            rank_2025 = item["rank_2025"]
+            rank_2026 = item["rank_2026"]
+            rank_delta = rank_2025 - rank_2026
+            rank_kind = "faster" if rank_delta > 0 else "slower" if rank_delta < 0 else "same"
+            change = f'<td class="num progress {kind}">{signed_seconds(delta)}</td>'
+            pct = f'<td class="num {kind}">{signed_pct(item["pct"])}</td>'
+            rank = f'<td class="num {rank_kind}">{rank_2025} → {rank_2026}</td>'
+            delta_attr = str(delta)
+            pct_attr = str(item["pct"])
+            rank_attr = str(rank_2026)
+        best_year = item["best_year"]
+        bold_2026 = best_year in ("2026", "both")
+        bold_2025 = best_year in ("2025", "both")
+        sec_2026 = "" if item["sec_2026"] is None else item["sec_2026"]
+        sec_2025 = "" if item["sec_2025"] is None else item["sec_2025"]
         rows.append(
-            f"""<tr data-name="{html.escape(fold(item['name']))}" data-delta="{delta}" data-pct="{item['pct']}" data-y2025="{item['sec_2025']}" data-y2026="{item['sec_2026']}" data-rank="{item['rank_2026']}">
+            f"""<tr data-name="{html.escape(fold(item['name']))}" data-best="{item['best']}" data-y2026="{sec_2026}" data-y2025="{sec_2025}" data-delta="{delta_attr}" data-pct="{pct_attr}" data-rank="{rank_attr}">
               <td class="name">{html.escape(item['name'])}</td>
-              <td class="num">{html.escape(item['time_2025'])}</td>
-              <td class="num">{html.escape(item['time_2026'])}</td>
-              <td class="num {kind}">{signed_seconds(delta)}</td>
-              <td class="num {kind}">{signed_pct(item['pct'])}</td>
-              <td class="num {rank_kind}">{rank_label}</td>
+              <td class="num year-best">{html.escape(item['best_time'])}</td>
+              {year_cell(item['time_2026'], bold_2026)}
+              {year_cell(item['time_2025'], bold_2025)}
+              {change}
+              {pct}
+              {rank}
             </tr>"""
         )
     return "\n".join(rows)
 
 
-def solo_table(riders: list[tuple[str, dict]], year: str) -> str:
-    if not riders:
-        return ""
-    rows = []
-    ordered = sorted(riders, key=lambda pair: pair[1]["fastest_seconds"])
-    for name, rider in ordered:
-        rows.append(
-            f"""<tr>
-              <td class="rank">{rider['rank']}</td>
-              <td class="name">{html.escape(name)}</td>
-              <td class="time">{html.escape(rider['fastest_time'])}</td>
-              <td class="gap">{html.escape(rider['category'])}</td>
-            </tr>"""
-        )
-    label = "No 2025 lap" if year == "2026" else "No 2026 lap"
-    return f"""
-    <section class="section">
-      <h2>{html.escape(label)}</h2>
-      <p class="hint">{len(ordered)} riders.</p>
-      <div class="panel">
-        <table>
-          <thead><tr><th>Rank that year</th><th>Rider</th><th>Best lap</th><th>Category</th></tr></thead>
-          <tbody>{''.join(rows)}</tbody>
-        </table>
-      </div>
-    </section>
-    """
-
-
-def progress_page(both: list[dict], only_2026, only_2025, links: dict[str, str]) -> str:
-    faster = sum(1 for item in both if item["delta"] < -0.0005)
-    slower = sum(1 for item in both if item["delta"] > 0.0005)
-    avg = sum(item["delta"] for item in both) / len(both) if both else 0
-    ordered = sorted(item["delta"] for item in both)
+def progress_page(riders: list[dict], links: dict[str, str]) -> str:
+    paired = [item for item in riders if item["delta"] is not None]
+    faster = sum(1 for item in paired if item["delta"] < -0.0005)
+    slower = sum(1 for item in paired if item["delta"] > 0.0005)
+    avg = sum(item["delta"] for item in paired) / len(paired) if paired else 0
+    ordered = sorted(item["delta"] for item in paired)
     mid = len(ordered) // 2
     median = ordered[mid] if len(ordered) % 2 else (
         (ordered[mid - 1] + ordered[mid]) / 2 if ordered else 0
@@ -426,11 +436,12 @@ def progress_page(both: list[dict], only_2026, only_2025, links: dict[str, str])
     <header class="top">
       <p class="eyebrow">Onewheel Algarve</p>
       <h1>How the lap changed</h1>
-      <p class="lede">Riders with a best lap in both years. Change is the 2026 lap minus the 2025 lap. A negative number is faster. The percentage is that change against their own 2025 time.</p>
+      <p class="lede">Sorted by each rider’s fastest lap from either year. The year that set it is in bold. To the right of the line, change is the 2026 lap minus the 2025 lap. A negative number is faster. n/a means they have no lap that year.</p>
       {nav("progress", links)}
     </header>
     <div class="kpis">
-      <div class="kpi"><b>{len(both)}</b><span>rode both years</span></div>
+      <div class="kpi"><b>{len(riders)}</b><span>riders</span></div>
+      <div class="kpi"><b>{len(paired)}</b><span>rode both years</span></div>
       <div class="kpi"><b class="faster">{faster}</b><span>faster in 2026</span></div>
       <div class="kpi"><b class="slower">{slower}</b><span>slower in 2026</span></div>
       <div class="kpi"><b class="{tone(median)}">{signed_seconds(median)}</b><span>median change</span></div>
@@ -439,47 +450,56 @@ def progress_page(both: list[dict], only_2026, only_2025, links: dict[str, str])
     <div class="tools">
       <input id="find" type="search" placeholder="Find a rider" aria-label="Find a rider">
     </div>
-    <div class="panel">
+    <div class="panel" id="progress">
       <table id="both">
         <thead>
           <tr>
             <th><button type="button" data-sort="name">Rider</button></th>
-            <th><button type="button" data-sort="y2025">2025</button></th>
+            <th><button type="button" data-sort="best">Best time</button></th>
             <th><button type="button" data-sort="y2026">2026</button></th>
-            <th><button type="button" data-sort="delta">Change</button></th>
+            <th><button type="button" data-sort="y2025">2025</button></th>
+            <th class="progress"><button type="button" data-sort="delta">Change</button></th>
             <th><button type="button" data-sort="pct">%</button></th>
             <th><button type="button" data-sort="rank">Rank</button></th>
           </tr>
         </thead>
         <tbody>
-          {progress_rows(both)}
+          {progress_rows(riders)}
         </tbody>
       </table>
     </div>
-    {solo_table(only_2026, "2026")}
-    {solo_table(only_2025, "2025")}
     <p class="note">Spelling differences are treated as the same rider, including Dan Turner / Daniel Turner, Henry Ld / Henry Livingstone Dunn, Florent Audrit / Florent Audit, and Quirine / Qurine Posno. 2026 legends short-track times are not used here. Rank is the place in that year’s full best-lap list. Green rank means a higher place in 2026.</p>
     <script>
       const table = document.querySelector("#both tbody");
       const find = document.querySelector("#find");
-      let sortKey = "delta";
+      let sortKey = "best";
       let sortDir = 1;
       function rows() {{ return [...table.querySelectorAll("tr")]; }}
+      function valueOf(row) {{
+        if (sortKey === "name") return row.dataset.name;
+        const raw = row.dataset[sortKey];
+        if (raw === undefined || raw === "") return null;
+        const number = Number(raw);
+        return Number.isFinite(number) ? number : null;
+      }}
       function applySort() {{
         const sorted = rows().sort((a, b) => {{
-          const av = sortKey === "name" ? a.dataset.name : Number(a.dataset[sortKey]);
-          const bv = sortKey === "name" ? b.dataset.name : Number(b.dataset[sortKey]);
+          const av = valueOf(a);
+          const bv = valueOf(b);
+          if (av === null && bv === null) return a.dataset.name.localeCompare(b.dataset.name);
+          if (av === null) return 1;
+          if (bv === null) return -1;
           if (av < bv) return -sortDir;
           if (av > bv) return sortDir;
           return a.dataset.name.localeCompare(b.dataset.name);
         }});
         sorted.forEach((row) => table.appendChild(row));
       }}
-      document.querySelectorAll("th button").forEach((button) => {{
+      document.querySelectorAll("#both th button").forEach((button) => {{
         button.addEventListener("click", () => {{
           const key = button.dataset.sort;
-          sortDir = sortKey === key ? -sortDir : (key === "name" ? 1 : 1);
-          if (sortKey !== key && (key === "delta" || key === "pct" || key === "y2026" || key === "y2025" || key === "rank")) sortDir = 1;
+          if (sortKey === key) sortDir = -sortDir;
+          else sortDir = key === "name" ? 1 : 1;
           sortKey = key;
           applySort();
         }});
@@ -495,40 +515,52 @@ def progress_page(both: list[dict], only_2026, only_2025, links: dict[str, str])
       }});
     </script>
     """
-    return shell("OWA lap change, 2025 to 2026", body)
+    return shell("OWA lap change, 2025 to 2026", body, wide=True)
 
 
-def build_pairs(y2025: list[dict], y2026: list[dict]):
+def build_pairs(y2025: list[dict], y2026: list[dict]) -> list[dict]:
     left = best_by_person(y2025)
     right = best_by_person(y2026)
-    both = []
-    for key in sorted(set(left) & set(right)):
-        a = left[key]
-        b = right[key]
-        delta = b["fastest_seconds"] - a["fastest_seconds"]
-        both.append(
+    rows = []
+    for key in set(left) | set(right):
+        earlier = left.get(key)
+        later = right.get(key)
+        sec_2025 = earlier["fastest_seconds"] if earlier else None
+        sec_2026 = later["fastest_seconds"] if later else None
+        if sec_2025 is None:
+            best = sec_2026
+            best_year = "2026"
+        elif sec_2026 is None:
+            best = sec_2025
+            best_year = "2025"
+        elif sec_2026 < sec_2025 - 0.0005:
+            best = sec_2026
+            best_year = "2026"
+        elif sec_2025 < sec_2026 - 0.0005:
+            best = sec_2025
+            best_year = "2025"
+        else:
+            best = sec_2026
+            best_year = "both"
+        delta = None if earlier is None or later is None else sec_2026 - sec_2025
+        rows.append(
             {
-                "name": display_name(key, b, a),
-                "time_2025": a["fastest_time"],
-                "time_2026": b["fastest_time"],
-                "sec_2025": a["fastest_seconds"],
-                "sec_2026": b["fastest_seconds"],
+                "name": display_name(key, later, earlier),
+                "time_2025": earlier["fastest_time"] if earlier else None,
+                "time_2026": later["fastest_time"] if later else None,
+                "sec_2025": sec_2025,
+                "sec_2026": sec_2026,
+                "best": best,
+                "best_time": format_time(best),
+                "best_year": best_year,
                 "delta": delta,
-                "pct": (delta / a["fastest_seconds"]) * 100 if a["fastest_seconds"] else 0,
-                "rank_2025": a["rank"],
-                "rank_2026": b["rank"],
+                "pct": (delta / sec_2025) * 100 if delta is not None and sec_2025 else None,
+                "rank_2025": earlier["rank"] if earlier else None,
+                "rank_2026": later["rank"] if later else None,
             }
         )
-    both.sort(key=lambda item: item["delta"])
-    only_2026 = [
-        (display_name(key, right[key], None), right[key])
-        for key in right.keys() - left.keys()
-    ]
-    only_2025 = [
-        (display_name(key, None, left[key]), left[key])
-        for key in left.keys() - right.keys()
-    ]
-    return both, only_2026, only_2025
+    rows.sort(key=lambda item: (item["best"], item["name"]))
+    return rows
 
 
 def write_pair(public_name: str, local_name: str, public_html: str, local_html: str) -> None:
@@ -544,7 +576,7 @@ def main() -> None:
     y2025 = load_riders(DATA / "owa-2025.json")
     y2026 = load_riders(DATA / "owa-2026.json")
     legends = load_riders(DATA / "owa-2026-legends.json")
-    both, only_2026, only_2025 = build_pairs(y2025, y2026)
+    riders = build_pairs(y2025, y2026)
 
     public_links = {
         "ranked": "owa-2026-best-times.html",
@@ -572,23 +604,16 @@ def main() -> None:
     write_pair(
         "owa-progression.html",
         "owa_progression.html",
-        progress_page(both, only_2026, only_2025, public_links),
-        progress_page(both, only_2026, only_2025, local_links),
+        progress_page(riders, public_links),
+        progress_page(riders, local_links),
     )
 
-    print(f"\nBoth years: {len(both)}")
-    for item in both:
+    print(f"\nRiders: {len(riders)}")
+    for item in riders[:8]:
         print(
-            f"  {item['name']:28} {item['time_2025']} -> {item['time_2026']}  "
-            f"{signed_seconds(item['delta']):>10}  {signed_pct(item['pct']):>7}  "
-            f"rank {item['rank_2025']}->{item['rank_2026']}"
+            f"  {item['best_time']}  {item['best_year']:4}  {item['name']:28} "
+            f"2026={item['time_2026']}  2025={item['time_2025']}"
         )
-    print("\n2026 only:")
-    for name, rider in sorted(only_2026, key=lambda pair: pair[1]["fastest_seconds"]):
-        print(f"  {name:28} {rider['fastest_time']}")
-    print("\n2025 only:")
-    for name, rider in sorted(only_2025, key=lambda pair: pair[1]["fastest_seconds"]):
-        print(f"  {name:28} {rider['fastest_time']}  ({rider['name']})")
 
 
 if __name__ == "__main__":

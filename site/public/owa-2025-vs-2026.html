@@ -92,7 +92,7 @@ table { width: 100%; border-collapse: collapse; }
 th, td { padding: 0.42rem 0.65rem; text-align: left; }
 thead th {
   position: sticky;
-  top: 49px;
+  top: 0;
   z-index: 2;
   background: #20242c;
   color: var(--muted);
@@ -101,7 +101,15 @@ thead th {
   text-transform: uppercase;
   font-weight: 600;
 }
-.panel thead th { top: 49px; }
+.split thead th { top: 49px; }
+#progress { overflow: visible; }
+#progress thead th { top: 0; background: #20242c; }
+.year-best { font-weight: 700; color: #fff; }
+.na { color: var(--muted); }
+th.progress, td.progress {
+  border-left: 3px solid var(--gold);
+  padding-left: 0.85rem;
+}
 tbody tr:nth-child(odd) { background: var(--row); }
 tbody tr:nth-child(even) { background: var(--row-alt); }
 .rank { color: var(--gold); font-variant-numeric: tabular-nums; font-weight: 700; width: 2.4rem; }

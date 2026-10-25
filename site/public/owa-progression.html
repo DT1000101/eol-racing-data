@@ -92,7 +92,7 @@ table { width: 100%; border-collapse: collapse; }
 th, td { padding: 0.42rem 0.65rem; text-align: left; }
 thead th {
   position: sticky;
-  top: 49px;
+  top: 0;
   z-index: 2;
   background: #20242c;
   color: var(--muted);
@@ -101,7 +101,15 @@ thead th {
   text-transform: uppercase;
   font-weight: 600;
 }
-.panel thead th { top: 49px; }
+.split thead th { top: 49px; }
+#progress { overflow: visible; }
+#progress thead th { top: 0; background: #20242c; }
+.year-best { font-weight: 700; color: #fff; }
+.na { color: var(--muted); }
+th.progress, td.progress {
+  border-left: 3px solid var(--gold);
+  padding-left: 0.85rem;
+}
 tbody tr:nth-child(odd) { background: var(--row); }
 tbody tr:nth-child(even) { background: var(--row-alt); }
 .rank { color: var(--gold); font-variant-numeric: tabular-nums; font-weight: 700; width: 2.4rem; }
@@ -154,15 +162,16 @@ th button:hover { color: var(--text); }
 </style>
 </head>
 <body>
-  <div class="wrap">
+  <div class="wrap wrap--wide">
     
     <header class="top">
       <p class="eyebrow">Onewheel Algarve</p>
       <h1>How the lap changed</h1>
-      <p class="lede">Riders with a best lap in both years. Change is the 2026 lap minus the 2025 lap. A negative number is faster. The percentage is that change against their own 2025 time.</p>
+      <p class="lede">Sorted by each rider’s fastest lap from either year. The year that set it is in bold. To the right of the line, change is the 2026 lap minus the 2025 lap. A negative number is faster. n/a means they have no lap that year.</p>
       <nav class="pages"><a href="owa-2026-best-times.html">2026 ranking</a><a href="owa-2025-vs-2026.html">2025 beside 2026</a><a href="owa-progression.html" aria-current="page">Who got faster</a></nav>
     </header>
     <div class="kpis">
+      <div class="kpi"><b>76</b><span>riders</span></div>
       <div class="kpi"><b>25</b><span>rode both years</span></div>
       <div class="kpi"><b class="faster">22</b><span>faster in 2026</span></div>
       <div class="kpi"><b class="slower">3</b><span>slower in 2026</span></div>
@@ -172,523 +181,739 @@ th button:hover { color: var(--text); }
     <div class="tools">
       <input id="find" type="search" placeholder="Find a rider" aria-label="Find a rider">
     </div>
-    <div class="panel">
+    <div class="panel" id="progress">
       <table id="both">
         <thead>
           <tr>
             <th><button type="button" data-sort="name">Rider</button></th>
-            <th><button type="button" data-sort="y2025">2025</button></th>
+            <th><button type="button" data-sort="best">Best time</button></th>
             <th><button type="button" data-sort="y2026">2026</button></th>
-            <th><button type="button" data-sort="delta">Change</button></th>
+            <th><button type="button" data-sort="y2025">2025</button></th>
+            <th class="progress"><button type="button" data-sort="delta">Change</button></th>
             <th><button type="button" data-sort="pct">%</button></th>
             <th><button type="button" data-sort="rank">Rank</button></th>
           </tr>
         </thead>
         <tbody>
-          <tr data-name="coby webb" data-delta="-303.97999999999996" data-pct="-37.579893434212316" data-y2025="808.89" data-y2026="504.91" data-rank="50">
-              <td class="name">Coby Webb</td>
-              <td class="num">13:28.890</td>
-              <td class="num">08:24.910</td>
-              <td class="num faster">−5:03.980</td>
-              <td class="num faster">−37.6%</td>
-              <td class="num same">50 → 50</td>
-            </tr>
-<tr data-name="quirine posno" data-delta="-129.223" data-pct="-27.259763354801148" data-y2025="474.043" data-y2026="344.82" data-rank="8">
-              <td class="name">Quirine Posno</td>
-              <td class="num">07:54.043</td>
-              <td class="num">05:44.820</td>
-              <td class="num faster">−2:09.223</td>
-              <td class="num faster">−27.3%</td>
-              <td class="num faster">44 → 8</td>
-            </tr>
-<tr data-name="radim klaska" data-delta="-78.27699999999999" data-pct="-18.363674752498472" data-y2025="426.26" data-y2026="347.983" data-rank="9">
-              <td class="name">Radim Klaška</td>
-              <td class="num">07:06.260</td>
-              <td class="num">05:47.983</td>
-              <td class="num faster">−1:18.277</td>
-              <td class="num faster">−18.4%</td>
-              <td class="num faster">24 → 9</td>
-            </tr>
-<tr data-name="nick oppy" data-delta="-74.23300000000006" data-pct="-13.996376135285931" data-y2025="530.373" data-y2026="456.14" data-rank="42">
-              <td class="name">Nick Oppy</td>
-              <td class="num">08:50.373</td>
-              <td class="num">07:36.140</td>
-              <td class="num faster">−1:14.233</td>
-              <td class="num faster">−14.0%</td>
-              <td class="num faster">48 → 42</td>
-            </tr>
-<tr data-name="henry livingstone dunn" data-delta="-72.827" data-pct="-19.17473874889088" data-y2025="379.807" data-y2026="306.98" data-rank="2">
-              <td class="name">Henry Livingstone Dunn</td>
-              <td class="num">06:19.807</td>
-              <td class="num">05:06.980</td>
-              <td class="num faster">−1:12.827</td>
-              <td class="num faster">−19.2%</td>
-              <td class="num faster">13 → 2</td>
-            </tr>
-<tr data-name="simon oppenheimer" data-delta="-70.64000000000004" data-pct="-14.38579341805149" data-y2025="491.04" data-y2026="420.4" data-rank="35">
-              <td class="name">Simon Oppenheimer</td>
-              <td class="num">08:11.040</td>
-              <td class="num">07:00.400</td>
-              <td class="num faster">−1:10.640</td>
-              <td class="num faster">−14.4%</td>
-              <td class="num faster">45 → 35</td>
-            </tr>
-<tr data-name="henry bisping" data-delta="-53.83300000000003" data-pct="-15.289860629453859" data-y2025="352.083" data-y2026="298.25" data-rank="1">
+          <tr data-name="henry bisping" data-best="298.25" data-y2026="298.25" data-y2025="352.083" data-delta="-53.83300000000003" data-pct="-15.289860629453859" data-rank="1">
               <td class="name">Henry Bisping</td>
+              <td class="num year-best">04:58.250</td>
+              <td class="num year-best">04:58.250</td>
               <td class="num">05:52.083</td>
-              <td class="num">04:58.250</td>
-              <td class="num faster">−53.833s</td>
+              <td class="num progress faster">−53.833s</td>
               <td class="num faster">−15.3%</td>
               <td class="num faster">4 → 1</td>
             </tr>
-<tr data-name="jonas andersen" data-delta="-53.74699999999996" data-pct="-11.389079011775367" data-y2025="471.917" data-y2026="418.17" data-rank="34">
-              <td class="name">Jonas Andersen</td>
-              <td class="num">07:51.917</td>
-              <td class="num">06:58.170</td>
-              <td class="num faster">−53.747s</td>
-              <td class="num faster">−11.4%</td>
-              <td class="num faster">43 → 34</td>
+<tr data-name="jay kenward" data-best="305.137" data-y2026="" data-y2025="305.137" data-delta="" data-pct="" data-rank="">
+              <td class="name">Jay Kenward</td>
+              <td class="num year-best">05:05.137</td>
+              <td class="num na">n/a</td>
+              <td class="num year-best">05:05.137</td>
+              <td class="num na progress">n/a</td>
+              <td class="num na">n/a</td>
+              <td class="num na">1 → n/a</td>
             </tr>
-<tr data-name="fabio costa" data-delta="-49.91700000000003" data-pct="-10.712101410554379" data-y2025="465.987" data-y2026="416.07" data-rank="31">
-              <td class="name">Fabio Costa</td>
-              <td class="num">07:45.987</td>
-              <td class="num">06:56.070</td>
-              <td class="num faster">−49.917s</td>
-              <td class="num faster">−10.7%</td>
-              <td class="num faster">38 → 31</td>
+<tr data-name="henry livingstone dunn" data-best="306.98" data-y2026="306.98" data-y2025="379.807" data-delta="-72.827" data-pct="-19.17473874889088" data-rank="2">
+              <td class="name">Henry Livingstone Dunn</td>
+              <td class="num year-best">05:06.980</td>
+              <td class="num year-best">05:06.980</td>
+              <td class="num">06:19.807</td>
+              <td class="num progress faster">−1:12.827</td>
+              <td class="num faster">−19.2%</td>
+              <td class="num faster">13 → 2</td>
             </tr>
-<tr data-name="wiktor sowinski" data-delta="-47.573000000000036" data-pct="-10.855888440360282" data-y2025="438.223" data-y2026="390.65" data-rank="20">
-              <td class="name">Wiktor Sowinski</td>
-              <td class="num">07:18.223</td>
-              <td class="num">06:30.650</td>
-              <td class="num faster">−47.573s</td>
-              <td class="num faster">−10.9%</td>
-              <td class="num faster">28 → 20</td>
-            </tr>
-<tr data-name="thorkild rasmussen" data-delta="-46.69" data-pct="-11.412020629139882" data-y2025="409.13" data-y2026="362.44" data-rank="15">
-              <td class="name">Thorkild Rasmussen</td>
-              <td class="num">06:49.130</td>
-              <td class="num">06:02.440</td>
-              <td class="num faster">−46.690s</td>
-              <td class="num faster">−11.4%</td>
-              <td class="num faster">18 → 15</td>
-            </tr>
-<tr data-name="chantelle warner wells" data-delta="-43.05000000000001" data-pct="-9.205996193571844" data-y2025="467.63" data-y2026="424.58" data-rank="36">
-              <td class="name">Chantelle Warner-Wells</td>
-              <td class="num">07:47.630</td>
-              <td class="num">07:04.580</td>
-              <td class="num faster">−43.050s</td>
-              <td class="num faster">−9.2%</td>
-              <td class="num faster">39 → 36</td>
-            </tr>
-<tr data-name="james grant" data-delta="-39.793000000000006" data-pct="-9.207442217764235" data-y2025="432.183" data-y2026="392.39" data-rank="21">
-              <td class="name">James Grant</td>
-              <td class="num">07:12.183</td>
-              <td class="num">06:32.390</td>
-              <td class="num faster">−39.793s</td>
-              <td class="num faster">−9.2%</td>
-              <td class="num faster">27 → 21</td>
-            </tr>
-<tr data-name="james pitcher" data-delta="-38.197" data-pct="-8.702754797713412" data-y2025="438.907" data-y2026="400.71" data-rank="25">
-              <td class="name">James Pitcher</td>
-              <td class="num">07:18.907</td>
-              <td class="num">06:40.710</td>
-              <td class="num faster">−38.197s</td>
-              <td class="num faster">−8.7%</td>
-              <td class="num faster">29 → 25</td>
-            </tr>
-<tr data-name="joel jones" data-delta="-37.66699999999997" data-pct="-10.63237614567543" data-y2025="354.267" data-y2026="316.6" data-rank="4">
-              <td class="name">Joel Jones</td>
-              <td class="num">05:54.267</td>
-              <td class="num">05:16.600</td>
-              <td class="num faster">−37.667s</td>
-              <td class="num faster">−10.6%</td>
-              <td class="num faster">5 → 4</td>
-            </tr>
-<tr data-name="jacob jones" data-delta="-32.18700000000001" data-pct="-8.617670682730926" data-y2025="373.5" data-y2026="341.313" data-rank="6">
-              <td class="name">Jacob Jones</td>
-              <td class="num">06:13.500</td>
-              <td class="num">05:41.313</td>
-              <td class="num faster">−32.187s</td>
-              <td class="num faster">−8.6%</td>
-              <td class="num faster">10 → 6</td>
-            </tr>
-<tr data-name="kate paxton" data-delta="-29.189999999999998" data-pct="-6.1941644562334215" data-y2025="471.25" data-y2026="442.06" data-rank="39">
-              <td class="name">Kate Paxton</td>
-              <td class="num">07:51.250</td>
-              <td class="num">07:22.060</td>
-              <td class="num faster">−29.190s</td>
-              <td class="num faster">−6.2%</td>
-              <td class="num faster">42 → 39</td>
-            </tr>
-<tr data-name="zack mcfarlane" data-delta="-28.07299999999998" data-pct="-7.290684658994991" data-y2025="385.053" data-y2026="356.98" data-rank="14">
-              <td class="name">Zack McFarlane</td>
-              <td class="num">06:25.053</td>
-              <td class="num">05:56.980</td>
-              <td class="num faster">−28.073s</td>
-              <td class="num faster">−7.3%</td>
-              <td class="num same">14 → 14</td>
-            </tr>
-<tr data-name="mollie stuart" data-delta="-19.642999999999972" data-pct="-3.817488188777438" data-y2025="514.553" data-y2026="494.91" data-rank="49">
-              <td class="name">Mollie Stuart</td>
-              <td class="num">08:34.553</td>
-              <td class="num">08:14.910</td>
-              <td class="num faster">−19.643s</td>
-              <td class="num faster">−3.8%</td>
-              <td class="num slower">46 → 49</td>
-            </tr>
-<tr data-name="sam o connell" data-delta="-15.692999999999984" data-pct="-4.236279265636004" data-y2025="370.443" data-y2026="354.75" data-rank="13">
-              <td class="name">Sam O&#x27;Connell</td>
-              <td class="num">06:10.443</td>
-              <td class="num">05:54.750</td>
-              <td class="num faster">−15.693s</td>
-              <td class="num faster">−4.2%</td>
-              <td class="num slower">9 → 13</td>
-            </tr>
-<tr data-name="alexis matton" data-delta="-12.923000000000002" data-pct="-3.9959431421477234" data-y2025="323.403" data-y2026="310.48" data-rank="3">
+<tr data-name="alexis matton" data-best="310.48" data-y2026="310.48" data-y2025="323.403" data-delta="-12.923000000000002" data-pct="-3.9959431421477234" data-rank="3">
               <td class="name">Alexis Matton</td>
+              <td class="num year-best">05:10.480</td>
+              <td class="num year-best">05:10.480</td>
               <td class="num">05:23.403</td>
-              <td class="num">05:10.480</td>
-              <td class="num faster">−12.923s</td>
+              <td class="num progress faster">−12.923s</td>
               <td class="num faster">−4.0%</td>
               <td class="num same">3 → 3</td>
             </tr>
-<tr data-name="adrian krige" data-delta="-3.6170000000000186" data-pct="-0.8608420401266198" data-y2025="420.17" data-y2026="416.553" data-rank="32">
-              <td class="name">Adrian Krige</td>
-              <td class="num">07:00.170</td>
-              <td class="num">06:56.553</td>
-              <td class="num faster">−3.617s</td>
-              <td class="num faster">−0.9%</td>
-              <td class="num slower">22 → 32</td>
+<tr data-name="joel jones" data-best="316.6" data-y2026="316.6" data-y2025="354.267" data-delta="-37.66699999999997" data-pct="-10.63237614567543" data-rank="4">
+              <td class="name">Joel Jones</td>
+              <td class="num year-best">05:16.600</td>
+              <td class="num year-best">05:16.600</td>
+              <td class="num">05:54.267</td>
+              <td class="num progress faster">−37.667s</td>
+              <td class="num faster">−10.6%</td>
+              <td class="num faster">5 → 4</td>
             </tr>
-<tr data-name="nico stuart" data-delta="11.410000000000025" data-pct="3.1002907371681725" data-y2025="368.03" data-y2026="379.44" data-rank="18">
+<tr data-name="dan turner" data-best="317.357" data-y2026="352.37" data-y2025="317.357" data-delta="35.01299999999998" data-pct="11.032685587524451" data-rank="12">
+              <td class="name">Dan Turner</td>
+              <td class="num year-best">05:17.357</td>
+              <td class="num">05:52.370</td>
+              <td class="num year-best">05:17.357</td>
+              <td class="num progress slower">+35.013s</td>
+              <td class="num slower">+11.0%</td>
+              <td class="num slower">2 → 12</td>
+            </tr>
+<tr data-name="sep de booser" data-best="332.64" data-y2026="332.64" data-y2025="" data-delta="" data-pct="" data-rank="">
+              <td class="name">Sep De Booser</td>
+              <td class="num year-best">05:32.640</td>
+              <td class="num year-best">05:32.640</td>
+              <td class="num na">n/a</td>
+              <td class="num na progress">n/a</td>
+              <td class="num na">n/a</td>
+              <td class="num na">n/a → 5</td>
+            </tr>
+<tr data-name="jacob jones" data-best="341.313" data-y2026="341.313" data-y2025="373.5" data-delta="-32.18700000000001" data-pct="-8.617670682730926" data-rank="6">
+              <td class="name">Jacob Jones</td>
+              <td class="num year-best">05:41.313</td>
+              <td class="num year-best">05:41.313</td>
+              <td class="num">06:13.500</td>
+              <td class="num progress faster">−32.187s</td>
+              <td class="num faster">−8.6%</td>
+              <td class="num faster">10 → 6</td>
+            </tr>
+<tr data-name="thomas ventoulou" data-best="342.72" data-y2026="342.72" data-y2025="" data-delta="" data-pct="" data-rank="">
+              <td class="name">Thomas Ventoulou</td>
+              <td class="num year-best">05:42.720</td>
+              <td class="num year-best">05:42.720</td>
+              <td class="num na">n/a</td>
+              <td class="num na progress">n/a</td>
+              <td class="num na">n/a</td>
+              <td class="num na">n/a → 7</td>
+            </tr>
+<tr data-name="quirine posno" data-best="344.82" data-y2026="344.82" data-y2025="474.043" data-delta="-129.223" data-pct="-27.259763354801148" data-rank="8">
+              <td class="name">Quirine Posno</td>
+              <td class="num year-best">05:44.820</td>
+              <td class="num year-best">05:44.820</td>
+              <td class="num">07:54.043</td>
+              <td class="num progress faster">−2:09.223</td>
+              <td class="num faster">−27.3%</td>
+              <td class="num faster">44 → 8</td>
+            </tr>
+<tr data-name="radim klaska" data-best="347.983" data-y2026="347.983" data-y2025="426.26" data-delta="-78.27699999999999" data-pct="-18.363674752498472" data-rank="9">
+              <td class="name">Radim Klaška</td>
+              <td class="num year-best">05:47.983</td>
+              <td class="num year-best">05:47.983</td>
+              <td class="num">07:06.260</td>
+              <td class="num progress faster">−1:18.277</td>
+              <td class="num faster">−18.4%</td>
+              <td class="num faster">24 → 9</td>
+            </tr>
+<tr data-name="cedric ackermann" data-best="351.057" data-y2026="351.057" data-y2025="" data-delta="" data-pct="" data-rank="">
+              <td class="name">Cedric Ackermann</td>
+              <td class="num year-best">05:51.057</td>
+              <td class="num year-best">05:51.057</td>
+              <td class="num na">n/a</td>
+              <td class="num na progress">n/a</td>
+              <td class="num na">n/a</td>
+              <td class="num na">n/a → 10</td>
+            </tr>
+<tr data-name="thomas harasse" data-best="352.32" data-y2026="352.32" data-y2025="" data-delta="" data-pct="" data-rank="">
+              <td class="name">Thomas Harasse</td>
+              <td class="num year-best">05:52.320</td>
+              <td class="num year-best">05:52.320</td>
+              <td class="num na">n/a</td>
+              <td class="num na progress">n/a</td>
+              <td class="num na">n/a</td>
+              <td class="num na">n/a → 11</td>
+            </tr>
+<tr data-name="sam o connell" data-best="354.75" data-y2026="354.75" data-y2025="370.443" data-delta="-15.692999999999984" data-pct="-4.236279265636004" data-rank="13">
+              <td class="name">Sam O&#x27;Connell</td>
+              <td class="num year-best">05:54.750</td>
+              <td class="num year-best">05:54.750</td>
+              <td class="num">06:10.443</td>
+              <td class="num progress faster">−15.693s</td>
+              <td class="num faster">−4.2%</td>
+              <td class="num slower">9 → 13</td>
+            </tr>
+<tr data-name="zack mcfarlane" data-best="356.98" data-y2026="356.98" data-y2025="385.053" data-delta="-28.07299999999998" data-pct="-7.290684658994991" data-rank="14">
+              <td class="name">Zack McFarlane</td>
+              <td class="num year-best">05:56.980</td>
+              <td class="num year-best">05:56.980</td>
+              <td class="num">06:25.053</td>
+              <td class="num progress faster">−28.073s</td>
+              <td class="num faster">−7.3%</td>
+              <td class="num same">14 → 14</td>
+            </tr>
+<tr data-name="thorkild rasmussen" data-best="362.44" data-y2026="362.44" data-y2025="409.13" data-delta="-46.69" data-pct="-11.412020629139882" data-rank="15">
+              <td class="name">Thorkild Rasmussen</td>
+              <td class="num year-best">06:02.440</td>
+              <td class="num year-best">06:02.440</td>
+              <td class="num">06:49.130</td>
+              <td class="num progress faster">−46.690s</td>
+              <td class="num faster">−11.4%</td>
+              <td class="num faster">18 → 15</td>
+            </tr>
+<tr data-name="indiana mcfarlane" data-best="362.51" data-y2026="" data-y2025="362.51" data-delta="" data-pct="" data-rank="">
+              <td class="name">Indiana Mcfarlane</td>
+              <td class="num year-best">06:02.510</td>
+              <td class="num na">n/a</td>
+              <td class="num year-best">06:02.510</td>
+              <td class="num na progress">n/a</td>
+              <td class="num na">n/a</td>
+              <td class="num na">6 → n/a</td>
+            </tr>
+<tr data-name="jonas pfluger" data-best="362.663" data-y2026="" data-y2025="362.663" data-delta="" data-pct="" data-rank="">
+              <td class="name">Jonas Pflüger</td>
+              <td class="num year-best">06:02.663</td>
+              <td class="num na">n/a</td>
+              <td class="num year-best">06:02.663</td>
+              <td class="num na progress">n/a</td>
+              <td class="num na">n/a</td>
+              <td class="num na">7 → n/a</td>
+            </tr>
+<tr data-name="andras varadi szabo" data-best="362.73" data-y2026="362.73" data-y2025="" data-delta="" data-pct="" data-rank="">
+              <td class="name">Andras Varadi-Szabo</td>
+              <td class="num year-best">06:02.730</td>
+              <td class="num year-best">06:02.730</td>
+              <td class="num na">n/a</td>
+              <td class="num na progress">n/a</td>
+              <td class="num na">n/a</td>
+              <td class="num na">n/a → 16</td>
+            </tr>
+<tr data-name="joshua billinghurst" data-best="367.47" data-y2026="367.47" data-y2025="" data-delta="" data-pct="" data-rank="">
+              <td class="name">Joshua Billinghurst</td>
+              <td class="num year-best">06:07.470</td>
+              <td class="num year-best">06:07.470</td>
+              <td class="num na">n/a</td>
+              <td class="num na progress">n/a</td>
+              <td class="num na">n/a</td>
+              <td class="num na">n/a → 17</td>
+            </tr>
+<tr data-name="nico stuart" data-best="368.03" data-y2026="379.44" data-y2025="368.03" data-delta="11.410000000000025" data-pct="3.1002907371681725" data-rank="18">
               <td class="name">Nico Stuart</td>
-              <td class="num">06:08.030</td>
+              <td class="num year-best">06:08.030</td>
               <td class="num">06:19.440</td>
-              <td class="num slower">+11.410s</td>
+              <td class="num year-best">06:08.030</td>
+              <td class="num progress slower">+11.410s</td>
               <td class="num slower">+3.1%</td>
               <td class="num slower">8 → 18</td>
             </tr>
-<tr data-name="florent audrit" data-delta="13.596000000000004" data-pct="3.510212301233842" data-y2025="387.327" data-y2026="400.923" data-rank="26">
+<tr data-name="geky del curto" data-best="378.273" data-y2026="" data-y2025="378.273" data-delta="" data-pct="" data-rank="">
+              <td class="name">Geky Del Curto</td>
+              <td class="num year-best">06:18.273</td>
+              <td class="num na">n/a</td>
+              <td class="num year-best">06:18.273</td>
+              <td class="num na progress">n/a</td>
+              <td class="num na">n/a</td>
+              <td class="num na">11 → n/a</td>
+            </tr>
+<tr data-name="benoit rousseaux" data-best="378.66" data-y2026="" data-y2025="378.66" data-delta="" data-pct="" data-rank="">
+              <td class="name">Benoit Rousseaux</td>
+              <td class="num year-best">06:18.660</td>
+              <td class="num na">n/a</td>
+              <td class="num year-best">06:18.660</td>
+              <td class="num na progress">n/a</td>
+              <td class="num na">n/a</td>
+              <td class="num na">12 → n/a</td>
+            </tr>
+<tr data-name="jeffrey jaffa gaming" data-best="387.307" data-y2026="" data-y2025="387.307" data-delta="" data-pct="" data-rank="">
+              <td class="name">Jeffrey Jaffa Gaming</td>
+              <td class="num year-best">06:27.307</td>
+              <td class="num na">n/a</td>
+              <td class="num year-best">06:27.307</td>
+              <td class="num na progress">n/a</td>
+              <td class="num na">n/a</td>
+              <td class="num na">15 → n/a</td>
+            </tr>
+<tr data-name="florent audrit" data-best="387.327" data-y2026="400.923" data-y2025="387.327" data-delta="13.596000000000004" data-pct="3.510212301233842" data-rank="26">
               <td class="name">Florent Audrit</td>
-              <td class="num">06:27.327</td>
+              <td class="num year-best">06:27.327</td>
               <td class="num">06:40.923</td>
-              <td class="num slower">+13.596s</td>
+              <td class="num year-best">06:27.327</td>
+              <td class="num progress slower">+13.596s</td>
               <td class="num slower">+3.5%</td>
               <td class="num slower">16 → 26</td>
             </tr>
-<tr data-name="dan turner" data-delta="35.01299999999998" data-pct="11.032685587524451" data-y2025="317.357" data-y2026="352.37" data-rank="12">
-              <td class="name">Dan Turner</td>
-              <td class="num">05:17.357</td>
-              <td class="num">05:52.370</td>
-              <td class="num slower">+35.013s</td>
-              <td class="num slower">+11.0%</td>
-              <td class="num slower">2 → 12</td>
+<tr data-name="miles musgrave" data-best="387.63" data-y2026="387.63" data-y2025="" data-delta="" data-pct="" data-rank="">
+              <td class="name">Miles Musgrave</td>
+              <td class="num year-best">06:27.630</td>
+              <td class="num year-best">06:27.630</td>
+              <td class="num na">n/a</td>
+              <td class="num na progress">n/a</td>
+              <td class="num na">n/a</td>
+              <td class="num na">n/a → 19</td>
+            </tr>
+<tr data-name="wiktor sowinski" data-best="390.65" data-y2026="390.65" data-y2025="438.223" data-delta="-47.573000000000036" data-pct="-10.855888440360282" data-rank="20">
+              <td class="name">Wiktor Sowinski</td>
+              <td class="num year-best">06:30.650</td>
+              <td class="num year-best">06:30.650</td>
+              <td class="num">07:18.223</td>
+              <td class="num progress faster">−47.573s</td>
+              <td class="num faster">−10.9%</td>
+              <td class="num faster">28 → 20</td>
+            </tr>
+<tr data-name="noah gamon" data-best="391.967" data-y2026="" data-y2025="391.967" data-delta="" data-pct="" data-rank="">
+              <td class="name">Noah Gamon</td>
+              <td class="num year-best">06:31.967</td>
+              <td class="num na">n/a</td>
+              <td class="num year-best">06:31.967</td>
+              <td class="num na progress">n/a</td>
+              <td class="num na">n/a</td>
+              <td class="num na">17 → n/a</td>
+            </tr>
+<tr data-name="james grant" data-best="392.39" data-y2026="392.39" data-y2025="432.183" data-delta="-39.793000000000006" data-pct="-9.207442217764235" data-rank="21">
+              <td class="name">James Grant</td>
+              <td class="num year-best">06:32.390</td>
+              <td class="num year-best">06:32.390</td>
+              <td class="num">07:12.183</td>
+              <td class="num progress faster">−39.793s</td>
+              <td class="num faster">−9.2%</td>
+              <td class="num faster">27 → 21</td>
+            </tr>
+<tr data-name="jeffrey gamon" data-best="394.03" data-y2026="394.03" data-y2025="" data-delta="" data-pct="" data-rank="">
+              <td class="name">Jeffrey Gamon</td>
+              <td class="num year-best">06:34.030</td>
+              <td class="num year-best">06:34.030</td>
+              <td class="num na">n/a</td>
+              <td class="num na progress">n/a</td>
+              <td class="num na">n/a</td>
+              <td class="num na">n/a → 22</td>
+            </tr>
+<tr data-name="maarten de booser" data-best="398.47" data-y2026="398.47" data-y2025="" data-delta="" data-pct="" data-rank="">
+              <td class="name">Maarten De Booser</td>
+              <td class="num year-best">06:38.470</td>
+              <td class="num year-best">06:38.470</td>
+              <td class="num na">n/a</td>
+              <td class="num na progress">n/a</td>
+              <td class="num na">n/a</td>
+              <td class="num na">n/a → 23</td>
+            </tr>
+<tr data-name="remo berli" data-best="400.49" data-y2026="400.49" data-y2025="" data-delta="" data-pct="" data-rank="">
+              <td class="name">Remo Berli</td>
+              <td class="num year-best">06:40.490</td>
+              <td class="num year-best">06:40.490</td>
+              <td class="num na">n/a</td>
+              <td class="num na progress">n/a</td>
+              <td class="num na">n/a</td>
+              <td class="num na">n/a → 24</td>
+            </tr>
+<tr data-name="james pitcher" data-best="400.71" data-y2026="400.71" data-y2025="438.907" data-delta="-38.197" data-pct="-8.702754797713412" data-rank="25">
+              <td class="name">James Pitcher</td>
+              <td class="num year-best">06:40.710</td>
+              <td class="num year-best">06:40.710</td>
+              <td class="num">07:18.907</td>
+              <td class="num progress faster">−38.197s</td>
+              <td class="num faster">−8.7%</td>
+              <td class="num faster">29 → 25</td>
+            </tr>
+<tr data-name="thomas sabinsky" data-best="403.527" data-y2026="403.527" data-y2025="" data-delta="" data-pct="" data-rank="">
+              <td class="name">Thomas Sabinsky</td>
+              <td class="num year-best">06:43.527</td>
+              <td class="num year-best">06:43.527</td>
+              <td class="num na">n/a</td>
+              <td class="num na progress">n/a</td>
+              <td class="num na">n/a</td>
+              <td class="num na">n/a → 27</td>
+            </tr>
+<tr data-name="enrique rufo molero" data-best="408.46" data-y2026="408.46" data-y2025="" data-delta="" data-pct="" data-rank="">
+              <td class="name">Enrique Rufo Molero</td>
+              <td class="num year-best">06:48.460</td>
+              <td class="num year-best">06:48.460</td>
+              <td class="num na">n/a</td>
+              <td class="num na progress">n/a</td>
+              <td class="num na">n/a</td>
+              <td class="num na">n/a → 28</td>
+            </tr>
+<tr data-name="jessica jones" data-best="409.27" data-y2026="" data-y2025="409.27" data-delta="" data-pct="" data-rank="">
+              <td class="name">Jessica Jones</td>
+              <td class="num year-best">06:49.270</td>
+              <td class="num na">n/a</td>
+              <td class="num year-best">06:49.270</td>
+              <td class="num na progress">n/a</td>
+              <td class="num na">n/a</td>
+              <td class="num na">19 → n/a</td>
+            </tr>
+<tr data-name="harley moss" data-best="410.04" data-y2026="410.04" data-y2025="" data-delta="" data-pct="" data-rank="">
+              <td class="name">Harley Moss</td>
+              <td class="num year-best">06:50.040</td>
+              <td class="num year-best">06:50.040</td>
+              <td class="num na">n/a</td>
+              <td class="num na progress">n/a</td>
+              <td class="num na">n/a</td>
+              <td class="num na">n/a → 29</td>
+            </tr>
+<tr data-name="zak moss" data-best="415.42" data-y2026="415.42" data-y2025="" data-delta="" data-pct="" data-rank="">
+              <td class="name">Zak Moss</td>
+              <td class="num year-best">06:55.420</td>
+              <td class="num year-best">06:55.420</td>
+              <td class="num na">n/a</td>
+              <td class="num na progress">n/a</td>
+              <td class="num na">n/a</td>
+              <td class="num na">n/a → 30</td>
+            </tr>
+<tr data-name="fabio costa" data-best="416.07" data-y2026="416.07" data-y2025="465.987" data-delta="-49.91700000000003" data-pct="-10.712101410554379" data-rank="31">
+              <td class="name">Fabio Costa</td>
+              <td class="num year-best">06:56.070</td>
+              <td class="num year-best">06:56.070</td>
+              <td class="num">07:45.987</td>
+              <td class="num progress faster">−49.917s</td>
+              <td class="num faster">−10.7%</td>
+              <td class="num faster">38 → 31</td>
+            </tr>
+<tr data-name="clint lashley" data-best="416.28" data-y2026="" data-y2025="416.28" data-delta="" data-pct="" data-rank="">
+              <td class="name">Clint Lashley</td>
+              <td class="num year-best">06:56.280</td>
+              <td class="num na">n/a</td>
+              <td class="num year-best">06:56.280</td>
+              <td class="num na progress">n/a</td>
+              <td class="num na">n/a</td>
+              <td class="num na">20 → n/a</td>
+            </tr>
+<tr data-name="gerard rincon" data-best="416.523" data-y2026="" data-y2025="416.523" data-delta="" data-pct="" data-rank="">
+              <td class="name">Gerard Rincon</td>
+              <td class="num year-best">06:56.523</td>
+              <td class="num na">n/a</td>
+              <td class="num year-best">06:56.523</td>
+              <td class="num na progress">n/a</td>
+              <td class="num na">n/a</td>
+              <td class="num na">21 → n/a</td>
+            </tr>
+<tr data-name="adrian krige" data-best="416.553" data-y2026="416.553" data-y2025="420.17" data-delta="-3.6170000000000186" data-pct="-0.8608420401266198" data-rank="32">
+              <td class="name">Adrian Krige</td>
+              <td class="num year-best">06:56.553</td>
+              <td class="num year-best">06:56.553</td>
+              <td class="num">07:00.170</td>
+              <td class="num progress faster">−3.617s</td>
+              <td class="num faster">−0.9%</td>
+              <td class="num slower">22 → 32</td>
+            </tr>
+<tr data-name="muddi shoooz" data-best="416.713" data-y2026="416.713" data-y2025="" data-delta="" data-pct="" data-rank="">
+              <td class="name">Muddi Shoooz</td>
+              <td class="num year-best">06:56.713</td>
+              <td class="num year-best">06:56.713</td>
+              <td class="num na">n/a</td>
+              <td class="num na progress">n/a</td>
+              <td class="num na">n/a</td>
+              <td class="num na">n/a → 33</td>
+            </tr>
+<tr data-name="jonas andersen" data-best="418.17" data-y2026="418.17" data-y2025="471.917" data-delta="-53.74699999999996" data-pct="-11.389079011775367" data-rank="34">
+              <td class="name">Jonas Andersen</td>
+              <td class="num year-best">06:58.170</td>
+              <td class="num year-best">06:58.170</td>
+              <td class="num">07:51.917</td>
+              <td class="num progress faster">−53.747s</td>
+              <td class="num faster">−11.4%</td>
+              <td class="num faster">43 → 34</td>
+            </tr>
+<tr data-name="simon oppenheimer" data-best="420.4" data-y2026="420.4" data-y2025="491.04" data-delta="-70.64000000000004" data-pct="-14.38579341805149" data-rank="35">
+              <td class="name">Simon Oppenheimer</td>
+              <td class="num year-best">07:00.400</td>
+              <td class="num year-best">07:00.400</td>
+              <td class="num">08:11.040</td>
+              <td class="num progress faster">−1:10.640</td>
+              <td class="num faster">−14.4%</td>
+              <td class="num faster">45 → 35</td>
+            </tr>
+<tr data-name="vid gladovic" data-best="421.36" data-y2026="" data-y2025="421.36" data-delta="" data-pct="" data-rank="">
+              <td class="name">Vid Gladovic</td>
+              <td class="num year-best">07:01.360</td>
+              <td class="num na">n/a</td>
+              <td class="num year-best">07:01.360</td>
+              <td class="num na progress">n/a</td>
+              <td class="num na">n/a</td>
+              <td class="num na">23 → n/a</td>
+            </tr>
+<tr data-name="chantelle warner wells" data-best="424.58" data-y2026="424.58" data-y2025="467.63" data-delta="-43.05000000000001" data-pct="-9.205996193571844" data-rank="36">
+              <td class="name">Chantelle Warner-Wells</td>
+              <td class="num year-best">07:04.580</td>
+              <td class="num year-best">07:04.580</td>
+              <td class="num">07:47.630</td>
+              <td class="num progress faster">−43.050s</td>
+              <td class="num faster">−9.2%</td>
+              <td class="num faster">39 → 36</td>
+            </tr>
+<tr data-name="thomas skovgaard" data-best="428.303" data-y2026="" data-y2025="428.303" data-delta="" data-pct="" data-rank="">
+              <td class="name">Thomas Skovgaard</td>
+              <td class="num year-best">07:08.303</td>
+              <td class="num na">n/a</td>
+              <td class="num year-best">07:08.303</td>
+              <td class="num na progress">n/a</td>
+              <td class="num na">n/a</td>
+              <td class="num na">25 → n/a</td>
+            </tr>
+<tr data-name="joselito dendoncker" data-best="431.177" data-y2026="" data-y2025="431.177" data-delta="" data-pct="" data-rank="">
+              <td class="name">Joselito Dendoncker</td>
+              <td class="num year-best">07:11.177</td>
+              <td class="num na">n/a</td>
+              <td class="num year-best">07:11.177</td>
+              <td class="num na progress">n/a</td>
+              <td class="num na">n/a</td>
+              <td class="num na">26 → n/a</td>
+            </tr>
+<tr data-name="adam freeman" data-best="434.78" data-y2026="434.78" data-y2025="" data-delta="" data-pct="" data-rank="">
+              <td class="name">Adam Freeman</td>
+              <td class="num year-best">07:14.780</td>
+              <td class="num year-best">07:14.780</td>
+              <td class="num na">n/a</td>
+              <td class="num na progress">n/a</td>
+              <td class="num na">n/a</td>
+              <td class="num na">n/a → 37</td>
+            </tr>
+<tr data-name="gilles de somviele" data-best="438.79" data-y2026="438.79" data-y2025="" data-delta="" data-pct="" data-rank="">
+              <td class="name">Gilles De Somviele</td>
+              <td class="num year-best">07:18.790</td>
+              <td class="num year-best">07:18.790</td>
+              <td class="num na">n/a</td>
+              <td class="num na progress">n/a</td>
+              <td class="num na">n/a</td>
+              <td class="num na">n/a → 38</td>
+            </tr>
+<tr data-name="kate paxton" data-best="442.06" data-y2026="442.06" data-y2025="471.25" data-delta="-29.189999999999998" data-pct="-6.1941644562334215" data-rank="39">
+              <td class="name">Kate Paxton</td>
+              <td class="num year-best">07:22.060</td>
+              <td class="num year-best">07:22.060</td>
+              <td class="num">07:51.250</td>
+              <td class="num progress faster">−29.190s</td>
+              <td class="num faster">−6.2%</td>
+              <td class="num faster">42 → 39</td>
+            </tr>
+<tr data-name="fabian scherrer" data-best="443.0" data-y2026="" data-y2025="443.0" data-delta="" data-pct="" data-rank="">
+              <td class="name">Fabian Scherrer</td>
+              <td class="num year-best">07:23.000</td>
+              <td class="num na">n/a</td>
+              <td class="num year-best">07:23.000</td>
+              <td class="num na progress">n/a</td>
+              <td class="num na">n/a</td>
+              <td class="num na">30 → n/a</td>
+            </tr>
+<tr data-name="eduardo stralis pavese" data-best="443.79" data-y2026="" data-y2025="443.79" data-delta="" data-pct="" data-rank="">
+              <td class="name">Eduardo Stralis Pavese</td>
+              <td class="num year-best">07:23.790</td>
+              <td class="num na">n/a</td>
+              <td class="num year-best">07:23.790</td>
+              <td class="num na progress">n/a</td>
+              <td class="num na">n/a</td>
+              <td class="num na">32 → n/a</td>
+            </tr>
+<tr data-name="travis wilson" data-best="446.05" data-y2026="446.05" data-y2025="" data-delta="" data-pct="" data-rank="">
+              <td class="name">Travis Wilson</td>
+              <td class="num year-best">07:26.050</td>
+              <td class="num year-best">07:26.050</td>
+              <td class="num na">n/a</td>
+              <td class="num na progress">n/a</td>
+              <td class="num na">n/a</td>
+              <td class="num na">n/a → 40</td>
+            </tr>
+<tr data-name="thomas de pauw" data-best="446.08" data-y2026="446.08" data-y2025="" data-delta="" data-pct="" data-rank="">
+              <td class="name">Thomas De Pauw</td>
+              <td class="num year-best">07:26.080</td>
+              <td class="num year-best">07:26.080</td>
+              <td class="num na">n/a</td>
+              <td class="num na progress">n/a</td>
+              <td class="num na">n/a</td>
+              <td class="num na">n/a → 41</td>
+            </tr>
+<tr data-name="barbara tokarska" data-best="450.747" data-y2026="" data-y2025="450.747" data-delta="" data-pct="" data-rank="">
+              <td class="name">Barbara Tokarska</td>
+              <td class="num year-best">07:30.747</td>
+              <td class="num na">n/a</td>
+              <td class="num year-best">07:30.747</td>
+              <td class="num na progress">n/a</td>
+              <td class="num na">n/a</td>
+              <td class="num na">33 → n/a</td>
+            </tr>
+<tr data-name="eduardo queralto" data-best="454.82" data-y2026="" data-y2025="454.82" data-delta="" data-pct="" data-rank="">
+              <td class="name">Eduardo Queralto</td>
+              <td class="num year-best">07:34.820</td>
+              <td class="num na">n/a</td>
+              <td class="num year-best">07:34.820</td>
+              <td class="num na progress">n/a</td>
+              <td class="num na">n/a</td>
+              <td class="num na">34 → n/a</td>
+            </tr>
+<tr data-name="nick oppy" data-best="456.14" data-y2026="456.14" data-y2025="530.373" data-delta="-74.23300000000006" data-pct="-13.996376135285931" data-rank="42">
+              <td class="name">Nick Oppy</td>
+              <td class="num year-best">07:36.140</td>
+              <td class="num year-best">07:36.140</td>
+              <td class="num">08:50.373</td>
+              <td class="num progress faster">−1:14.233</td>
+              <td class="num faster">−14.0%</td>
+              <td class="num faster">48 → 42</td>
+            </tr>
+<tr data-name="leyla zi" data-best="457.33" data-y2026="" data-y2025="457.33" data-delta="" data-pct="" data-rank="">
+              <td class="name">Leyla Zi</td>
+              <td class="num year-best">07:37.330</td>
+              <td class="num na">n/a</td>
+              <td class="num year-best">07:37.330</td>
+              <td class="num na progress">n/a</td>
+              <td class="num na">n/a</td>
+              <td class="num na">35 → n/a</td>
+            </tr>
+<tr data-name="max mcfarlane" data-best="457.69" data-y2026="" data-y2025="457.69" data-delta="" data-pct="" data-rank="">
+              <td class="name">Max Mcfarlane</td>
+              <td class="num year-best">07:37.690</td>
+              <td class="num na">n/a</td>
+              <td class="num year-best">07:37.690</td>
+              <td class="num na progress">n/a</td>
+              <td class="num na">n/a</td>
+              <td class="num na">36 → n/a</td>
+            </tr>
+<tr data-name="tobi sunder" data-best="458.883" data-y2026="" data-y2025="458.883" data-delta="" data-pct="" data-rank="">
+              <td class="name">Tobi Sünder</td>
+              <td class="num year-best">07:38.883</td>
+              <td class="num na">n/a</td>
+              <td class="num year-best">07:38.883</td>
+              <td class="num na progress">n/a</td>
+              <td class="num na">n/a</td>
+              <td class="num na">37 → n/a</td>
+            </tr>
+<tr data-name="mark conningsby" data-best="460.07" data-y2026="460.07" data-y2025="" data-delta="" data-pct="" data-rank="">
+              <td class="name">Mark Conningsby</td>
+              <td class="num year-best">07:40.070</td>
+              <td class="num year-best">07:40.070</td>
+              <td class="num na">n/a</td>
+              <td class="num na progress">n/a</td>
+              <td class="num na">n/a</td>
+              <td class="num na">n/a → 43</td>
+            </tr>
+<tr data-name="bartosz kozak" data-best="467.89" data-y2026="467.89" data-y2025="" data-delta="" data-pct="" data-rank="">
+              <td class="name">Bartosz Kozak</td>
+              <td class="num year-best">07:47.890</td>
+              <td class="num year-best">07:47.890</td>
+              <td class="num na">n/a</td>
+              <td class="num na progress">n/a</td>
+              <td class="num na">n/a</td>
+              <td class="num na">n/a → 44</td>
+            </tr>
+<tr data-name="lars lottrup" data-best="468.7" data-y2026="" data-y2025="468.7" data-delta="" data-pct="" data-rank="">
+              <td class="name">Lars Lottrup</td>
+              <td class="num year-best">07:48.700</td>
+              <td class="num na">n/a</td>
+              <td class="num year-best">07:48.700</td>
+              <td class="num na progress">n/a</td>
+              <td class="num na">n/a</td>
+              <td class="num na">40 → n/a</td>
+            </tr>
+<tr data-name="tomas mach" data-best="470.37" data-y2026="" data-y2025="470.37" data-delta="" data-pct="" data-rank="">
+              <td class="name">Tomáš Mach</td>
+              <td class="num year-best">07:50.370</td>
+              <td class="num na">n/a</td>
+              <td class="num year-best">07:50.370</td>
+              <td class="num na progress">n/a</td>
+              <td class="num na">n/a</td>
+              <td class="num na">41 → n/a</td>
+            </tr>
+<tr data-name="lars vloemans" data-best="473.86" data-y2026="473.86" data-y2025="" data-delta="" data-pct="" data-rank="">
+              <td class="name">Lars Vloemans</td>
+              <td class="num year-best">07:53.860</td>
+              <td class="num year-best">07:53.860</td>
+              <td class="num na">n/a</td>
+              <td class="num na progress">n/a</td>
+              <td class="num na">n/a</td>
+              <td class="num na">n/a → 45</td>
+            </tr>
+<tr data-name="jonathan tims" data-best="474.59" data-y2026="474.59" data-y2025="" data-delta="" data-pct="" data-rank="">
+              <td class="name">Jonathan Tims</td>
+              <td class="num year-best">07:54.590</td>
+              <td class="num year-best">07:54.590</td>
+              <td class="num na">n/a</td>
+              <td class="num na progress">n/a</td>
+              <td class="num na">n/a</td>
+              <td class="num na">n/a → 46</td>
+            </tr>
+<tr data-name="herman dijkstra" data-best="480.69" data-y2026="480.69" data-y2025="" data-delta="" data-pct="" data-rank="">
+              <td class="name">Herman Dijkstra</td>
+              <td class="num year-best">08:00.690</td>
+              <td class="num year-best">08:00.690</td>
+              <td class="num na">n/a</td>
+              <td class="num na progress">n/a</td>
+              <td class="num na">n/a</td>
+              <td class="num na">n/a → 47</td>
+            </tr>
+<tr data-name="willow wilson" data-best="488.85" data-y2026="488.85" data-y2025="" data-delta="" data-pct="" data-rank="">
+              <td class="name">Willow Wilson</td>
+              <td class="num year-best">08:08.850</td>
+              <td class="num year-best">08:08.850</td>
+              <td class="num na">n/a</td>
+              <td class="num na progress">n/a</td>
+              <td class="num na">n/a</td>
+              <td class="num na">n/a → 48</td>
+            </tr>
+<tr data-name="mollie stuart" data-best="494.91" data-y2026="494.91" data-y2025="514.553" data-delta="-19.642999999999972" data-pct="-3.817488188777438" data-rank="49">
+              <td class="name">Mollie Stuart</td>
+              <td class="num year-best">08:14.910</td>
+              <td class="num year-best">08:14.910</td>
+              <td class="num">08:34.553</td>
+              <td class="num progress faster">−19.643s</td>
+              <td class="num faster">−3.8%</td>
+              <td class="num slower">46 → 49</td>
+            </tr>
+<tr data-name="coby webb" data-best="504.91" data-y2026="504.91" data-y2025="808.89" data-delta="-303.97999999999996" data-pct="-37.579893434212316" data-rank="50">
+              <td class="name">Coby Webb</td>
+              <td class="num year-best">08:24.910</td>
+              <td class="num year-best">08:24.910</td>
+              <td class="num">13:28.890</td>
+              <td class="num progress faster">−5:03.980</td>
+              <td class="num faster">−37.6%</td>
+              <td class="num same">50 → 50</td>
+            </tr>
+<tr data-name="kacper kozak" data-best="519.27" data-y2026="519.27" data-y2025="" data-delta="" data-pct="" data-rank="">
+              <td class="name">Kacper Kozak</td>
+              <td class="num year-best">08:39.270</td>
+              <td class="num year-best">08:39.270</td>
+              <td class="num na">n/a</td>
+              <td class="num na progress">n/a</td>
+              <td class="num na">n/a</td>
+              <td class="num na">n/a → 51</td>
+            </tr>
+<tr data-name="chloe jager" data-best="531.127" data-y2026="" data-y2025="531.127" data-delta="" data-pct="" data-rank="">
+              <td class="name">Chloe Jager</td>
+              <td class="num year-best">08:51.127</td>
+              <td class="num na">n/a</td>
+              <td class="num year-best">08:51.127</td>
+              <td class="num na progress">n/a</td>
+              <td class="num na">n/a</td>
+              <td class="num na">49 → n/a</td>
+            </tr>
+<tr data-name="anna carson" data-best="536.97" data-y2026="536.97" data-y2025="" data-delta="" data-pct="" data-rank="">
+              <td class="name">Anna Carson</td>
+              <td class="num year-best">08:56.970</td>
+              <td class="num year-best">08:56.970</td>
+              <td class="num na">n/a</td>
+              <td class="num na progress">n/a</td>
+              <td class="num na">n/a</td>
+              <td class="num na">n/a → 52</td>
+            </tr>
+<tr data-name="teresa neves" data-best="739.86" data-y2026="739.86" data-y2025="" data-delta="" data-pct="" data-rank="">
+              <td class="name">Teresa Neves</td>
+              <td class="num year-best">12:19.860</td>
+              <td class="num year-best">12:19.860</td>
+              <td class="num na">n/a</td>
+              <td class="num na progress">n/a</td>
+              <td class="num na">n/a</td>
+              <td class="num na">n/a → 53</td>
             </tr>
         </tbody>
       </table>
     </div>
-    
-    <section class="section">
-      <h2>No 2025 lap</h2>
-      <p class="hint">28 riders.</p>
-      <div class="panel">
-        <table>
-          <thead><tr><th>Rank that year</th><th>Rider</th><th>Best lap</th><th>Category</th></tr></thead>
-          <tbody><tr>
-              <td class="rank">5</td>
-              <td class="name">Sep De Booser</td>
-              <td class="time">05:32.640</td>
-              <td class="gap">Groms</td>
-            </tr><tr>
-              <td class="rank">7</td>
-              <td class="name">Thomas Ventoulou</td>
-              <td class="time">05:42.720</td>
-              <td class="gap">Open</td>
-            </tr><tr>
-              <td class="rank">10</td>
-              <td class="name">Cedric Ackermann</td>
-              <td class="time">05:51.057</td>
-              <td class="gap">Open</td>
-            </tr><tr>
-              <td class="rank">11</td>
-              <td class="name">Thomas Harasse</td>
-              <td class="time">05:52.320</td>
-              <td class="gap">Open</td>
-            </tr><tr>
-              <td class="rank">16</td>
-              <td class="name">Andras Varadi-Szabo</td>
-              <td class="time">06:02.730</td>
-              <td class="gap">Open</td>
-            </tr><tr>
-              <td class="rank">17</td>
-              <td class="name">Joshua Billinghurst</td>
-              <td class="time">06:07.470</td>
-              <td class="gap">Groms</td>
-            </tr><tr>
-              <td class="rank">19</td>
-              <td class="name">Miles Musgrave</td>
-              <td class="time">06:27.630</td>
-              <td class="gap">Groms</td>
-            </tr><tr>
-              <td class="rank">22</td>
-              <td class="name">Jeffrey Gamon</td>
-              <td class="time">06:34.030</td>
-              <td class="gap">Open</td>
-            </tr><tr>
-              <td class="rank">23</td>
-              <td class="name">Maarten De Booser</td>
-              <td class="time">06:38.470</td>
-              <td class="gap">Open</td>
-            </tr><tr>
-              <td class="rank">24</td>
-              <td class="name">Remo Berli</td>
-              <td class="time">06:40.490</td>
-              <td class="gap">Open</td>
-            </tr><tr>
-              <td class="rank">27</td>
-              <td class="name">Thomas Sabinsky</td>
-              <td class="time">06:43.527</td>
-              <td class="gap">Open</td>
-            </tr><tr>
-              <td class="rank">28</td>
-              <td class="name">Enrique Rufo Molero</td>
-              <td class="time">06:48.460</td>
-              <td class="gap">Open</td>
-            </tr><tr>
-              <td class="rank">29</td>
-              <td class="name">Harley Moss</td>
-              <td class="time">06:50.040</td>
-              <td class="gap">Open</td>
-            </tr><tr>
-              <td class="rank">30</td>
-              <td class="name">Zak Moss</td>
-              <td class="time">06:55.420</td>
-              <td class="gap">Groms</td>
-            </tr><tr>
-              <td class="rank">33</td>
-              <td class="name">Muddi Shoooz</td>
-              <td class="time">06:56.713</td>
-              <td class="gap">Open</td>
-            </tr><tr>
-              <td class="rank">37</td>
-              <td class="name">Adam Freeman</td>
-              <td class="time">07:14.780</td>
-              <td class="gap">Open</td>
-            </tr><tr>
-              <td class="rank">38</td>
-              <td class="name">Gilles De Somviele</td>
-              <td class="time">07:18.790</td>
-              <td class="gap">Wildcard</td>
-            </tr><tr>
-              <td class="rank">40</td>
-              <td class="name">Travis Wilson</td>
-              <td class="time">07:26.050</td>
-              <td class="gap">Open</td>
-            </tr><tr>
-              <td class="rank">41</td>
-              <td class="name">Thomas De Pauw</td>
-              <td class="time">07:26.080</td>
-              <td class="gap">Wildcard</td>
-            </tr><tr>
-              <td class="rank">43</td>
-              <td class="name">Mark Conningsby</td>
-              <td class="time">07:40.070</td>
-              <td class="gap">Wildcard</td>
-            </tr><tr>
-              <td class="rank">44</td>
-              <td class="name">Bartosz Kozak</td>
-              <td class="time">07:47.890</td>
-              <td class="gap">Wildcard</td>
-            </tr><tr>
-              <td class="rank">45</td>
-              <td class="name">Lars Vloemans</td>
-              <td class="time">07:53.860</td>
-              <td class="gap">Wildcard</td>
-            </tr><tr>
-              <td class="rank">46</td>
-              <td class="name">Jonathan Tims</td>
-              <td class="time">07:54.590</td>
-              <td class="gap">Wildcard</td>
-            </tr><tr>
-              <td class="rank">47</td>
-              <td class="name">Herman Dijkstra</td>
-              <td class="time">08:00.690</td>
-              <td class="gap">Wildcard</td>
-            </tr><tr>
-              <td class="rank">48</td>
-              <td class="name">Willow Wilson</td>
-              <td class="time">08:08.850</td>
-              <td class="gap">Groms</td>
-            </tr><tr>
-              <td class="rank">51</td>
-              <td class="name">Kacper Kozak</td>
-              <td class="time">08:39.270</td>
-              <td class="gap">Wildcard</td>
-            </tr><tr>
-              <td class="rank">52</td>
-              <td class="name">Anna Carson</td>
-              <td class="time">08:56.970</td>
-              <td class="gap">Women</td>
-            </tr><tr>
-              <td class="rank">53</td>
-              <td class="name">Teresa Neves</td>
-              <td class="time">12:19.860</td>
-              <td class="gap">Women</td>
-            </tr></tbody>
-        </table>
-      </div>
-    </section>
-    
-    
-    <section class="section">
-      <h2>No 2026 lap</h2>
-      <p class="hint">23 riders.</p>
-      <div class="panel">
-        <table>
-          <thead><tr><th>Rank that year</th><th>Rider</th><th>Best lap</th><th>Category</th></tr></thead>
-          <tbody><tr>
-              <td class="rank">1</td>
-              <td class="name">Jay Kenward</td>
-              <td class="time">05:05.137</td>
-              <td class="gap">Open</td>
-            </tr><tr>
-              <td class="rank">6</td>
-              <td class="name">Indiana Mcfarlane</td>
-              <td class="time">06:02.510</td>
-              <td class="gap">Groms</td>
-            </tr><tr>
-              <td class="rank">7</td>
-              <td class="name">Jonas Pflüger</td>
-              <td class="time">06:02.663</td>
-              <td class="gap">Open</td>
-            </tr><tr>
-              <td class="rank">11</td>
-              <td class="name">Geky Del Curto</td>
-              <td class="time">06:18.273</td>
-              <td class="gap">Open</td>
-            </tr><tr>
-              <td class="rank">12</td>
-              <td class="name">Benoit Rousseaux</td>
-              <td class="time">06:18.660</td>
-              <td class="gap">Open</td>
-            </tr><tr>
-              <td class="rank">15</td>
-              <td class="name">Jeffrey Jaffa Gaming</td>
-              <td class="time">06:27.307</td>
-              <td class="gap">Open</td>
-            </tr><tr>
-              <td class="rank">17</td>
-              <td class="name">Noah Gamon</td>
-              <td class="time">06:31.967</td>
-              <td class="gap">Groms</td>
-            </tr><tr>
-              <td class="rank">19</td>
-              <td class="name">Jessica Jones</td>
-              <td class="time">06:49.270</td>
-              <td class="gap">Women</td>
-            </tr><tr>
-              <td class="rank">20</td>
-              <td class="name">Clint Lashley</td>
-              <td class="time">06:56.280</td>
-              <td class="gap">Open</td>
-            </tr><tr>
-              <td class="rank">21</td>
-              <td class="name">Gerard Rincon</td>
-              <td class="time">06:56.523</td>
-              <td class="gap">Open</td>
-            </tr><tr>
-              <td class="rank">23</td>
-              <td class="name">Vid Gladovic</td>
-              <td class="time">07:01.360</td>
-              <td class="gap">Open</td>
-            </tr><tr>
-              <td class="rank">25</td>
-              <td class="name">Thomas Skovgaard</td>
-              <td class="time">07:08.303</td>
-              <td class="gap">Groms</td>
-            </tr><tr>
-              <td class="rank">26</td>
-              <td class="name">Joselito Dendoncker</td>
-              <td class="time">07:11.177</td>
-              <td class="gap">Open</td>
-            </tr><tr>
-              <td class="rank">30</td>
-              <td class="name">Fabian Scherrer</td>
-              <td class="time">07:23.000</td>
-              <td class="gap">Wildcard</td>
-            </tr><tr>
-              <td class="rank">32</td>
-              <td class="name">Eduardo Stralis Pavese</td>
-              <td class="time">07:23.790</td>
-              <td class="gap">Wildcard</td>
-            </tr><tr>
-              <td class="rank">33</td>
-              <td class="name">Barbara Tokarska</td>
-              <td class="time">07:30.747</td>
-              <td class="gap">Women</td>
-            </tr><tr>
-              <td class="rank">34</td>
-              <td class="name">Eduardo Queralto</td>
-              <td class="time">07:34.820</td>
-              <td class="gap">Open</td>
-            </tr><tr>
-              <td class="rank">35</td>
-              <td class="name">Leyla Zi</td>
-              <td class="time">07:37.330</td>
-              <td class="gap">Women</td>
-            </tr><tr>
-              <td class="rank">36</td>
-              <td class="name">Max Mcfarlane</td>
-              <td class="time">07:37.690</td>
-              <td class="gap">Groms</td>
-            </tr><tr>
-              <td class="rank">37</td>
-              <td class="name">Tobi Sünder</td>
-              <td class="time">07:38.883</td>
-              <td class="gap">Open</td>
-            </tr><tr>
-              <td class="rank">40</td>
-              <td class="name">Lars Lottrup</td>
-              <td class="time">07:48.700</td>
-              <td class="gap">Legends</td>
-            </tr><tr>
-              <td class="rank">41</td>
-              <td class="name">Tomáš Mach</td>
-              <td class="time">07:50.370</td>
-              <td class="gap">Open</td>
-            </tr><tr>
-              <td class="rank">49</td>
-              <td class="name">Chloe Jager</td>
-              <td class="time">08:51.127</td>
-              <td class="gap">Women</td>
-            </tr></tbody>
-        </table>
-      </div>
-    </section>
-    
     <p class="note">Spelling differences are treated as the same rider, including Dan Turner / Daniel Turner, Henry Ld / Henry Livingstone Dunn, Florent Audrit / Florent Audit, and Quirine / Qurine Posno. 2026 legends short-track times are not used here. Rank is the place in that year’s full best-lap list. Green rank means a higher place in 2026.</p>
     <script>
       const table = document.querySelector("#both tbody");
       const find = document.querySelector("#find");
-      let sortKey = "delta";
+      let sortKey = "best";
       let sortDir = 1;
       function rows() { return [...table.querySelectorAll("tr")]; }
+      function valueOf(row) {
+        if (sortKey === "name") return row.dataset.name;
+        const raw = row.dataset[sortKey];
+        if (raw === undefined || raw === "") return null;
+        const number = Number(raw);
+        return Number.isFinite(number) ? number : null;
+      }
       function applySort() {
         const sorted = rows().sort((a, b) => {
-          const av = sortKey === "name" ? a.dataset.name : Number(a.dataset[sortKey]);
-          const bv = sortKey === "name" ? b.dataset.name : Number(b.dataset[sortKey]);
+          const av = valueOf(a);
+          const bv = valueOf(b);
+          if (av === null && bv === null) return a.dataset.name.localeCompare(b.dataset.name);
+          if (av === null) return 1;
+          if (bv === null) return -1;
           if (av < bv) return -sortDir;
           if (av > bv) return sortDir;
           return a.dataset.name.localeCompare(b.dataset.name);
         });
         sorted.forEach((row) => table.appendChild(row));
       }
-      document.querySelectorAll("th button").forEach((button) => {
+      document.querySelectorAll("#both th button").forEach((button) => {
         button.addEventListener("click", () => {
           const key = button.dataset.sort;
-          sortDir = sortKey === key ? -sortDir : (key === "name" ? 1 : 1);
-          if (sortKey !== key && (key === "delta" || key === "pct" || key === "y2026" || key === "y2025" || key === "rank")) sortDir = 1;
+          if (sortKey === key) sortDir = -sortDir;
+          else sortDir = key === "name" ? 1 : 1;
           sortKey = key;
           applySort();
         });
