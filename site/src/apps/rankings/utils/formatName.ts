@@ -1,11 +1,11 @@
-/** "James Grant" → "J Grant" for compact mobile columns */
+/** "Jess Jones" → "Jess J" for compact mobile columns */
 export function shortRiderName(fullName: string): string {
   const parts = fullName.trim().split(/\s+/).filter(Boolean);
   if (parts.length <= 1) return fullName;
   const first = parts[0];
   const last = parts[parts.length - 1];
-  const initial = first.charAt(0).toUpperCase();
-  return `${initial} ${last}`;
+  const initial = last.charAt(0).toUpperCase();
+  return `${first} ${initial}`;
 }
 
 /** First team segment only, truncated */
