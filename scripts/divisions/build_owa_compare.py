@@ -47,6 +47,7 @@ ALIASES = {
     "lars lot trip": "lars lottrup",
     "lars lottrup": "lars lottrup",
     "jeffrey jaffa gaming": "jaffa gamon",
+    "jeffrey gamon": "jaffa gamon",
     "jaffa gamon": "jaffa gamon",
 }
 
