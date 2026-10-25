@@ -1,6 +1,43 @@
 {
   "events": [
     {
+      "id": "owa-2026",
+      "name": "Onewheel Algarve 2026",
+      "riderCount": 53,
+      "categories": [
+        "Groms",
+        "Open",
+        "Wildcard",
+        "Women"
+      ],
+      "defaultCategories": [
+        "Open",
+        "Women",
+        "Groms",
+        "Wildcard"
+      ],
+      "countsByCategory": {
+        "Open": 33,
+        "Groms": 7,
+        "Women": 4,
+        "Wildcard": 9
+      }
+    },
+    {
+      "id": "owa-2026-legends",
+      "name": "Onewheel Algarve 2026 \u2014 Legends (short track)",
+      "riderCount": 11,
+      "categories": [
+        "Legends"
+      ],
+      "defaultCategories": [
+        "Legends"
+      ],
+      "countsByCategory": {
+        "Legends": 11
+      }
+    },
+    {
       "id": "sts-2026",
       "name": "Shred the Shires 2026",
       "riderCount": 112,
@@ -79,5 +116,5 @@
       }
     }
   ],
-  "defaultEventId": "sts-2026"
+  "defaultEventId": "owa-2026"
 }

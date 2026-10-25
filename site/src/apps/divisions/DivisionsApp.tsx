@@ -124,6 +124,20 @@ export function DivisionsApp() {
       <div className="rankings-page__toolbar divisions-page__toolbar">
         <PageHeader title={PAGE.pageTitle} subtitle={PAGE.pageSubtitle} />
       </div>
+      {eventData?.id === "owa-2026" && (
+        <p className="event-source">
+          Best lap from every standard-track session at OWA 2026. Legends
+          raced a shorter track and are a separate event.{" "}
+          <a href="/owa-2026-best-times.html">Open the full ranked table</a>
+        </p>
+      )}
+      {eventData?.id === "owa-2026-legends" && (
+        <p className="event-source">
+          Shorter course than the main OWA 2026 ranking, so these times are
+          not mixed into that list.{" "}
+          <a href="/owa-2026-best-times.html">Open the full ranked table</a>
+        </p>
+      )}
       <ControlsPanel
         settings={settings}
         onChange={setSettings}

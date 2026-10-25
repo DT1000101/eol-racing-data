@@ -130,6 +130,7 @@ def write_event(event: dict, out_dir: Path, site_public: Path) -> None:
                 "fastest_time",
                 "fastest_seconds",
             ],
+            extrasaction="ignore",
         )
         writer.writeheader()
         writer.writerows(event["riders"])
@@ -159,6 +160,15 @@ def main() -> None:
 
     events.extend(extract_all_orl_events(args.orl_dir))
 
+    # OWA 2026 is fetched separately (extract_owa_2026.py) from the public
+    # results feed. Keep it in the index when rebuilding other events.
+    owa_2026_path = args.out_dir / "owa-2026.json"
+    if owa_2026_path.is_file():
+        events.insert(0, json.loads(owa_2026_path.read_text()))
+        legends_path = args.out_dir / "owa-2026-legends.json"
+        if legends_path.is_file():
+            events.insert(1, json.loads(legends_path.read_text()))
+
     for event in events:
         write_event(event, args.out_dir, site_public)
         counts = {cat: len(riders) for cat, riders in event["ridersByCategory"].items()}
@@ -180,7 +190,13 @@ def main() -> None:
             }
             for e in events
         ],
-        "defaultEventId": "sts-2026" if any(e["id"] == "sts-2026" for e in events) else events[0]["id"],
+        "defaultEventId": (
+            "owa-2026"
+            if any(e["id"] == "owa-2026" for e in events)
+            else "sts-2026"
+            if any(e["id"] == "sts-2026" for e in events)
+            else events[0]["id"]
+        ),
     }
 
     for target in (args.out_dir / "events.json", site_public / "events.json"):

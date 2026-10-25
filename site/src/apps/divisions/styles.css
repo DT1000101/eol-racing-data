@@ -75,6 +75,17 @@ body {
   color: var(--muted);
 }
 
+.event-source {
+  margin: 0;
+  padding: 0.45rem 0.75rem 0;
+  font-size: 12px;
+  color: var(--muted);
+}
+
+.event-source a {
+  color: var(--accent);
+}
+
 .controls__grid {
   display: flex;
   flex-wrap: wrap;
