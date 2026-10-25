@@ -24,20 +24,6 @@
       }
     },
     {
-      "id": "owa-2026-legends",
-      "name": "Onewheel Algarve 2026 \u2014 Legends (short track)",
-      "riderCount": 11,
-      "categories": [
-        "Legends"
-      ],
-      "defaultCategories": [
-        "Legends"
-      ],
-      "countsByCategory": {
-        "Legends": 11
-      }
-    },
-    {
       "id": "sts-2026",
       "name": "Shred the Shires 2026",
       "riderCount": 112,

@@ -5,8 +5,8 @@ Each rider keeps their fastest standard-track lap from seeding, heats,
 quarters, semis, finals, and wild card. Mass-race totals, the team race,
 and the chair race are different formats and are left out.
 
-Legends raced a shorter track. They are written as their own event and as
-a second table in the ranked HTML, not mixed into the standard-track order.
+Legends raced a shorter track. Those times stay on the ranked HTML only
+and are not added to the divisions visualizer.
 """
 
 from __future__ import annotations
@@ -462,26 +462,14 @@ def main() -> None:
         riders=standard_riders,
         default_categories=["Open", "Women", "Groms", "Wildcard"],
     )
-    legends_event = build_event(
-        event_id="owa-2026-legends",
-        event_name="Onewheel Algarve 2026 — Legends (short track)",
-        description=(
-            "Best Legends heat time. This was a shorter course and is not "
-            "comparable with the standard-track OWA 2026 ranking."
-        ),
-        riders=legend_riders,
-        default_categories=["Legends"],
-    )
-
     out_dir = HUB_ROOT / "data" / "divisions"
     site_public = HUB_ROOT / "site" / "public" / "data" / "divisions"
     out_dir.mkdir(parents=True, exist_ok=True)
     site_public.mkdir(parents=True, exist_ok=True)
-    for event in (standard_event, legends_event):
-        write_event(event, out_dir, site_public)
+    write_event(standard_event, out_dir, site_public)
 
     for index_path in (out_dir / "events.json", site_public / "events.json"):
-        upsert_events(index_path, [standard_event, legends_event])
+        upsert_events(index_path, [standard_event])
 
     updated = events_payload.get("updatedAt") or ""
     public_page = render_html(standard_riders, legend_riders, updated)

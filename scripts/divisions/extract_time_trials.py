@@ -165,9 +165,6 @@ def main() -> None:
     owa_2026_path = args.out_dir / "owa-2026.json"
     if owa_2026_path.is_file():
         events.insert(0, json.loads(owa_2026_path.read_text()))
-        legends_path = args.out_dir / "owa-2026-legends.json"
-        if legends_path.is_file():
-            events.insert(1, json.loads(legends_path.read_text()))
 
     for event in events:
         write_event(event, args.out_dir, site_public)
