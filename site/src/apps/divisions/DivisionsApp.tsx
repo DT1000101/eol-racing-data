@@ -1,4 +1,5 @@
 import { useCallback, useEffect, useMemo, useState } from "react";
+import { Link } from "react-router-dom";
 import { DATA } from "../../hub/dataPaths";
 import { PageHeader } from "../../hub/PageHeader";
 import { pageMeta } from "../../hub/navConfig";
@@ -131,7 +132,7 @@ export function DivisionsApp() {
           {" · "}
           <a href="/owa-2025-vs-2026.html">2025 beside 2026</a>
           {" · "}
-          <a href="/owa-progression.html">Who got faster</a>
+          <Link to="/owa-laps">Who got faster</Link>
         </p>
       )}
       <ControlsPanel

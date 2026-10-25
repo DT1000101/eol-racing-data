@@ -5,6 +5,7 @@ import {
   LayoutGrid,
   ListOrdered,
   Medal,
+  Timer,
   TrendingUp,
   UserSearch,
   Users,
@@ -19,6 +20,7 @@ export const SECTION_ICONS: Record<string, LucideIcon> = {
   "/podiums": Medal,
   "/attendance": TrendingUp,
   "/divisions": LayoutGrid,
+  "/owa-laps": Timer,
   "/seeding": GitBranch,
 };
 

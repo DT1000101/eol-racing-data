@@ -1,0 +1,149 @@
+.laps-page {
+  flex: 1;
+  overflow: auto;
+  background: var(--bg);
+}
+
+.laps-page__toolbar {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.35rem;
+  padding: 0.65rem 0.9rem 0.7rem;
+  border-bottom: 1px solid var(--border);
+  background: var(--surface);
+}
+
+.laps-page__intro {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.8rem;
+  max-width: 42rem;
+}
+
+.laps-page__body {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0.9rem 0.9rem 2rem;
+}
+
+.laps-kpis {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 0.75rem;
+}
+
+.laps-kpi {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 0.55rem 0.75rem;
+  min-width: 6.5rem;
+}
+
+.laps-kpi b {
+  display: block;
+  font-size: 1.05rem;
+  letter-spacing: -0.02em;
+}
+
+.laps-kpi span {
+  color: var(--muted);
+  font-size: 0.7rem;
+}
+
+.laps-search {
+  width: min(100%, 16rem);
+  margin-bottom: 0.7rem;
+  background: var(--surface);
+  color: var(--text);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 0.4rem 0.6rem;
+  font: inherit;
+}
+
+.laps-table-wrap {
+  overflow: auto;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  background: var(--surface);
+}
+
+.laps-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.82rem;
+}
+
+.laps-table th,
+.laps-table td {
+  padding: 0.4rem 0.65rem;
+  text-align: left;
+  white-space: nowrap;
+}
+
+.laps-table thead th {
+  background: var(--surface2);
+  color: var(--muted);
+  font-size: 0.68rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  font-weight: 600;
+  border-bottom: 1px solid var(--border);
+}
+
+.laps-table th button {
+  all: unset;
+  cursor: pointer;
+  color: inherit;
+  font: inherit;
+  letter-spacing: inherit;
+  text-transform: inherit;
+}
+
+.laps-table th button:hover,
+.laps-table th button[aria-pressed="true"] {
+  color: var(--text);
+}
+
+.laps-table tbody tr:nth-child(even) {
+  background: color-mix(in srgb, var(--surface2) 55%, transparent);
+}
+
+.laps-table .num {
+  font-variant-numeric: tabular-nums;
+}
+
+.laps-table .progress {
+  border-left: 3px solid var(--accent);
+  padding-left: 0.8rem;
+}
+
+.laps-faster {
+  color: #7dcea0;
+  font-weight: 600;
+}
+
+.laps-slower {
+  color: #e08b8b;
+  font-weight: 600;
+}
+
+.laps-na {
+  color: var(--muted);
+}
+
+.laps-note {
+  margin: 0.8rem 0 0;
+  color: var(--muted);
+  font-size: 0.75rem;
+  max-width: 46rem;
+}
+
+.laps-page--loading,
+.laps-page--error {
+  padding: 2rem 1rem;
+  color: var(--muted);
+}

@@ -86,6 +86,16 @@ export const SITE_NAV: SiteNavItem[] = [
     help: "Explore how organisers might group riders before knockout racing.",
   },
   {
+    to: "/owa-laps",
+    navLabel: "OWA",
+    navSublabel: "Lap change",
+    pageTitle: "How the lap changed",
+    pageSubtitle: "OWA 2025 and 2026",
+    description:
+      "Best OWA lap from 2025 and 2026, and how much that lap changed. A negative change is faster.",
+    help: "Spelling differences are treated as the same rider, including Dan Turner / Daniel Turner and Henry Ld / Henry Livingstone Dunn. 2026 legends short-track times are not included. Rank is the place in that year’s full best-lap list.",
+  },
+  {
     to: "/seeding",
     navLabel: "Seeding",
     navSublabel: "Visualizer",

@@ -7,6 +7,7 @@ import { RotyPage } from "./apps/rankings/pages/RotyPage";
 import { SeasonRankingsPage } from "./apps/rankings/pages/SeasonRankingsPage";
 import { AttendancePage } from "./apps/rankings/pages/AttendancePage";
 import { TeamsDirectoryPage } from "./apps/rankings/pages/TeamsDirectoryPage";
+import { LapsPage } from "./apps/laps/LapsPage";
 import { SeedingPage } from "./apps/seeding/SeedingPage";
 import { HomePage } from "./hub/HomePage";
 import { HubLayout } from "./hub/HubLayout";
@@ -38,6 +39,7 @@ export default function App() {
             }
           />
           <Route path="seeding" element={<SeedingPage />} />
+          <Route path="owa-laps" element={<LapsPage />} />
           <Route path="*" element={<Navigate to="/" replace />} />
         </Route>
       </Routes>
